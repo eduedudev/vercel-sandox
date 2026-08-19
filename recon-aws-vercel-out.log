@@ -1,0 +1,447 @@
+resumed: victim-np
+CommandFinished {
+  _client: APIClient {
+    fetch: [AsyncFunction (anonymous)],
+    baseUrl: 'https://vercel.com/api',
+    debug: false,
+    token: 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im1yay00MzAyZWMxYjY3MGY0OGE5OGFkNjFkYWRlNGEyM2JlNyJ9.eyJpc3MiOiJodHRwczovL29pZGMudmVyY2VsLmNvbS9oaS1lZHVlZHVkZXZzLXByb2plY3RzIiwic3ViIjoib3duZXI6aGktZWR1ZWR1ZGV2cy1wcm9qZWN0czpwcm9qZWN0OnZpY3RpbWE6ZW52aXJvbm1lbnQ6ZGV2ZWxvcG1lbnQiLCJzY29wZSI6Im93bmVyOmhpLWVkdWVkdWRldnMtcHJvamVjdHM6cHJvamVjdDp2aWN0aW1hOmVudmlyb25tZW50OmRldmVsb3BtZW50IiwiYXVkIjoiaHR0cHM6Ly92ZXJjZWwuY29tL2hpLWVkdWVkdWRldnMtcHJvamVjdHMiLCJvd25lciI6ImhpLWVkdWVkdWRldnMtcHJvamVjdHMiLCJvd25lcl9pZCI6InRlYW1fYmk3ekxpd045VUxaUWtsSGgzcmxtcTdEIiwicHJvamVjdCI6InZpY3RpbWEiLCJwcm9qZWN0X2lkIjoicHJqX2Q3OHhPaFRIN29EMEhzMk1UbWhwU2dwUFZjN0EiLCJlbnZpcm9ubWVudCI6ImRldmVsb3BtZW50IiwicGxhbiI6ImhvYmJ5IiwidXNlcl9pZCI6Ijk2NlYwWEt4TnJrY2FVT0ZJVjBtRjc2TiIsImNsaWVudF9pZCI6ImNsX0hZeU9QQk50Rk1mSGhhVW45TDRRUGZUWno2VFA0N2JwIiwibmJmIjoxNzg3MTczNTQyLCJpYXQiOjE3ODcxNzM1NDIsImV4cCI6MTc4NzIxNjc0Mn0.dz2BtAbAnrXWwNIRp_Zh8sD326smWiL00u9ls_OCDIDf6C-QjsUIGJyNpaPpvAFzreM53TNMF2g0hZHEfs4-zjpxN24WgNA76XkRIVbBFkjYCOVQ_N-RaQNFq7GaPm-Ebyfo5QjppUUUL6nLgsbtAaD8WBOdcttE59tUFxM5dPOUHa3LZRI6LyJuwtdkBb6vwp2X1wUSvycF1B_oMIkiEXORdLHIAaldocQHzNt3uBoCB4l3WfNxo4vJrWsy_lLcUW14JyaR1B5ODGs6jGG36enhSZPIU8QFc_AdnqeZcbLjyFPVHmr-bz9coeKvdfWk3uFh5tKI7yT1B4z6NPgwaQ',
+    agent: Agent {
+      _events: [Object: null prototype] {},
+      _eventsCount: 0,
+      _maxListeners: undefined,
+      Symbol(shapeMode): false,
+      Symbol(kCapture): false,
+      Symbol(nodejs.stream.destroyed): false,
+      Symbol(onDestroyed): null,
+      Symbol(closed): false,
+      Symbol(onClosed): null,
+      Symbol(webSocketOptions): {},
+      Symbol(options): [Object],
+      Symbol(factory): [Function: defaultFactory],
+      Symbol(clients): [Map],
+      Symbol(origins): Set(0) {},
+      Symbol(onDrain): [Function (anonymous)],
+      Symbol(onConnect): [Function (anonymous)],
+      Symbol(onDisconnect): [Function (anonymous)],
+      Symbol(onConnectionError): [Function (anonymous)]
+    },
+    teamId: 'team_bi7zLiwN9ULZQklHh3rlmq7D',
+    isJwtToken: true,
+    projectId: 'prj_d78xOhTH7oD0Hs2MTmhpSgpPVc7A'
+  },
+  outputCache: Promise {
+    {
+      stdout: '===== [AWS] INTERFACES =====\n' +
+        '1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000\n' +
+        '    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00\n' +
+        '    inet 127.0.0.1/8 scope host lo\n' +
+        '       valid_lft forever preferred_lft forever\n' +
+        '    inet6 ::1/128 scope host proto kernel_lo \n' +
+        '       valid_lft forever preferred_lft forever\n' +
+        '2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000\n' +
+        '    link/ether 52:e6:f2:62:df:6a brd ff:ff:ff:ff:ff:ff\n' +
+        '    inet 100.64.25.37/16 brd 100.64.255.255 scope global eth0\n' +
+        '       valid_lft forever preferred_lft forever\n' +
+        '    inet6 fe80::50e6:f2ff:fe62:df6a/64 scope link proto kernel_ll \n' +
+        '       valid_lft forever preferred_lft forever\n' +
+        'default via 100.64.0.1 dev eth0 \n' +
+        '100.64.0.0/16 dev eth0 proto kernel scope link src 100.64.25.37 \n' +
+        '100.64.0.1 dev eth0 lladdr 0e:c5:2b:66:4b:3a DELAY \n' +
+        '===== [AWS] IMDSv1 =====\n' +
+        '---- IMDSv1 IAM roles ----\n' +
+        '===== [AWS] IMDSv2 =====\n' +
+        'TOKEN:[]\n' +
+        '===== [AWS] ECS metadata =====\n' +
+        '===== [AWS] route/DNS =====\n' +
+        '#MANUAL\n' +
+        'nameserver 172.31.0.2\n' +
+        '===== [AWS] public ip =====\n' +
+        '\n' +
+        '\n' +
+        '===== [AWS] ec2 api reachable? =====\n' +
+        '===== [VERCEL] env =====\n' +
+        'AWS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt\n' +
+        'CARGO_HTTP_CAINFO=/etc/ssl/certs/ca-certificates.crt\n' +
+        'CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt\n' +
+        'GIT_SSL_CAINFO=/etc/ssl/certs/ca-certificates.crt\n' +
+        'GRPC_DEFAULT_SSL_ROOTS_FILE_PATH=/etc/ssl/certs/ca-certificates.crt\n' +
+        'HOME=/vercel\n' +
+        'LANG=C.UTF-8\n' +
+        'NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt\n' +
+        'NODE_USE_SYSTEM_CA=1\n' +
+        'NPM_CONFIG_CAFILE=/etc/ssl/certs/ca-certificates.crt\n' +
+        'PATH=/vercel/.local/bin:/vercel/.global/pnpm/bin:/vercel/.global/npm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\n' +
+        'PIP_CERT=/etc/ssl/certs/ca-certificates.crt\n' +
+        'PWD=/vercel\n' +
+        'REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt\n' +
+        'SHLVL=1\n' +
+        'SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt\n' +
+        '_=/usr/bin/env\n' +
+        '===== [VERCEL] /run/vercel =====\n' +
+        '/run/vercel\n' +
+        '/run/vercel/share\n' +
+        '/run/vercel/share/sandbox-init\n' +
+        '/run/vercel/share/init.sock\n' +
+        '===== [VERCEL] mounts =====\n' +
+        '/dev/vdb on / type xfs (rw,relatime,nouuid,inode64,logbufs=8,logbsize=32k,noquota)\n' +
+        'proc on /proc type proc (rw,relatime)\n' +
+        'devtmpfs on /dev type devtmpfs (rw,relatime,size=1168720k,nr_inodes=292180,mode=755)\n' +
+        'devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,mode=620,ptmxmode=666)\n' +
+        'shm on /dev/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=65536k)\n' +
+        'mqueue on /dev/mqueue type mqueue (rw,nosuid,nodev,noexec,relatime)\n' +
+        'sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)\n' +
+        'cgroup on /sys/fs/cgroup type cgroup2 (rw,nosuid,nodev,noexec,relatime)\n' +
+        '/dev/vda on /etc/hosts type xfs (ro,relatime,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota)\n' +
+        '/dev/vda on /etc/resolv.conf type xfs (ro,relatime,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota)\n' +
+        '/dev/vda on /run/vercel/share type xfs (rw,relatime,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota)\n' +
+        '/dev/vda on /etc/pki/ca-trust/source/anchors/vercel-proxy-ca.pem type xfs (ro,relatime,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota)\n' +
+        '/dev/vda on /usr/local/share/ca-certificates/vercel-proxy-ca.crt type xfs (ro,relatime,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota)\n' +
+        'devtmpfs on /proc/kcore type devtmpfs (rw,relatime,size=1168720k,nr_inodes=292180,mode=755)\n' +
+        'devtmpfs on /proc/keys type devtmpfs (rw,relatime,size=1168720k,nr_inodes=292180,mode=755)\n' +
+        '===== [VERCEL] cmdline =====\n' +
+        'panic=1 i8042.noaux i8042.dumbkbd build_version=2026.08.19-81ade84e0e1185cfa9c085b01f5ff42833c5eaf9 ro reboot=k nomodule i8042.nopnp pci=off quiet init=/opt/vercel/celld-init.sh cell_id=hvc_iad1_b01540a2_26b6711a2a5747838f9debd5ef839df8 console=ttyS0 i8042.nomux ip=100.64.25.37::100.64.0.1:255.255.0.0:::off:172.31.0.2:: pci=off root=/dev/vda rw virtio_mmio.device=4K@0xc0001000:5 virtio_mmio.device=4K@0xc0002000:6 virtio_mmio.device=4K@0xc0003000:7 virtio_mmio.device=4K@0xc0004000:8 virtio_mmio.device=4K@0xc0005000:9\n' +
+        '===== [VERCEL] virtio =====\n' +
+        'virtio0\n' +
+        'virtio1\n' +
+        'virtio2\n' +
+        'virtio3\n' +
+        'virtio4\n' +
+        '===== [VERCEL] local services =====\n' +
+        'State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess\n' +
+        'LISTEN 0      4096               *:30001            *:*          \n' +
+        'LISTEN 0      4096               *:30002            *:*          \n' +
+        'LISTEN 0      4096               *:23456            *:*          \n' +
+        '--- :23456 ---\n' +
+        '404 page not found\n' +
+        '--- :30001 ---\n' +
+        '404 page not found\n' +
+        '--- :30002 ---\n' +
+        '--- :2050 ---\n' +
+        '--- :8080 ---\n' +
+        '--- :3000 ---\n' +
+        '===== [VERCEL] dmesg tail =====\n' +
+        '[    0.101262] VFS: Mounted root (xfs filesystem) on device 254:0.\n' +
+        '[    0.101590] devtmpfs: mounted\n' +
+        '[    0.102538] Freeing unused kernel image (initmem) memory: 3020K\n' +
+        '[    0.102548] Write protecting the kernel read-only data: 20480k\n' +
+        '[    0.103660] Freeing unused kernel image (text/rodata gap) memory: 1920K\n' +
+        '[    0.103706] Freeing unused kernel image (rodata/data gap) memory: 52K\n' +
+        '[    0.103713] Run /opt/vercel/celld-init.sh as init process\n' +
+        '[    0.103714]   with arguments:\n' +
+        '[    0.103715]     /opt/vercel/celld-init.sh\n' +
+        '[    0.103717]   with environment:\n' +
+        '[    0.103717]     HOME=/\n' +
+        '[    0.103718]     TERM=linux\n' +
+        '[    0.103718]     build_version=2026.08.19-81ade84e0e1185cfa9c085b01f5ff42833c5eaf9\n' +
+        '[    0.103719]     cell_id=hvc_iad1_b01540a2_26b6711a2a5747838f9debd5ef839df8\n' +
+        '[  174.204771] virtio_blk virtio1: [vdb] new size: 134217728 512-byte logical blocks (68.7 GB/64.0 GiB)\n' +
+        '[  174.204809] vdb: detected capacity change from 0 to 134217728\n' +
+        '[  174.207223] XFS (vdb): Mounting V5 Filesystem d09668bd-b36b-4a5f-942f-b65b257d1567\n' +
+        '[  174.215090] XFS (vdb): Starting recovery (logdev: internal)\n' +
+        '[  174.217664] XFS (vdb): Ending recovery (logdev: internal)\n' +
+        '[  174.217913] xfs filesystem being mounted at /mnt/drives/sandbox supports timestamps until 2038-01-19 (0x7fffffff)\n' +
+        '===== [VERCEL] processes =====\n' +
+        'USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND\n' +
+        'ubuntu         1  0.0  0.5 1268980 12192 ?       Ssl  21:58   0:00 /run/vercel/share/sandbox-init --socket=/run/vercel/share/init.sock --pubkey=7UldRT5rAm5q+NeUHMU3o4Er118dj6ZmmznMLoNt0DU=\n' +
+        'ubuntu        14  0.0  0.1   4948  3900 ?        S    21:58   0:00 bash -c  echo "===== [AWS] INTERFACES =====" ip addr 2>/dev/null; ip route 2>/dev/null; ip neigh 2>/dev/null echo "===== [AWS] IMDSv1 =====" curl -s -m 4 http://169.254.169.254/latest/meta-data/ 2>&1 | head -20 echo "---- IMDSv1 IAM roles ----" curl -s -m 4 http://169.254.169.254/latest/meta-data/iam/security-credentials/ 2>&1 | head -10 echo "===== [AWS] IMDSv2 =====" TOK=$(curl -s -m 4 -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600" 2>&1) echo "TOKEN:[$TOK]" curl -s -m 4 -H "X-aws-ec2-metadata-token: $TOK" http://169.254.169.254/latest/meta-data/ 2>&1 | head -20 echo "===== [AWS] ECS metadata =====" curl -s -m 4 http://169.254.170.2/v2/metadata 2>&1 | head -5 curl -s -m 4 http://169.254.170.2/v2/credentials 2>&1 | head -5 echo "===== [AWS] route/DNS =====" cat /etc/resolv.conf getent hosts $(hostname) 2>&1 getent hosts ip-172-31-0-2.ec2.internal 2>&1 echo "===== [AWS] public ip =====" curl -s -m 6 https://api.ipify.org 2>&1; echo curl -s -m 6 http://checkip.amazonaws.com 2>&1; echo echo "===== [AWS] ec2 api reachable? =====" curl -s -m 5 https://ec2.us-east-1.amazonaws.com/ 2>&1 | head -3 echo "===== [VERCEL] env =====" env | sort | grep -v -E "VERCEL_OIDC_TOKEN|TOKEN|SECRET|KEY|PASSWORD" | head -40 echo "===== [VERCEL] /run/vercel =====" find /run/vercel -maxdepth 4 2>/dev/null | head -60 echo "===== [VERCEL] mounts =====" mount 2>/dev/null | head -30 echo "===== [VERCEL] cmdline =====" cat /proc/cmdline echo "===== [VERCEL] virtio =====" ls /sys/bus/virtio/devices/ 2>/dev/null echo "===== [VERCEL] local services =====" ss -tlnp 2>/dev/null || netstat -tlnp 2>/dev/null for p in 23456 30001 30002 2050 8080 3000; do   echo "--- :$p ---"   curl -s -m 2 http://127.0.0.1:$p/ 2>&1 | head -5 done echo "===== [VERCEL] dmesg tail =====" dmesg 2>/dev/null | tail -20 echo "===== [VERCEL] processes =====" ps auxww 2>/dev/null | head -30 echo DONE \n' +
+        'ubuntu       701  0.0  0.1   7160  4424 ?        R    21:58   0:00 ps auxww\n' +
+        'ubuntu       702  0.0  0.3  16304  7780 ?        S    21:58   0:00 head -30\n' +
+        'DONE\n',
+      stderr: '',
+      both: '===== [AWS] INTERFACES =====\n' +
+        '1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000\n' +
+        '    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00\n' +
+        '    inet 127.0.0.1/8 scope host lo\n' +
+        '       valid_lft forever preferred_lft forever\n' +
+        '    inet6 ::1/128 scope host proto kernel_lo \n' +
+        '       valid_lft forever preferred_lft forever\n' +
+        '2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000\n' +
+        '    link/ether 52:e6:f2:62:df:6a brd ff:ff:ff:ff:ff:ff\n' +
+        '    inet 100.64.25.37/16 brd 100.64.255.255 scope global eth0\n' +
+        '       valid_lft forever preferred_lft forever\n' +
+        '    inet6 fe80::50e6:f2ff:fe62:df6a/64 scope link proto kernel_ll \n' +
+        '       valid_lft forever preferred_lft forever\n' +
+        'default via 100.64.0.1 dev eth0 \n' +
+        '100.64.0.0/16 dev eth0 proto kernel scope link src 100.64.25.37 \n' +
+        '100.64.0.1 dev eth0 lladdr 0e:c5:2b:66:4b:3a DELAY \n' +
+        '===== [AWS] IMDSv1 =====\n' +
+        '---- IMDSv1 IAM roles ----\n' +
+        '===== [AWS] IMDSv2 =====\n' +
+        'TOKEN:[]\n' +
+        '===== [AWS] ECS metadata =====\n' +
+        '===== [AWS] route/DNS =====\n' +
+        '#MANUAL\n' +
+        'nameserver 172.31.0.2\n' +
+        '===== [AWS] public ip =====\n' +
+        '\n' +
+        '\n' +
+        '===== [AWS] ec2 api reachable? =====\n' +
+        '===== [VERCEL] env =====\n' +
+        'AWS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt\n' +
+        'CARGO_HTTP_CAINFO=/etc/ssl/certs/ca-certificates.crt\n' +
+        'CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt\n' +
+        'GIT_SSL_CAINFO=/etc/ssl/certs/ca-certificates.crt\n' +
+        'GRPC_DEFAULT_SSL_ROOTS_FILE_PATH=/etc/ssl/certs/ca-certificates.crt\n' +
+        'HOME=/vercel\n' +
+        'LANG=C.UTF-8\n' +
+        'NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt\n' +
+        'NODE_USE_SYSTEM_CA=1\n' +
+        'NPM_CONFIG_CAFILE=/etc/ssl/certs/ca-certificates.crt\n' +
+        'PATH=/vercel/.local/bin:/vercel/.global/pnpm/bin:/vercel/.global/npm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\n' +
+        'PIP_CERT=/etc/ssl/certs/ca-certificates.crt\n' +
+        'PWD=/vercel\n' +
+        'REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt\n' +
+        'SHLVL=1\n' +
+        'SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt\n' +
+        '_=/usr/bin/env\n' +
+        '===== [VERCEL] /run/vercel =====\n' +
+        '/run/vercel\n' +
+        '/run/vercel/share\n' +
+        '/run/vercel/share/sandbox-init\n' +
+        '/run/vercel/share/init.sock\n' +
+        '===== [VERCEL] mounts =====\n' +
+        '/dev/vdb on / type xfs (rw,relatime,nouuid,inode64,logbufs=8,logbsize=32k,noquota)\n' +
+        'proc on /proc type proc (rw,relatime)\n' +
+        'devtmpfs on /dev type devtmpfs (rw,relatime,size=1168720k,nr_inodes=292180,mode=755)\n' +
+        'devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,mode=620,ptmxmode=666)\n' +
+        'shm on /dev/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=65536k)\n' +
+        'mqueue on /dev/mqueue type mqueue (rw,nosuid,nodev,noexec,relatime)\n' +
+        'sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)\n' +
+        'cgroup on /sys/fs/cgroup type cgroup2 (rw,nosuid,nodev,noexec,relatime)\n' +
+        '/dev/vda on /etc/hosts type xfs (ro,relatime,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota)\n' +
+        '/dev/vda on /etc/resolv.conf type xfs (ro,relatime,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota)\n' +
+        '/dev/vda on /run/vercel/share type xfs (rw,relatime,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota)\n' +
+        '/dev/vda on /etc/pki/ca-trust/source/anchors/vercel-proxy-ca.pem type xfs (ro,relatime,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota)\n' +
+        '/dev/vda on /usr/local/share/ca-certificates/vercel-proxy-ca.crt type xfs (ro,relatime,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota)\n' +
+        'devtmpfs on /proc/kcore type devtmpfs (rw,relatime,size=1168720k,nr_inodes=292180,mode=755)\n' +
+        'devtmpfs on /proc/keys type devtmpfs (rw,relatime,size=1168720k,nr_inodes=292180,mode=755)\n' +
+        '===== [VERCEL] cmdline =====\n' +
+        'panic=1 i8042.noaux i8042.dumbkbd build_version=2026.08.19-81ade84e0e1185cfa9c085b01f5ff42833c5eaf9 ro reboot=k nomodule i8042.nopnp pci=off quiet init=/opt/vercel/celld-init.sh cell_id=hvc_iad1_b01540a2_26b6711a2a5747838f9debd5ef839df8 console=ttyS0 i8042.nomux ip=100.64.25.37::100.64.0.1:255.255.0.0:::off:172.31.0.2:: pci=off root=/dev/vda rw virtio_mmio.device=4K@0xc0001000:5 virtio_mmio.device=4K@0xc0002000:6 virtio_mmio.device=4K@0xc0003000:7 virtio_mmio.device=4K@0xc0004000:8 virtio_mmio.device=4K@0xc0005000:9\n' +
+        '===== [VERCEL] virtio =====\n' +
+        'virtio0\n' +
+        'virtio1\n' +
+        'virtio2\n' +
+        'virtio3\n' +
+        'virtio4\n' +
+        '===== [VERCEL] local services =====\n' +
+        'State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess\n' +
+        'LISTEN 0      4096               *:30001            *:*          \n' +
+        'LISTEN 0      4096               *:30002            *:*          \n' +
+        'LISTEN 0      4096               *:23456            *:*          \n' +
+        '--- :23456 ---\n' +
+        '404 page not found\n' +
+        '--- :30001 ---\n' +
+        '404 page not found\n' +
+        '--- :30002 ---\n' +
+        '--- :2050 ---\n' +
+        '--- :8080 ---\n' +
+        '--- :3000 ---\n' +
+        '===== [VERCEL] dmesg tail =====\n' +
+        '[    0.101262] VFS: Mounted root (xfs filesystem) on device 254:0.\n' +
+        '[    0.101590] devtmpfs: mounted\n' +
+        '[    0.102538] Freeing unused kernel image (initmem) memory: 3020K\n' +
+        '[    0.102548] Write protecting the kernel read-only data: 20480k\n' +
+        '[    0.103660] Freeing unused kernel image (text/rodata gap) memory: 1920K\n' +
+        '[    0.103706] Freeing unused kernel image (rodata/data gap) memory: 52K\n' +
+        '[    0.103713] Run /opt/vercel/celld-init.sh as init process\n' +
+        '[    0.103714]   with arguments:\n' +
+        '[    0.103715]     /opt/vercel/celld-init.sh\n' +
+        '[    0.103717]   with environment:\n' +
+        '[    0.103717]     HOME=/\n' +
+        '[    0.103718]     TERM=linux\n' +
+        '[    0.103718]     build_version=2026.08.19-81ade84e0e1185cfa9c085b01f5ff42833c5eaf9\n' +
+        '[    0.103719]     cell_id=hvc_iad1_b01540a2_26b6711a2a5747838f9debd5ef839df8\n' +
+        '[  174.204771] virtio_blk virtio1: [vdb] new size: 134217728 512-byte logical blocks (68.7 GB/64.0 GiB)\n' +
+        '[  174.204809] vdb: detected capacity change from 0 to 134217728\n' +
+        '[  174.207223] XFS (vdb): Mounting V5 Filesystem d09668bd-b36b-4a5f-942f-b65b257d1567\n' +
+        '[  174.215090] XFS (vdb): Starting recovery (logdev: internal)\n' +
+        '[  174.217664] XFS (vdb): Ending recovery (logdev: internal)\n' +
+        '[  174.217913] xfs filesystem being mounted at /mnt/drives/sandbox supports timestamps until 2038-01-19 (0x7fffffff)\n' +
+        '===== [VERCEL] processes =====\n' +
+        'USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND\n' +
+        'ubuntu         1  0.0  0.5 1268980 12192 ?       Ssl  21:58   0:00 /run/vercel/share/sandbox-init --socket=/run/vercel/share/init.sock --pubkey=7UldRT5rAm5q+NeUHMU3o4Er118dj6ZmmznMLoNt0DU=\n' +
+        'ubuntu        14  0.0  0.1   4948  3900 ?        S    21:58   0:00 bash -c  echo "===== [AWS] INTERFACES =====" ip addr 2>/dev/null; ip route 2>/dev/null; ip neigh 2>/dev/null echo "===== [AWS] IMDSv1 =====" curl -s -m 4 http://169.254.169.254/latest/meta-data/ 2>&1 | head -20 echo "---- IMDSv1 IAM roles ----" curl -s -m 4 http://169.254.169.254/latest/meta-data/iam/security-credentials/ 2>&1 | head -10 echo "===== [AWS] IMDSv2 =====" TOK=$(curl -s -m 4 -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600" 2>&1) echo "TOKEN:[$TOK]" curl -s -m 4 -H "X-aws-ec2-metadata-token: $TOK" http://169.254.169.254/latest/meta-data/ 2>&1 | head -20 echo "===== [AWS] ECS metadata =====" curl -s -m 4 http://169.254.170.2/v2/metadata 2>&1 | head -5 curl -s -m 4 http://169.254.170.2/v2/credentials 2>&1 | head -5 echo "===== [AWS] route/DNS =====" cat /etc/resolv.conf getent hosts $(hostname) 2>&1 getent hosts ip-172-31-0-2.ec2.internal 2>&1 echo "===== [AWS] public ip =====" curl -s -m 6 https://api.ipify.org 2>&1; echo curl -s -m 6 http://checkip.amazonaws.com 2>&1; echo echo "===== [AWS] ec2 api reachable? =====" curl -s -m 5 https://ec2.us-east-1.amazonaws.com/ 2>&1 | head -3 echo "===== [VERCEL] env =====" env | sort | grep -v -E "VERCEL_OIDC_TOKEN|TOKEN|SECRET|KEY|PASSWORD" | head -40 echo "===== [VERCEL] /run/vercel =====" find /run/vercel -maxdepth 4 2>/dev/null | head -60 echo "===== [VERCEL] mounts =====" mount 2>/dev/null | head -30 echo "===== [VERCEL] cmdline =====" cat /proc/cmdline echo "===== [VERCEL] virtio =====" ls /sys/bus/virtio/devices/ 2>/dev/null echo "===== [VERCEL] local services =====" ss -tlnp 2>/dev/null || netstat -tlnp 2>/dev/null for p in 23456 30001 30002 2050 8080 3000; do   echo "--- :$p ---"   curl -s -m 2 http://127.0.0.1:$p/ 2>&1 | head -5 done echo "===== [VERCEL] dmesg tail =====" dmesg 2>/dev/null | tail -20 echo "===== [VERCEL] processes =====" ps auxww 2>/dev/null | head -30 echo DONE \n' +
+        'ubuntu       701  0.0  0.1   7160  4424 ?        R    21:58   0:00 ps auxww\n' +
+        'ubuntu       702  0.0  0.3  16304  7780 ?        S    21:58   0:00 head -30\n' +
+        'DONE\n'
+    }
+  },
+  _resolvedOutput: {
+    stdout: '===== [AWS] INTERFACES =====\n' +
+      '1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000\n' +
+      '    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00\n' +
+      '    inet 127.0.0.1/8 scope host lo\n' +
+      '       valid_lft forever preferred_lft forever\n' +
+      '    inet6 ::1/128 scope host proto kernel_lo \n' +
+      '       valid_lft forever preferred_lft forever\n' +
+      '2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000\n' +
+      '    link/ether 52:e6:f2:62:df:6a brd ff:ff:ff:ff:ff:ff\n' +
+      '    inet 100.64.25.37/16 brd 100.64.255.255 scope global eth0\n' +
+      '       valid_lft forever preferred_lft forever\n' +
+      '    inet6 fe80::50e6:f2ff:fe62:df6a/64 scope link proto kernel_ll \n' +
+      '       valid_lft forever preferred_lft forever\n' +
+      'default via 100.64.0.1 dev eth0 \n' +
+      '100.64.0.0/16 dev eth0 proto kernel scope link src 100.64.25.37 \n' +
+      '100.64.0.1 dev eth0 lladdr 0e:c5:2b:66:4b:3a DELAY \n' +
+      '===== [AWS] IMDSv1 =====\n' +
+      '---- IMDSv1 IAM roles ----\n' +
+      '===== [AWS] IMDSv2 =====\n' +
+      'TOKEN:[]\n' +
+      '===== [AWS] ECS metadata =====\n' +
+      '===== [AWS] route/DNS =====\n' +
+      '#MANUAL\n' +
+      'nameserver 172.31.0.2\n' +
+      '===== [AWS] public ip =====\n' +
+      '\n' +
+      '\n' +
+      '===== [AWS] ec2 api reachable? =====\n' +
+      '===== [VERCEL] env =====\n' +
+      'AWS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt\n' +
+      'CARGO_HTTP_CAINFO=/etc/ssl/certs/ca-certificates.crt\n' +
+      'CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt\n' +
+      'GIT_SSL_CAINFO=/etc/ssl/certs/ca-certificates.crt\n' +
+      'GRPC_DEFAULT_SSL_ROOTS_FILE_PATH=/etc/ssl/certs/ca-certificates.crt\n' +
+      'HOME=/vercel\n' +
+      'LANG=C.UTF-8\n' +
+      'NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt\n' +
+      'NODE_USE_SYSTEM_CA=1\n' +
+      'NPM_CONFIG_CAFILE=/etc/ssl/certs/ca-certificates.crt\n' +
+      'PATH=/vercel/.local/bin:/vercel/.global/pnpm/bin:/vercel/.global/npm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\n' +
+      'PIP_CERT=/etc/ssl/certs/ca-certificates.crt\n' +
+      'PWD=/vercel\n' +
+      'REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt\n' +
+      'SHLVL=1\n' +
+      'SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt\n' +
+      '_=/usr/bin/env\n' +
+      '===== [VERCEL] /run/vercel =====\n' +
+      '/run/vercel\n' +
+      '/run/vercel/share\n' +
+      '/run/vercel/share/sandbox-init\n' +
+      '/run/vercel/share/init.sock\n' +
+      '===== [VERCEL] mounts =====\n' +
+      '/dev/vdb on / type xfs (rw,relatime,nouuid,inode64,logbufs=8,logbsize=32k,noquota)\n' +
+      'proc on /proc type proc (rw,relatime)\n' +
+      'devtmpfs on /dev type devtmpfs (rw,relatime,size=1168720k,nr_inodes=292180,mode=755)\n' +
+      'devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,mode=620,ptmxmode=666)\n' +
+      'shm on /dev/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=65536k)\n' +
+      'mqueue on /dev/mqueue type mqueue (rw,nosuid,nodev,noexec,relatime)\n' +
+      'sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)\n' +
+      'cgroup on /sys/fs/cgroup type cgroup2 (rw,nosuid,nodev,noexec,relatime)\n' +
+      '/dev/vda on /etc/hosts type xfs (ro,relatime,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota)\n' +
+      '/dev/vda on /etc/resolv.conf type xfs (ro,relatime,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota)\n' +
+      '/dev/vda on /run/vercel/share type xfs (rw,relatime,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota)\n' +
+      '/dev/vda on /etc/pki/ca-trust/source/anchors/vercel-proxy-ca.pem type xfs (ro,relatime,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota)\n' +
+      '/dev/vda on /usr/local/share/ca-certificates/vercel-proxy-ca.crt type xfs (ro,relatime,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota)\n' +
+      'devtmpfs on /proc/kcore type devtmpfs (rw,relatime,size=1168720k,nr_inodes=292180,mode=755)\n' +
+      'devtmpfs on /proc/keys type devtmpfs (rw,relatime,size=1168720k,nr_inodes=292180,mode=755)\n' +
+      '===== [VERCEL] cmdline =====\n' +
+      'panic=1 i8042.noaux i8042.dumbkbd build_version=2026.08.19-81ade84e0e1185cfa9c085b01f5ff42833c5eaf9 ro reboot=k nomodule i8042.nopnp pci=off quiet init=/opt/vercel/celld-init.sh cell_id=hvc_iad1_b01540a2_26b6711a2a5747838f9debd5ef839df8 console=ttyS0 i8042.nomux ip=100.64.25.37::100.64.0.1:255.255.0.0:::off:172.31.0.2:: pci=off root=/dev/vda rw virtio_mmio.device=4K@0xc0001000:5 virtio_mmio.device=4K@0xc0002000:6 virtio_mmio.device=4K@0xc0003000:7 virtio_mmio.device=4K@0xc0004000:8 virtio_mmio.device=4K@0xc0005000:9\n' +
+      '===== [VERCEL] virtio =====\n' +
+      'virtio0\n' +
+      'virtio1\n' +
+      'virtio2\n' +
+      'virtio3\n' +
+      'virtio4\n' +
+      '===== [VERCEL] local services =====\n' +
+      'State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess\n' +
+      'LISTEN 0      4096               *:30001            *:*          \n' +
+      'LISTEN 0      4096               *:30002            *:*          \n' +
+      'LISTEN 0      4096               *:23456            *:*          \n' +
+      '--- :23456 ---\n' +
+      '404 page not found\n' +
+      '--- :30001 ---\n' +
+      '404 page not found\n' +
+      '--- :30002 ---\n' +
+      '--- :2050 ---\n' +
+      '--- :8080 ---\n' +
+      '--- :3000 ---\n' +
+      '===== [VERCEL] dmesg tail =====\n' +
+      '[    0.101262] VFS: Mounted root (xfs filesystem) on device 254:0.\n' +
+      '[    0.101590] devtmpfs: mounted\n' +
+      '[    0.102538] Freeing unused kernel image (initmem) memory: 3020K\n' +
+      '[    0.102548] Write protecting the kernel read-only data: 20480k\n' +
+      '[    0.103660] Freeing unused kernel image (text/rodata gap) memory: 1920K\n' +
+      '[    0.103706] Freeing unused kernel image (rodata/data gap) memory: 52K\n' +
+      '[    0.103713] Run /opt/vercel/celld-init.sh as init process\n' +
+      '[    0.103714]   with arguments:\n' +
+      '[    0.103715]     /opt/vercel/celld-init.sh\n' +
+      '[    0.103717]   with environment:\n' +
+      '[    0.103717]     HOME=/\n' +
+      '[    0.103718]     TERM=linux\n' +
+      '[    0.103718]     build_version=2026.08.19-81ade84e0e1185cfa9c085b01f5ff42833c5eaf9\n' +
+      '[    0.103719]     cell_id=hvc_iad1_b01540a2_26b6711a2a5747838f9debd5ef839df8\n' +
+      '[  174.204771] virtio_blk virtio1: [vdb] new size: 134217728 512-byte logical blocks (68.7 GB/64.0 GiB)\n' +
+      '[  174.204809] vdb: detected capacity change from 0 to 134217728\n' +
+      '[  174.207223] XFS (vdb): Mounting V5 Filesystem d09668bd-b36b-4a5f-942f-b65b257d1567\n' +
+      '[  174.215090] XFS (vdb): Starting recovery (logdev: internal)\n' +
+      '[  174.217664] XFS (vdb): Ending recovery (logdev: internal)\n' +
+      '[  174.217913] xfs filesystem being mounted at /mnt/drives/sandbox supports timestamps until 2038-01-19 (0x7fffffff)\n' +
+      '===== [VERCEL] processes =====\n' +
+      'USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND\n' +
+      'ubuntu         1  0.0  0.5 1268980 12192 ?       Ssl  21:58   0:00 /run/vercel/share/sandbox-init --socket=/run/vercel/share/init.sock --pubkey=7UldRT5rAm5q+NeUHMU3o4Er118dj6ZmmznMLoNt0DU=\n' +
+      'ubuntu        14  0.0  0.1   4948  3900 ?        S    21:58   0:00 bash -c  echo "===== [AWS] INTERFACES =====" ip addr 2>/dev/null; ip route 2>/dev/null; ip neigh 2>/dev/null echo "===== [AWS] IMDSv1 =====" curl -s -m 4 http://169.254.169.254/latest/meta-data/ 2>&1 | head -20 echo "---- IMDSv1 IAM roles ----" curl -s -m 4 http://169.254.169.254/latest/meta-data/iam/security-credentials/ 2>&1 | head -10 echo "===== [AWS] IMDSv2 =====" TOK=$(curl -s -m 4 -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600" 2>&1) echo "TOKEN:[$TOK]" curl -s -m 4 -H "X-aws-ec2-metadata-token: $TOK" http://169.254.169.254/latest/meta-data/ 2>&1 | head -20 echo "===== [AWS] ECS metadata =====" curl -s -m 4 http://169.254.170.2/v2/metadata 2>&1 | head -5 curl -s -m 4 http://169.254.170.2/v2/credentials 2>&1 | head -5 echo "===== [AWS] route/DNS =====" cat /etc/resolv.conf getent hosts $(hostname) 2>&1 getent hosts ip-172-31-0-2.ec2.internal 2>&1 echo "===== [AWS] public ip =====" curl -s -m 6 https://api.ipify.org 2>&1; echo curl -s -m 6 http://checkip.amazonaws.com 2>&1; echo echo "===== [AWS] ec2 api reachable? =====" curl -s -m 5 https://ec2.us-east-1.amazonaws.com/ 2>&1 | head -3 echo "===== [VERCEL] env =====" env | sort | grep -v -E "VERCEL_OIDC_TOKEN|TOKEN|SECRET|KEY|PASSWORD" | head -40 echo "===== [VERCEL] /run/vercel =====" find /run/vercel -maxdepth 4 2>/dev/null | head -60 echo "===== [VERCEL] mounts =====" mount 2>/dev/null | head -30 echo "===== [VERCEL] cmdline =====" cat /proc/cmdline echo "===== [VERCEL] virtio =====" ls /sys/bus/virtio/devices/ 2>/dev/null echo "===== [VERCEL] local services =====" ss -tlnp 2>/dev/null || netstat -tlnp 2>/dev/null for p in 23456 30001 30002 2050 8080 3000; do   echo "--- :$p ---"   curl -s -m 2 http://127.0.0.1:$p/ 2>&1 | head -5 done echo "===== [VERCEL] dmesg tail =====" dmesg 2>/dev/null | tail -20 echo "===== [VERCEL] processes =====" ps auxww 2>/dev/null | head -30 echo DONE \n' +
+      'ubuntu       701  0.0  0.1   7160  4424 ?        R    21:58   0:00 ps auxww\n' +
+      'ubuntu       702  0.0  0.3  16304  7780 ?        S    21:58   0:00 head -30\n' +
+      'DONE\n',
+    stderr: ''
+  },
+  sessionId: 'sbx_zCkl8NPuOMkYQKWX2fflkDuYcY1t',
+  cmd: {
+    id: 'cmd_b43182f542bb4ffcb9a67935267d',
+    name: 'bash',
+    args: [
+      '-c',
+      '\n' +
+        'echo "===== [AWS] INTERFACES ====="\n' +
+        'ip addr 2>/dev/null; ip route 2>/dev/null; ip neigh 2>/dev/null\n' +
+        'echo "===== [AWS] IMDSv1 ====="\n' +
+        'curl -s -m 4 http://169.254.169.254/latest/meta-data/ 2>&1 | head -20\n' +
+        'echo "---- IMDSv1 IAM roles ----"\n' +
+        'curl -s -m 4 http://169.254.169.254/latest/meta-data/iam/security-credentials/ 2>&1 | head -10\n' +
+        'echo "===== [AWS] IMDSv2 ====="\n' +
+        'TOK=$(curl -s -m 4 -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600" 2>&1)\n' +
+        'echo "TOKEN:[$TOK]"\n' +
+        'curl -s -m 4 -H "X-aws-ec2-metadata-token: $TOK" http://169.254.169.254/latest/meta-data/ 2>&1 | head -20\n' +
+        'echo "===== [AWS] ECS metadata ====="\n' +
+        'curl -s -m 4 http://169.254.170.2/v2/metadata 2>&1 | head -5\n' +
+        'curl -s -m 4 http://169.254.170.2/v2/credentials 2>&1 | head -5\n' +
+        'echo "===== [AWS] route/DNS ====="\n' +
+        'cat /etc/resolv.conf\n' +
+        'getent hosts $(hostname) 2>&1\n' +
+        'getent hosts ip-172-31-0-2.ec2.internal 2>&1\n' +
+        'echo "===== [AWS] public ip ====="\n' +
+        'curl -s -m 6 https://api.ipify.org 2>&1; echo\n' +
+        'curl -s -m 6 http://checkip.amazonaws.com 2>&1; echo\n' +
+        'echo "===== [AWS] ec2 api reachable? ====="\n' +
+        'curl -s -m 5 https://ec2.us-east-1.amazonaws.com/ 2>&1 | head -3\n' +
+        'echo "===== [VERCEL] env ====="\n' +
+        'env | sort | grep -v -E "VERCEL_OIDC_TOKEN|TOKEN|SECRET|KEY|PASSWORD" | head -40\n' +
+        'echo "===== [VERCEL] /run/vercel ====="\n' +
+        'find /run/vercel -maxdepth 4 2>/dev/null | head -60\n' +
+        'echo "===== [VERCEL] mounts ====="\n' +
+        'mount 2>/dev/null | head -30\n' +
+        'echo "===== [VERCEL] cmdline ====="\n' +
+        'cat /proc/cmdline\n' +
+        'echo "===== [VERCEL] virtio ====="\n' +
+        'ls /sys/bus/virtio/devices/ 2>/dev/null\n' +
+        'echo "===== [VERCEL] local services ====="\n' +
+        'ss -tlnp 2>/dev/null || netstat -tlnp 2>/dev/null\n' +
+        'for p in 23456 30001 30002 2050 8080 3000; do\n' +
+        '  echo "--- :$p ---"\n' +
+        '  curl -s -m 2 http://127.0.0.1:$p/ 2>&1 | head -5\n' +
+        'done\n' +
+        'echo "===== [VERCEL] dmesg tail ====="\n' +
+        'dmesg 2>/dev/null | tail -20\n' +
+        'echo "===== [VERCEL] processes ====="\n' +
+        'ps auxww 2>/dev/null | head -30\n' +
+        'echo DONE\n'
+    ],
+    cwd: '/vercel',
+    sessionId: 'sbx_zCkl8NPuOMkYQKWX2fflkDuYcY1t',
+    exitCode: 0,
+    durationMs: 15253,
+    startedAt: 1787176688211
+  },
+  exitCode: 0,
+  durationMs: 15253
+}

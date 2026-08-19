@@ -1,0 +1,117 @@
+exit: 0
+===== mount /dev/vda ro =====
+mount: /mnt/vda: must be superuser to use mount.
+       dmesg(1) may have more information after failed mount system call.
+mount exit: 32
+--- ls /mnt/vda ---
+/mnt/vda:
+total 0
+drwxr-xr-x 2 ubuntu ubuntu  6 Aug 19 22:05 .
+drwxr-xr-x 3 root   root   17 Aug 19 22:05 ..
+===== init.sock perms & inode =====
+total 0
+drwxr-xr-x 2 ubuntu ubuntu  6 Aug 19 22:05 .
+drwxr-xr-x 3 root   root   17 Aug 19 22:05 ..
+  File: /run/vercel/share/init.sock
+  size: 0         	Blocks: 0          IO Block: 4096   socket
+Device: 254,0	Inode: 125832467   Links: 1
+Access: (0600/srw-------)  Uid: ( 1000/  ubuntu)   Gid: ( 1000/  ubuntu)
+Access: 2026-08-19 22:03:16.851786851 +0000
+Modify: 2026-08-19 22:03:16.847786851 +0000
+Change: 2026-08-19 22:03:16.847786851 +0000
+ Birth: 2026-08-19 22:03:16.847786851 +0000
+===== local ports deep probe =====
+--- :23456 ---
+>> GET /
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Wed, 19 Aug 2026 22:05:25 GMT
+Content-Length: 19
+
+404 page not found
+>> OPTIONS /
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Wed, 19 Aug 2026 22:05:25 GMT
+Content-Length: 19
+
+404 page not found
+>> HEAD /
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Wed, 19 Aug 2026 22:05:25 GMT
+Content-Length: 19
+
+--- :30001 ---
+>> GET /
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Wed, 19 Aug 2026 22:05:28 GMT
+Content-Length: 19
+
+404 page not found
+>> OPTIONS /
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Wed, 19 Aug 2026 22:05:28 GMT
+Content-Length: 19
+
+404 page not found
+>> HEAD /
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Wed, 19 Aug 2026 22:05:28 GMT
+Content-Length: 19
+
+--- :30002 ---
+>> GET /
+>> OPTIONS /
+>> HEAD /
+===== all listening sockets =====
+State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess
+LISTEN 0      4096               *:23456            *:*          
+LISTEN 0      4096               *:30001            *:*          
+LISTEN 0      4096               *:30002            *:*          
+Netid State  Recv-Q Send-Q                                                                      Local Address:Port Peer Address:PortProcess                             
+u_str LISTEN 0      0                                                                       /run/apm/apm.sock 551             * 0                                       
+u_str LISTEN 0      0                                                   /run/containerd/containerd.sock.ttrpc 561             * 0                                       
+u_str LISTEN 0      0                                                         /run/containerd/containerd.sock 562             * 0                                       
+u_str LISTEN 0      0                                                                     /run/cell/cell.sock 567             * 0                                       
+u_str LISTEN 0      0      /run/containerd/s/081d0fe74f643993c5b87ddb38d3ab7a81470a49c8296c0124f075e1601be324 582             * 0                                       
+u_str LISTEN 0      0                                                             /run/vercel/share/init.sock 883             * 0    users:(("sandbox-init",pid=1,fd=4))
+===== sandbox-init binary details =====
+/run/vercel/share/sandbox-init: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, Go BuildID=jsew6QlLu0BjbIS5zTym/jU8rfXxa6EoYX1hiUl4M/3Wubc93_THmJZDHRl-jE/Vx_3uhJ34OD1myaD7XeG, BuildID[sha1]=1e470a83e2bfdca3e3d986f3f6dd57cba1132291, with debug_info, not stripped
+429e3350aed61d4902907f26e48d007c  /run/vercel/share/sandbox-init
+===== can we read host's other files? /proc =====
+1
+652
+681
+682
+acpi
+buddyinfo
+bus
+cgroups
+cmdline
+consoles
+PATH=/vercel/.local/bin:/vercel/.global/pnpm/bin:/vercel/.global/npm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+LANG=C.UTF-8
+HOME=/vercel
+AWS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+CARGO_HTTP_CAINFO=/etc/ssl/certs/ca-certificates.crt
+CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+GIT_SSL_CAINFO=/etc/ssl/certs/ca-certificates.crt
+GRPC_DEFAULT_SSL_ROOTS_FILE_PATH=/etc/ssl/certs/ca-certificates.crt
+NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt
+NODE_USE_SYSTEM_CA=1
+NPM_CONFIG_CAFILE=/etc/ssl/certs/ca-certificates.crt
+PIP_CERT=/etc/ssl/certs/ca-certificates.crt
+REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+DONE
+

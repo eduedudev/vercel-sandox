@@ -1,0 +1,350 @@
+SANDBOX: olive-sour-armadillo-kQDLzS
+SESSION: sbx_BrqIdwzGYU4DH04ULcruKaF5dHzn
+
+########## CMD: IDENTITY ##########
+====IDENTITY
+root
+uid=0(root) gid=0(root) groups=0(root)
+660558a5-c02
+Linux 660558a5-c02 6.18.40 #1 SMP Wed Jul 29 22:20:41 UTC 2026 x86_64 GNU/Linux
+
+
+
+########## CMD: OS ##########
+====OS
+PRETTY_NAME="Ubuntu 26.04 LTS"
+NAME="Ubuntu"
+VERSION_ID="26.04"
+VERSION="26.04 LTS (Resolute Raccoon)"
+
+
+
+########## CMD: CMD ##########
+====CMD
+i8042.noaux i8042.nomux build_version=2026.08.19-81ade84e0e1185cfa9c085b01f5ff42833c5eaf9 ro console=ttyS0 i8042.dumbkbd quiet init=/opt/vercel/celld-init.sh cell_id=hvc_iad1_b5d62a97_8807c8701ce24e0a8ec05bcc3fd8073f ip=100.64.162.132::100.64.0.1:255.255.0.0:::off:172.31.0.2:: panic=1 i8042.nopnp reboot=k pci=off nomodule pci=off root=/dev/vda rw virtio_mmio.device=4K@0xc0001000:5 virtio_mmio.device=4K@0xc0002000:6 virtio_mmio.device=4K@0xc0003000:7 virtio_mmio.device=4K@0xc0004000:8 virtio_mmio.device=4K@0xc0005000:9
+
+
+
+########## CMD: CPU ##########
+====CPU
+processor	: 0
+model name	: Intel(R) Xeon(R) Processor @ 2.90GHz
+
+
+
+########## CMD: MEM ##########
+====MEM
+MemTotal:        2342436 kB
+MemFree:         2046876 kB
+MemAvailable:    2119064 kB
+
+
+
+########## CMD: ENV ##########
+====ENV
+AWS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+CARGO_HTTP_CAINFO=/etc/ssl/certs/ca-certificates.crt
+CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+GIT_SSL_CAINFO=/etc/ssl/certs/ca-certificates.crt
+GRPC_DEFAULT_SSL_ROOTS_FILE_PATH=/etc/ssl/certs/ca-certificates.crt
+HOME=/root
+LANG=C.UTF-8
+LOGNAME=root
+NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt
+NODE_USE_SYSTEM_CA=1
+NPM_CONFIG_CAFILE=/etc/ssl/certs/ca-certificates.crt
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+PIP_CERT=/etc/ssl/certs/ca-certificates.crt
+PWD=/vercel
+REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+SHELL=/bin/bash
+SHLVL=1
+SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+SUDO_COMMAND=/usr/bin/bash -lc echo ====ENV; env | sort
+SUDO_GID=1000
+SUDO_HOME=/vercel
+SUDO_UID=1000
+SUDO_USER=ubuntu
+TERM=unknown
+USER=root
+_=/usr/bin/env
+
+
+
+########## CMD: CAPS ##########
+====CAPS
+CapInh:	000001ffffffffff
+CapPrm:	000001ffffffffff
+CapEff:	000001ffffffffff
+CapBnd:	000001ffffffffff
+CapAmb:	0000000000000000
+
+
+
+########## CMD: CGROUP ##########
+====CGROUP
+0::/
+
+
+
+########## CMD: MOUNTS ##########
+====MOUNTS
+/dev/vdb / xfs rw,relatime,nouuid,inode64,logbufs=8,logbsize=32k,noquota 0 0
+proc /proc proc rw,relatime 0 0
+devtmpfs /dev devtmpfs rw,relatime,size=1168720k,nr_inodes=292180,mode=755 0 0
+devpts /dev/pts devpts rw,nosuid,noexec,relatime,mode=620,ptmxmode=666 0 0
+shm /dev/shm tmpfs rw,nosuid,nodev,noexec,relatime,size=65536k 0 0
+mqueue /dev/mqueue mqueue rw,nosuid,nodev,noexec,relatime 0 0
+sysfs /sys sysfs rw,nosuid,nodev,noexec,relatime 0 0
+cgroup /sys/fs/cgroup cgroup2 rw,nosuid,nodev,noexec,relatime 0 0
+/dev/root /etc/hosts xfs ro,relatime,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota 0 0
+/dev/root /etc/resolv.conf xfs ro,relatime,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota 0 0
+/dev/root /run/vercel/share xfs rw,relatime,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota 0 0
+/dev/root /etc/pki/ca-trust/source/anchors/vercel-proxy-ca.pem xfs ro,relatime,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota 0 0
+/dev/root /usr/local/share/ca-certificates/vercel-proxy-ca.crt xfs ro,relatime,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota 0 0
+devtmpfs /proc/kcore devtmpfs rw,relatime,size=1168720k,nr_inodes=292180,mode=755 0 0
+devtmpfs /proc/keys devtmpfs rw,relatime,size=1168720k,nr_inodes=292180,mode=755 0 0
+
+
+
+########## CMD: NET ##########
+====NET
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 6e:07:78:35:2c:55 brd ff:ff:ff:ff:ff:ff
+    inet 100.64.162.132/16 brd 100.64.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::6c07:78ff:fe35:2c55/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+
+
+
+########## CMD: ROUTES ##########
+====ROUTES
+default via 100.64.0.1 dev eth0 
+100.64.0.0/16 dev eth0 proto kernel scope link src 100.64.162.132 
+
+
+
+########## CMD: DNS ##########
+====DNS
+#MANUAL
+nameserver 172.31.0.2
+
+
+
+########## CMD: DEV ##########
+====DEV
+total 0
+drwxr-xr-x  7 root root    2200 Aug 19 19:50 .
+drwxr-xr-x 19 root root     251 Aug  7 10:53 ..
+crw-r--r--  1 root root  10, 235 Aug 19 19:50 autofs
+crw-------  1 root root   5,   1 Aug 19 19:50 console
+drwxr-xr-x  3 root root      60 Aug 19 19:50 cpu
+crw-------  1 root root  10, 259 Aug 19 19:50 cpu_dma_latency
+crw-------  1 root root  10, 203 Aug 19 19:50 cuse
+crw-rw-rw-  1 root root   1,   7 Aug 19 19:50 full
+crw-------  1 root root  10, 229 Aug 19 19:50 fuse
+crw-------  1 root root  10, 183 Aug 19 19:50 hwrng
+crw-r--r--  1 root root   1,  11 Aug 19 19:50 kmsg
+crw-------  1 root root  10, 237 Aug 19 19:50 loop-control
+brw-------  1 root root   7,   0 Aug 19 19:50 loop0
+brw-------  1 root root   7,   1 Aug 19 19:50 loop1
+brw-------  1 root root   7,   2 Aug 19 19:50 loop2
+brw-------  1 root root   7,   3 Aug 19 19:50 loop3
+brw-------  1 root root   7,   4 Aug 19 19:50 loop4
+brw-------  1 root root   7,   5 Aug 19 19:50 loop5
+brw-------  1 root root   7,   6 Aug 19 19:50 loop6
+brw-------  1 root root   7,   7 Aug 19 19:50 loop7
+crw-------  1 root root   1,   1 Aug 19 19:50 mem
+drwxrwxrwt  2 root root      40 Aug 19 19:52 mqueue
+drwxr-xr-x  2 root root      60 Aug 19 19:50 net
+crw-rw-rw-  1 root root   1,   3 Aug 19 19:50 null
+crw-------  1 root root   1,   4 Aug 19 19:50 port
+crw-rw-rw-  1 root root   5,   2 Aug 19 19:50 ptmx
+crw-------  1 root root 253,   0 Aug 19 19:50 ptp0
+drwxr-xr-x  2 root root       0 Aug 19 19:52 pts
+crw-rw-rw-  1 root root   1,   8 Aug 19 19:50 random
+drwxrwxrwt  2 root root      40 Aug 19 19:52 shm
+crw-------  1 root root  10, 231 Aug 19 19:50 snapshot
+crw-rw-rw-  1 root root   5,   0 Aug 19 19:50 tty
+crw-------  1 root root   4,   0 Aug 19 19:50 tty0
+crw-------  1 root root   4,   1 Aug 19 19:50 tty1
+crw-------  1 root root   4,  10 Aug 19 19:50 tty10
+crw-------  1 root root   4,  11 Aug 19 19:50 tty11
+crw-------  1 root root   4,  12 Aug 19 19:50 tty12
+crw-------  1 root root   4,  13 Aug 19 19:50 tty13
+crw-------  1 root root   4,  14 Aug 19 19:50 tty14
+crw-------  1 root root   4,  15 Aug 19 19:50 tty15
+crw-------  1 root root   4,  16 Aug 19 19:50 tty16
+crw-------  1 root root   4,  17 Aug 19 19:50 tty17
+crw-------  1 root root   4,  18 Aug 19 19:50 tty18
+crw-------  1 root root   4,  19 Aug 19 19:50 tty19
+crw-------  1 root root   4,   2 Aug 19 19:50 tty2
+crw-------  1 root root   4,  20 Aug 19 19:50 tty20
+crw-------  1 root root   4,  21 Aug 19 19:50 tty21
+crw-------  1 root root   4,  22 Aug 19 19:50 tty22
+crw-------  1 root root   4,  23 Aug 19 19:50 tty23
+crw-------  1 root root   4,  24 Aug 19 19:50 tty24
+crw-------  1 root root   4,  25 Aug 19 19:50 tty25
+crw-------  1 root root   4,  26 Aug 19 19:50 tty26
+crw-------  1 root root   4,  27 Aug 19 19:50 tty27
+crw-------  1 root root   4,  28 Aug 19 19:50 tty28
+crw-------  1 root root   4,  29 Aug 19 19:50 tty29
+crw-------  1 root root   4,   3 Aug 19 19:50 tty3
+crw-------  1 root root   4,  30 Aug 19 19:50 tty30
+crw-------  1 root root   4,  31 Aug 19 19:50 tty31
+crw-------  1 root root   4,  32 Aug 19 19:50 tty32
+crw-------  1 root root   4,  33 Aug 19 19:50 tty33
+crw-------  1 root root   4,  34 Aug 19 19:50 tty34
+crw-------  1 root root   4,  35 Aug 19 19:50 tty35
+crw-------  1 root root   4,  36 Aug 19 19:50 tty36
+crw-------  1 root root   4,  37 Aug 19 19:50 tty37
+crw-------  1 root root   4,  38 Aug 19 19:50 tty38
+crw-------  1 root root   4,  39 Aug 19 19:50 tty39
+crw-------  1 root root   4,   4 Aug 19 19:50 tty4
+crw-------  1 root root   4,  40 Aug 19 19:50 tty40
+crw-------  1 root root   4,  41 Aug 19 19:50 tty41
+crw-------  1 root root   4,  42 Aug 19 19:50 tty42
+crw-------  1 root root   4,  43 Aug 19 19:50 tty43
+crw-------  1 root root   4,  44 Aug 19 19:50 tty44
+crw-------  1 root root   4,  45 Aug 19 19:50 tty45
+crw-------  1 root root   4,  46 Aug 19 19:50 tty46
+crw-------  1 root root   4,  47 Aug 19 19:50 tty47
+crw-------  1 root root   4,  48 Aug 19 19:50 tty48
+crw-------  1 root root   4,  49 Aug 19 19:50 
+
+
+########## CMD: VSOCK ##########
+====VSOCK
+crw------- 1 root root 10, 258 Aug 19 19:50 /dev/vsock
+
+
+
+########## CMD: MMDS ##########
+====MMDS
+
+
+
+########## CMD: FS ##########
+====FS
+total 4
+drwxr-xr-x 19 root   root    251 Aug  7 10:53 .
+drwxr-xr-x 19 root   root    251 Aug  7 10:53 ..
+drwxr-xr-x  2 root   root     27 Aug  7 10:53 .rock
+lrwxrwxrwx  1 root   root      7 Aug  7 10:53 bin -> usr/bin
+drwxr-xr-x  2 root   root      6 Apr 20 08:46 boot
+drwxr-xr-x  7 root   root   2200 Aug 19 19:50 dev
+drwxr-xr-x 45 root   root   4096 Aug 19 19:52 etc
+drwxr-xr-x  3 root   root     20 Aug  7 10:53 home
+lrwxrwxrwx  1 root   root      7 Aug  7 10:53 lib -> usr/lib
+lrwxrwxrwx  1 root   root      9 Aug  7 10:53 lib64 -> usr/lib64
+drwxr-xr-x  2 root   root      6 Jul 24 12:47 media
+drwxr-xr-x  2 root   root      6 Jul 24 12:47 mnt
+drwxr-xr-x  2 root   root      6 Jul 24 12:47 opt
+dr-xr-xr-x 86 root   root      0 Aug 19 19:52 proc
+drwx------  6 root   root     92 Aug  7 10:53 root
+drwxr-xr-x  5 root   root     47 Aug 19 19:52 run
+lrwxrwxrwx  1 root   root      8 Aug  7 10:53 sbin -> usr/sbin
+drwxr-xr-x  2 root   root      6 Jul 24 12:47 srv
+dr-xr-xr-x 12 root   root      0 Aug 19 19:50 sys
+drwxrwxrwt  4 root   root     48 Aug 19 19:52 tmp
+drwxr-xr-x 12 root   root    133 Jul 24 12:47 usr
+drwxr-xr-x 11 root   root    139 Jul 24 12:48 var
+drwxr-xr-x  8 ubuntu ubuntu  137 Aug  7 10:53 vercel
+total 4
+drwxr-xr-x  8 ubuntu ubuntu 137 Aug  7 10:53 .
+drwxr-xr-x 19 root   root   251 Aug  7 10:53 ..
+drwxr-xr-x  3 ubuntu ubuntu  22 Aug  7 10:53 .cache
+drwxr-xr-x  3 ubuntu ubuntu  17 Aug  7 10:53 .codex
+drwxr-xr-x  4 ubuntu ubuntu  34 Aug  7 10:53 .config
+drwxr-xr-x  4 ubuntu ubuntu  29 Aug  7 10:53 .global
+drwxr-xr-x  4 ubuntu ubuntu  32 Aug  7 10:53 .local
+drwxr-xr-x  3 ubuntu ubuntu  56 Aug  7 10:53 .npm
+-rw-------  1 ubuntu ubuntu  27 Aug  7 10:48 .npmrc
+-rw-r--r--  1 ubuntu ubuntu   0 Aug  7 10:48 .sudo_as_admin_successful
+ls: cannot access '/volumes': No such file or directory
+total 0
+drwxr-xr-x  2 root root   6 Jul 24 12:47 .
+drwxr-xr-x 19 root root 251 Aug  7 10:53 ..
+
+
+
+########## CMD: OIDC ##########
+====OIDC
+SUDO_COMMAND=<redacted>
+PWD=<redacted>
+SUDO_HOME=<redacted>
+
+
+
+########## CMD: PROC ##########
+====PROC
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+ubuntu         1  0.7  0.5 1269820 14032 ?       Ssl  19:52   0:00 /run/vercel/share/sandbox-init --socket=/run/vercel/share/init.sock --pubkey=MI6TCLGQ4PtENqbLRHhr+STBNHz0MKlQuMrv/caPyUQ=
+root        1000  0.0  0.3  16592  7396 ?        S    19:52   0:00 sudo bash -lc echo ====PROC; ps aux | head -30
+root        1002  0.0  0.1   4948  3764 ?        S    19:52   0:00 bash -lc echo ====PROC; ps aux | head -30
+root        1005  0.0  0.1   7160  4404 ?        R    19:52   0:00 ps aux
+root        1006  0.0  0.3  16304  7892 ?        S    19:52   0:00 head -30
+
+
+
+########## CMD: KERNEL ##########
+====KERNEL
+acct
+acpi_video_flags
+arch
+auto_msgmni
+bootloader_type
+bootloader_version
+bpf_stats_enabled
+cad_pid
+cap_last_cap
+core_file_note_size_limit
+660558a5-c02
+
+
+
+########## CMD: EGRESS ##########
+====EGRESS
+54.166.253.10
+google:301 0.093506s
+
+
+
+########## CMD: VSOCK2050 ##########
+
+bash: -c: line 2: unexpected EOF while looking for matching `)'
+
+
+########## CMD: SNIFF ##########
+====SNIFF
+bin
+boot
+dev
+etc
+home
+lib
+lib64
+media
+mnt
+opt
+cgroup:[4026532094]
+ipc:[4026532092]
+mnt:[4026532090]
+net:[4026531833]
+pid:[4026532093]
+pid:[4026532093]
+time:[4026531834]
+time:[4026531834]
+user:[4026531837]
+uts:[4026532091]
+
+
+
+DONE

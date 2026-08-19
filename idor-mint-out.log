@@ -1,0 +1,26 @@
+
+[403] CTRL: VICTIM mint su propio project
+  POST /v1/projects/prj_d78xOhTH7oD0Hs2MTmhpSgpPVc7A/token?source=vercel-oidc-refresh&teamId=team_bi7zLiwN9ULZQklHh3rlmq7D
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] CTRL: ATTACKER mint su propio project
+  POST /v1/projects/prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU/token?source=vercel-oidc-refresh&teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] IDOR: ATTACKER mint project VÍCTIMA (teamId=V)
+  POST /v1/projects/prj_d78xOhTH7oD0Hs2MTmhpSgpPVc7A/token?source=vercel-oidc-refresh&teamId=team_bi7zLiwN9ULZQklHh3rlmq7D
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] IDOR: ATTACKER mint project VÍCTIMA (teamId=A)
+  POST /v1/projects/prj_d78xOhTH7oD0Hs2MTmhpSgpPVc7A/token?source=vercel-oidc-refresh&teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] IDOR: ATTACKER mint project VÍCTIMA (sin teamId)
+  POST /v1/projects/prj_d78xOhTH7oD0Hs2MTmhpSgpPVc7A/token?source=vercel-oidc-refresh
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] IDOR: VICTIM mint project ATTACKER (teamId=A)
+  POST /v1/projects/prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU/token?source=vercel-oidc-refresh&teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+DONE

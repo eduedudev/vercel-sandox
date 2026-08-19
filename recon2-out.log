@@ -1,0 +1,70 @@
+exit: 0
+===== proxy env =====
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+===== egress verbose =====
+--- https://api.ipify.org ---
+* Could not resolve host: api.ipify.org
+* Store negative name resolve for api.ipify.org:443
+* shutting down connection #0
+HTTP 000 ip= tls=0
+--- http://checkip.amazonaws.com ---
+* Could not resolve host: checkip.amazonaws.com
+* Store negative name resolve for checkip.amazonaws.com:80
+* shutting down connection #0
+HTTP 000 ip= tls=0
+--- https://1.1.1.1/cdn-cgi/trace ---
+< 
+{ [5 bytes data]
+* Connection #0 to host 1.1.1.1:443 left intact
+HTTP 200 ip=1.1.1.1 tls=0
+--- https://www.google.com ---
+* Could not resolve host: www.google.com
+* Store negative name resolve for www.google.com:443
+* shutting down connection #0
+HTTP 000 ip= tls=0
+===== VPC neighbors reachability =====
+172.31.0.1:80 closed
+172.31.0.2:80 closed
+172.31.1.1:80 closed
+172.31.2.1:80 closed
+172.31.0.3:80 closed
+172.31.0.4:80 closed
+172.31.16.1:80 closed
+--- gw scan ---
+gw:22 closed
+gw:80 closed
+gw:443 closed
+gw:8080 closed
+gw:3000 closed
+gw:8000 closed
+gw:2050 closed
+gw:23456 closed
+===== DNS internal resolution =====
+--- reverse of 172.31.0.2 ---
+===== /dev/vda readable? =====
+brw------- 1 root root 254,  0 Aug 19 21:55 /dev/vda
+brw------- 1 root root 254, 16 Aug 19 21:55 /dev/vdb
+===== block devices =====
+NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINTS
+vda  254:0    0  33G  0 disk /usr/local/share/ca-certificates/vercel-proxy-ca.crt
+                             /etc/pki/ca-trust/source/anchors/vercel-proxy-ca.pem
+                             /run/vercel/share
+                             /etc/resolv.conf
+                             /etc/hosts
+vdb  254:16   0  64G  0 disk /
+major minor  #blocks  name
+
+ 254        0   34603008 vda
+ 254       16   67108864 vdb
+===== vda mounts / content =====
+total 15708
+drwxr-x--- 2 ubuntu ubuntu       43 Aug 19 21:58 .
+drwxr-xr-x 3 root   root         19 Aug 19 21:41 ..
+srw------- 1 ubuntu ubuntu        0 Aug 19 21:58 init.sock
+-rwxr-xr-x 1 root   root   16082925 Aug 19 21:55 sandbox-init
+===== read vda fs superblock strings =====
+DONE
+bash: line 26: xxd: command not found
+bash: line 31: xxd: command not found
+bash: line 33: strings: command not found
+

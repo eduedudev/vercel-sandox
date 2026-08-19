@@ -1,0 +1,40 @@
+exit: 0
+--- unix:/run/vercel/share/init.sock /vercel.sandbox.spawn.v1.SpawnService/Ping ---
+b'HTTP/1.1 401 Unauthorized\r\nAccept-Encoding: gzip\r\nContent-Type: application/json\r\nDate: Wed, 19 Aug 2026 22:03:17 GMT\r\nContent-Length: 63\r\n\r\n{"code":"unauthenticated","message":"missing signature header"}'
+--- unix:/run/vercel/share/init.sock /vercel.sandbox.spawn.v1.SpawnService/Spawn ---
+b'HTTP/1.1 415 Unsupported Media Type\r\nAccept-Post: application/connect+json, application/connect+json; charset=utf-8, application/connect+proto, application/grpc, application/grpc+json, application/grpc+json; charset=utf-8, application/grpc+proto, application/grpc-web, application/grpc-web+json, application/grpc-web+json; charset=utf-8, application/grpc-web+proto\r\nDate: Wed, 19 Aug 2026 22:03:22 GMT\r\nContent-Length: 0\r\n\r\n'
+--- unix:/run/vercel/share/init.sock /vercel.sandbox.spawn.v1.SpawnService/ ---
+b'HTTP/1.1 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Wed, 19 Aug 2026 22:03:27 GMT\r\nContent-Length: 19\r\n\r\n404 page not found\n'
+--- unix:/run/vercel/share/init.sock /vercel.sandbox.spawn.v1.SpawnService/Kill ---
+b'HTTP/1.1 401 Unauthorized\r\nAccept-Encoding: gzip\r\nContent-Type: application/json\r\nDate: Wed, 19 Aug 2026 22:03:32 GMT\r\nContent-Length: 63\r\n\r\n{"code":"unauthenticated","message":"missing signature header"}'
+--- unix:/run/vercel/share/init.sock /grpc.health.v1.Health/Check ---
+b'HTTP/1.1 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Wed, 19 Aug 2026 22:03:37 GMT\r\nContent-Length: 19\r\n\r\n404 page not found\n'
+--- 127.0.0.1:23456 /vercel.sandbox.spawn.v1.SpawnService/Ping ---
+b'HTTP/1.1 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Wed, 19 Aug 2026 22:03:42 GMT\r\nContent-Length: 19\r\n\r\n404 page not found\n'
+--- 127.0.0.1:23456 /vercel.sandbox.spawn.v1.SpawnService/Spawn ---
+b'HTTP/1.1 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Wed, 19 Aug 2026 22:03:47 GMT\r\nContent-Length: 19\r\n\r\n404 page not found\n'
+--- 127.0.0.1:23456 /vercel.sandbox.spawn.v1.SpawnService/ ---
+b'HTTP/1.1 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Wed, 19 Aug 2026 22:03:52 GMT\r\nContent-Length: 19\r\n\r\n404 page not found\n'
+--- 127.0.0.1:23456 /vercel.sandbox.spawn.v1.SpawnService/Kill ---
+b'HTTP/1.1 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Wed, 19 Aug 2026 22:03:57 GMT\r\nContent-Length: 19\r\n\r\n404 page not found\n'
+--- 127.0.0.1:23456 /grpc.health.v1.Health/Check ---
+b'HTTP/1.1 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Wed, 19 Aug 2026 22:04:02 GMT\r\nContent-Length: 19\r\n\r\n404 page not found\n'
+--- 127.0.0.1:30001 /vercel.sandbox.spawn.v1.SpawnService/Ping ---
+b'HTTP/1.1 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Wed, 19 Aug 2026 22:04:07 GMT\r\nContent-Length: 19\r\n\r\n404 page not found\n'
+--- 127.0.0.1:30001 /vercel.sandbox.spawn.v1.SpawnService/Spawn ---
+b'HTTP/1.1 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Wed, 19 Aug 2026 22:04:12 GMT\r\nContent-Length: 19\r\n\r\n404 page not found\n'
+--- 127.0.0.1:30001 /vercel.sandbox.spawn.v1.SpawnService/ ---
+b'HTTP/1.1 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Wed, 19 Aug 2026 22:04:17 GMT\r\nContent-Length: 19\r\n\r\n404 page not found\n'
+--- 127.0.0.1:30001 /vercel.sandbox.spawn.v1.SpawnService/Kill ---
+b'HTTP/1.1 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Wed, 19 Aug 2026 22:04:22 GMT\r\nContent-Length: 19\r\n\r\n404 page not found\n'
+--- 127.0.0.1:30001 /grpc.health.v1.Health/Check ---
+b'HTTP/1.1 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Wed, 19 Aug 2026 22:04:27 GMT\r\nContent-Length: 19\r\n\r\n404 page not found\n'
+--- 127.0.0.1:30002 /vercel.sandbox.spawn.v1.SpawnService/Ping --- ERR [Errno 104] Connection reset by peer
+--- 127.0.0.1:30002 /vercel.sandbox.spawn.v1.SpawnService/Spawn ---
+b''
+--- 127.0.0.1:30002 /vercel.sandbox.spawn.v1.SpawnService/ ---
+b''
+--- 127.0.0.1:30002 /vercel.sandbox.spawn.v1.SpawnService/Kill --- ERR [Errno 104] Connection reset by peer
+--- 127.0.0.1:30002 /grpc.health.v1.Health/Check --- ERR [Errno 104] Connection reset by peer
+PROBE DONE
+

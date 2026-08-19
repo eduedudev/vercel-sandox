@@ -1,0 +1,54 @@
+VÍCTIMA  : team_bi7zLiwN9ULZQklHh3rlmq7D / prj_d78xOhTH7oD0Hs2MTmhpSgpPVc7A
+ATACANTE: team_Tot08em9MgVFhARjP9xELTLS / prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU
+
+VÍCTIMA creada: session=sbx_Yhvk6P1F19HWPbYo9adwQDqJyV5j name=victim-target
+
+[403] A: GET session víctima SIN teamId
+  GET /api/v2/sandboxes/sessions/sbx_Yhvk6P1F19HWPbYo9adwQDqJyV5j
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: GET session víctima CON teamId de víctima
+  GET /api/v2/sandboxes/sessions/sbx_Yhvk6P1F19HWPbYo9adwQDqJyV5j?teamId=team_bi7zLiwN9ULZQklHh3rlmq7D
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: GET sandbox víctima por nombre
+  GET /api/v2/sandboxes/victim-target?projectId=prj_d78xOhTH7oD0Hs2MTmhpSgpPVc7A&teamId=team_bi7zLiwN9ULZQklHh3rlmq7D
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: cmd en session víctima (RCE)
+  POST /api/v2/sandboxes/sessions/sbx_Yhvk6P1F19HWPbYo9adwQDqJyV5j/cmd?teamId=team_bi7zLiwN9ULZQklHh3rlmq7D
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: fs/read en session víctima
+  POST /api/v2/sandboxes/sessions/sbx_Yhvk6P1F19HWPbYo9adwQDqJyV5j/fs/read?teamId=team_bi7zLiwN9ULZQklHh3rlmq7D
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[400] A: network-policy víctima
+  POST /api/v2/sandboxes/sessions/sbx_Yhvk6P1F19HWPbYo9adwQDqJyV5j/network-policy?teamId=team_bi7zLiwN9ULZQklHh3rlmq7D
+  {"error":{"code":"bad_request","message":"Invalid request: should be object."}}
+
+[403] A: stop víctima (DoS)
+  POST /api/v2/sandboxes/sessions/sbx_Yhvk6P1F19HWPbYo9adwQDqJyV5j/stop?teamId=team_bi7zLiwN9ULZQklHh3rlmq7D
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: snapshot víctima
+  POST /api/v2/sandboxes/sessions/sbx_Yhvk6P1F19HWPbYo9adwQDqJyV5j/snapshot?teamId=team_bi7zLiwN9ULZQklHh3rlmq7D
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: fork sandbox víctima
+  POST /api/v2/sandboxes/victim-target/fork?projectId=prj_d78xOhTH7oD0Hs2MTmhpSgpPVc7A&teamId=team_bi7zLiwN9ULZQklHh3rlmq7D
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: listar sessions del project víctima
+  GET /api/v2/sandboxes/sessions?project=prj_d78xOhTH7oD0Hs2MTmhpSgpPVc7A&teamId=team_bi7zLiwN9ULZQklHh3rlmq7D&limit=5
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: listar snapshots del project víctima
+  GET /api/v2/sandboxes/snapshots?project=prj_d78xOhTH7oD0Hs2MTmhpSgpPVc7A&teamId=team_bi7zLiwN9ULZQklHh3rlmq7D&limit=5
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: DELETE sandbox víctima
+  DELETE /api/v2/sandboxes/victim-target?projectId=prj_d78xOhTH7oD0Hs2MTmhpSgpPVc7A&teamId=team_bi7zLiwN9ULZQklHh3rlmq7D
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+DONE

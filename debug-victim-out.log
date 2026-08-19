@@ -1,0 +1,7 @@
+nbf: 1787173423 now: 1787173696 exp: 1787216623
+
+[403] V: POST crear sandbox
+  POST /api/v2/sandboxes?teamId=team_bi7zLiwN9ULZQklHh3rlmq7D
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+SID: undefined

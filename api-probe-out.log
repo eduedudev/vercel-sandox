@@ -1,0 +1,34 @@
+CLAIMS: {"iss":"https://oidc.vercel.com/devsoftec","sub":"owner:devsoftec:project:hackaton:environment:development","scope":"owner:devsoftec:project:hackaton:environment:development","aud":"https://vercel.com/devsoftec","owner":"devsoftec","owner_id":"team_Tot08em9MgVFhARjP9xELTLS","project":"hackaton","project_id":"prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU","environment":"development","plan":"hobby","user_id":"wFflTIXsF7cxpeIaz3H0J92F","client_id":"cl_HYyOPBNtFMfHhaUn9L4QPfTZz6TP47bp","nbf":1787167263,"iat":1787167263,"exp":1787210463}
+SESSION: sbx_vBr7whXChJfyDR89V9IYm0vfye7D NAME: api-probe
+
+### GET sessions (propias)
+URL: https://vercel.com/api/v2/sandboxes/sessions?project=prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU&limit=5&teamId=team_Tot08em9MgVFhARjP9xELTLS
+STATUS: 200
+{"sessions":[{"id":"sbx_vBr7whXChJfyDR89V9IYm0vfye7D","runtime":"node22","requestedAt":1787169446106,"startedAt":1787169446141,"status":"running","vcpus":1,"memory":2048,"timeout":300000,"region":"iad1","cwd":"/vercel","createdAt":1787169446106,"updatedAt":1787169446150,"interactivePort":26661,"sourceSandboxName":"api-probe","projectId":"prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU"},{"id":"sbx_1jHclKJM1ihihTwvHxRir4JyWCvL","runtime":"node22","requestedAt":1787169355053,"startedAt":1787169355187,"status":"running","vcpus":1,"memory":2048,"timeout":600000,"region":"iad1","cwd":"/vercel","createdAt":1787169355053,"updatedAt":1787169355203,"interactivePort":26661,"sourceSandboxName":"silver-evolutionary-panda-RWB46F","projectId":"prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU"},{"id":"sbx_8jvuWV6zMPFnysTf8rWvh9yeK5kz","runtime":"node22","requestedAt":1787169323898,"startedAt":1787169323971,"status":"running","vcpus":1,"memory":2048,"timeout":600000,"region":"iad1","cwd":"/vercel","createdAt":1787169323898,"updatedAt":1787169323981,"interactivePort":26661,"sourceSandboxName":"red-romantic-marten-JhipbG","projectId":"prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU"},{"id":"sbx_uNeXe0ko0I2CyrHN6on3kY24BiRx","runtime":"node22","…
+
+### GET sandboxes (propias)
+URL: https://vercel.com/api/v2/sandboxes?project=prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU&limit=5&teamId=team_Tot08em9MgVFhARjP9xELTLS
+STATUS: 200
+{"sandboxes":[{"name":"api-probe","currentSessionId":"sbx_vBr7whXChJfyDR89V9IYm0vfye7D","status":"running","statusUpdatedAt":1787169446175,"persistent":true,"region":"iad1","vcpus":1,"memory":2048,"runtime":"node22","image":"vercel/sandbox/universal@sha256:0e3e3617e824397f170fc7c43ccaa565dd7ac36518e83ead3d41e077cd9f6ec7","timeout":300000,"cwd":"/vercel","createdAt":1787169446175,"updatedAt":1787169446175,"expiresAt":1787169746141},{"name":"silver-evolutionary-panda-RWB46F","currentSessionId":"sbx_1jHclKJM1ihihTwvHxRir4JyWCvL","status":"running","statusUpdatedAt":1787169355279,"persistent":true,"region":"iad1","vcpus":1,"memory":2048,"runtime":"node22","image":"vercel/sandbox/universal@sha256:0e3e3617e824397f170fc7c43ccaa565dd7ac36518e83ead3d41e077cd9f6ec7","timeout":600000,"cwd":"/vercel","createdAt":1787169355279,"updatedAt":1787169355279,"expiresAt":1787169955187},{"name":"red-romantic-marten-JhipbG","currentSessionId":"sbx_8jvuWV6zMPFnysTf8rWvh9yeK5kz","status":"running","statusUpdatedAt":1787169324003,"persistent":true,"region":"iad1","vcpus":1,"memory":2048,"runtime":"node22","image":"vercel/sandbox/universal@sha256:0e3e3617e824397f170fc7c43ccaa565dd7ac36518e83ead3d41e077cd9f6…
+
+### GET session por id
+URL: https://vercel.com/api/v2/sandboxes/sessions/sbx_vBr7whXChJfyDR89V9IYm0vfye7D?teamId=team_Tot08em9MgVFhARjP9xELTLS
+STATUS: 200
+{"session":{"id":"sbx_vBr7whXChJfyDR89V9IYm0vfye7D","runtime":"node22","requestedAt":1787169446106,"startedAt":1787169446141,"status":"running","vcpus":1,"memory":2048,"timeout":300000,"region":"iad1","cwd":"/vercel","createdAt":1787169446106,"updatedAt":1787169446150,"interactivePort":26661,"sourceSandboxName":"api-probe","projectId":"prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU"},"routes":[]}
+
+### GET sandbox por nombre
+URL: https://vercel.com/api/v2/sandboxes/api-probe?projectId=prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU&teamId=team_Tot08em9MgVFhARjP9xELTLS
+STATUS: 200
+{"sandbox":{"name":"api-probe","currentSessionId":"sbx_vBr7whXChJfyDR89V9IYm0vfye7D","status":"running","statusUpdatedAt":1787169446175,"persistent":true,"region":"iad1","vcpus":1,"memory":2048,"runtime":"node22","image":"vercel/sandbox/universal@sha256:0e3e3617e824397f170fc7c43ccaa565dd7ac36518e83ead3d41e077cd9f6ec7","timeout":300000,"cwd":"/vercel","createdAt":1787169446175,"updatedAt":1787169446175,"expiresAt":1787169746141},"session":{"id":"sbx_vBr7whXChJfyDR89V9IYm0vfye7D","runtime":"node22","requestedAt":1787169446106,"startedAt":1787169446141,"status":"running","vcpus":1,"memory":2048,"timeout":300000,"region":"iad1","cwd":"/vercel","createdAt":1787169446106,"updatedAt":1787169446150,"interactivePort":26661,"sourceSandboxName":"api-probe","projectId":"prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU"},"routes":[],"resumed":false}
+
+### GET sandbox por SESSION (¿cross?)
+URL: https://vercel.com/api/v2/sandboxes/sbx_vBr7whXChJfyDR89V9IYm0vfye7D?projectId=prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU&teamId=team_Tot08em9MgVFhARjP9xELTLS
+STATUS: 404
+{"error":{"code":"not_found","message":"Named sandbox 'sbx_vBr7whXChJfyDR89V9IYm0vfye7D' not found for this project."}}
+
+### GET snapshots
+URL: https://vercel.com/api/v2/sandboxes/snapshots?project=prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU&limit=5&teamId=team_Tot08em9MgVFhARjP9xELTLS
+STATUS: 200
+{"snapshots":[{"id":"snap_K6Vqsje2UuwCrtBag9WFMLR2zMBg","sourceSessionId":"sbx_wKzqwHxUfLYgl1m2mfqx0RIpmvaX","region":"iad1","status":"created","sizeBytes":642544143,"expiresAt":1789761395833,"createdAt":1787169395839,"updatedAt":1787169395839,"lastUsedAt":1787169395838,"creationMethod":"automatic"},{"id":"snap_RcESnqKIM3LZB3OV7y6JwHA2XVdP","sourceSessionId":"sbx_2I0eHvVvUTvYT97oQTTeGkvBUZPQ","region":"iad1","status":"created","sizeBytes":642544119,"expiresAt":1789761092192,"createdAt":1787169092199,"updatedAt":1787169092199,"lastUsedAt":1787169092198,"creationMethod":"automatic"},{"id":"snap_QkF8VJSSBqUHOyiQPiZMXB0qY0Re","sourceSessionId":"sbx_cVXXDx7CrkA00eC7lZYfIdtRdLu7","region":"iad1","status":"created","sizeBytes":642556433,"expiresAt":1789761067346,"createdAt":1787169067362,"updatedAt":1787169067362,"lastUsedAt":1787169067361,"creationMethod":"automatic"},{"id":"snap_3Tbw8zzCDnPw5ft16yN0vVNd1sU6","sourceSessionId":"sbx_Velzy3qup5QmIWlHd1bgqQi0uSkG","region":"iad1","status":"created","sizeBytes":642545467,"expiresAt":1789761021086,"createdAt":1787169021092,"updatedAt":1787169021092,"lastUsedAt":1787169021092,"creationMethod":"automatic"},{"id":"snap_gzur23DOzYgvGIqY0ii9tz7Hz2…
+
+DONE

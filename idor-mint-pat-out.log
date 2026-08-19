@@ -1,0 +1,19 @@
+PAT user: 966V0XKxNrkcaUOFIV0mF76N exp: 2026-08-20T05:03:27.000Z
+
+[200] CTRL: PAT víctima mint su project
+  POST /v1/projects/prj_d78xOhTH7oD0Hs2MTmhpSgpPVc7A/token?source=vercel-oidc-refresh&teamId=team_bi7zLiwN9ULZQklHh3rlmq7D
+  token minted → owner=hi-eduedudevs-projects, project=victima, project_id=prj_d78xOhTH7oD0Hs2MTmhpSgpPVc7A, owner_id=team_bi7zLiwN9ULZQklHh3rlmq7D, user_id=966V0XKxNrkcaUOFIV0mF76N
+
+[403] IDOR: PAT víctima mint project ATACANTE (teamId=A)
+  POST /v1/projects/prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU/token?source=vercel-oidc-refresh&teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized"}}
+
+[404] IDOR: PAT víctima mint project ATACANTE (teamId=V)
+  POST /v1/projects/prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU/token?source=vercel-oidc-refresh&teamId=team_bi7zLiwN9ULZQklHh3rlmq7D
+  {"error":{"code":"project_not_found","message":"Project not found"}}
+
+[404] IDOR: PAT víctima mint project ATACANTE (sin teamId)
+  POST /v1/projects/prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU/token?source=vercel-oidc-refresh
+  {"error":{"code":"project_not_found","message":"Project not found"}}
+
+DONE

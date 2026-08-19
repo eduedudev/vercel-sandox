@@ -1,0 +1,43 @@
+VÍCTIMA: victim-2 sbx_pDSOkETA0tAtKEIOpz7ZV6R5TVhm
+
+[403] A: GET session VÍCTIMA con teamId ATACANTE
+  GET /api/v2/sandboxes/sessions/sbx_pDSOkETA0tAtKEIOpz7ZV6R5TVhm?teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: cmd VÍCTIMA con teamId ATACANTE
+  POST /api/v2/sandboxes/sessions/sbx_pDSOkETA0tAtKEIOpz7ZV6R5TVhm/cmd?teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: fs/read VÍCTIMA con teamId ATACANTE
+  POST /api/v2/sandboxes/sessions/sbx_pDSOkETA0tAtKEIOpz7ZV6R5TVhm/fs/read?teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: fork sandbox VÍCTIMA en project ATACANTE
+  POST /api/v2/sandboxes/victim-2/fork?projectId=prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU&teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: GET sandbox VÍCTIMA con project ATACANTE
+  GET /api/v2/sandboxes/victim-2?projectId=prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU&teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: PATCH sandbox VÍCTIMA con project ATACANTE
+  PATCH /api/v2/sandboxes/victim-2?projectId=prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU&teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: DELETE sandbox VÍCTIMA con project ATACANTE
+  DELETE /api/v2/sandboxes/victim-2?projectId=prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU&teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: stop VÍCTIMA con teamId ATACANTE
+  POST /api/v2/sandboxes/sessions/sbx_pDSOkETA0tAtKEIOpz7ZV6R5TVhm/stop?teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: network-policy VÍCTIMA con teamId ATACANTE
+  POST /api/v2/sandboxes/sessions/sbx_pDSOkETA0tAtKEIOpz7ZV6R5TVhm/network-policy?teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] CTRL: víctima GET su session
+  GET /api/v2/sandboxes/sessions/sbx_pDSOkETA0tAtKEIOpz7ZV6R5TVhm?teamId=team_bi7zLiwN9ULZQklHh3rlmq7D
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+DONE

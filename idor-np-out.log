@@ -1,0 +1,39 @@
+VÍCTIMA session: sbx_Gu8RURBASPWvUtgc9xtFIcEdy5It
+
+[403] A: network-policy víctima (body válido, teamId=A)
+  POST /api/v2/sandboxes/sessions/sbx_Gu8RURBASPWvUtgc9xtFIcEdy5It/network-policy?teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: network-policy víctima (body válido, teamId=V)
+  POST /api/v2/sandboxes/sessions/sbx_Gu8RURBASPWvUtgc9xtFIcEdy5It/network-policy?teamId=team_bi7zLiwN9ULZQklHh3rlmq7D
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[200] CTRL V: network-policy víctima su propia
+  POST /api/v2/sandboxes/sessions/sbx_Gu8RURBASPWvUtgc9xtFIcEdy5It/network-policy?teamId=team_bi7zLiwN9ULZQklHh3rlmq7D
+  {"session":{"id":"sbx_Gu8RURBASPWvUtgc9xtFIcEdy5It","runtime":"node22","requestedAt":1787175681169,"startedAt":1787175681251,"status":"running","vcpus":1,"memory":2048,"timeout":300000,"region":"iad1","cwd":"/vercel","createdAt":1787175681169,"updatedAt":1787175681263,"interactivePort":26661,"networkPolicy":{"mode":"custom","allowedDomains":["example.com"],"allowedCIDRs":["0.0.0.0/0"],"deniedCIDRs":[]},"sourceSandboxName":"victim-np","projectId":"prj_d78xOhTH7oD0Hs2MTmhpSgpPVc7A"}}
+
+[403] A: extend-timeout víctima
+  POST /api/v2/sandboxes/sessions/sbx_Gu8RURBASPWvUtgc9xtFIcEdy5It/extend-timeout?teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: snapshot víctima
+  POST /api/v2/sandboxes/sessions/sbx_Gu8RURBASPWvUtgc9xtFIcEdy5It/snapshot?teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: interactive víctima
+  POST /api/v2/sandboxes/sessions/sbx_Gu8RURBASPWvUtgc9xtFIcEdy5It/interactive?teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[400] A: kill cmd 0 víctima
+  POST /api/v2/sandboxes/sessions/sbx_Gu8RURBASPWvUtgc9xtFIcEdy5It/cmd/0/kill?teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"bad_request","message":"Invalid request: `signal` should be number."}}
+
+[403] A: logs cmd 0 víctima
+  GET /api/v2/sandboxes/sessions/sbx_Gu8RURBASPWvUtgc9xtFIcEdy5It/cmd/0/logs?teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] A: fs/mkdir víctima
+  POST /api/v2/sandboxes/sessions/sbx_Gu8RURBASPWvUtgc9xtFIcEdy5It/fs/mkdir?teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+DONE

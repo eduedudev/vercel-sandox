@@ -1,0 +1,30 @@
+
+[403] CTRL A: raw POST /v3/sandboxes (su project)
+  POST /api/v3/sandboxes?teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] CTRL A: raw GET /v2 list sessions (su project)
+  GET /api/v2/sandboxes/sessions?project=prj_ZygqqKW3wnuiaLESKr4A7EoCmWIU&teamId=team_Tot08em9MgVFhARjP9xELTLS&limit=5
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] IDOR: A crea en project VÍCTIMA (teamId=A)
+  POST /api/v3/sandboxes?teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] IDOR: A crea en project VÍCTIMA (teamId=V)
+  POST /api/v3/sandboxes?teamId=team_bi7zLiwN9ULZQklHh3rlmq7D
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] IDOR: A lista sessions de project VÍCTIMA
+  GET /api/v2/sandboxes/sessions?project=prj_d78xOhTH7oD0Hs2MTmhpSgpPVc7A&teamId=team_Tot08em9MgVFhARjP9xELTLS&limit=5
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] IDOR: A lista sessions de project VÍCTIMA (teamId=V)
+  GET /api/v2/sandboxes/sessions?project=prj_d78xOhTH7oD0Hs2MTmhpSgpPVc7A&teamId=team_bi7zLiwN9ULZQklHh3rlmq7D&limit=5
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+[403] IDOR: A POST /v2/sandboxes project VÍCTIMA
+  POST /api/v2/sandboxes?teamId=team_Tot08em9MgVFhARjP9xELTLS
+  {"error":{"code":"forbidden","message":"Not authorized","invalidToken":true}}
+
+DONE

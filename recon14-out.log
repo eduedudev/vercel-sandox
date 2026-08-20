@@ -1,0 +1,253 @@
+exit: 0
+===== MOUNT =====
+mount: /mnt/vda2: /dev/vda already mounted on /etc/hosts.
+       dmesg(1) may have more information after failed mount system call.
+mount rc=0
+===== TOP =====
+total 12
+drwxr-xr-x 19 root root  252 Aug 20 14:02 .
+drwxr-xr-x  6 root root   59 Aug 20 14:03 ..
+lrwxrwxrwx+ 1 root root    7 Jan 30  2023 bin -> usr/bin
+dr-xr-xr-x+ 2 root root    6 Jan 30  2023 boot
+drwxr-xr-x+ 3 root root  136 Jan 30  2023 dev
+drwxr-xr-x+56 root root 4096 Aug 20 14:02 etc
+drwxr-xr-x+ 3 root root   20 Aug 19 12:22 home
+lrwxrwxrwx+ 1 root root    7 Jan 30  2023 lib -> usr/lib
+lrwxrwxrwx+ 1 root root    9 Jan 30  2023 lib64 -> usr/lib64
+===== /root =====
+total 0
+dr-xr-x---+ 3 root root  18 Aug 18 18:14 .
+drwxr-xr-x 19 root root 252 Aug 20 14:02 ..
+drwx------+ 2 root root   6 Aug 18 18:14 .ssh
+===== /home =====
+total 0
+drwxr-xr-x+ 3 root   root    20 Aug 19 12:22 .
+drwxr-xr-x 19 root   root   252 Aug 20 14:02 ..
+drwx------+ 2 ubuntu ubuntu  62 Aug 19 12:22 vercel
+===== /etc (hosts, resolv, passwd, shadow) =====
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost6 localhost6.localdomain6
+#MANUAL
+nameserver 172.31.0.2
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+systemd-oom:x:999:999:systemd Userspace OOM Killer:/:/usr/sbin/nologin
+vector:x:998:998:Vector observability data router:/var/lib/vector:/sbin/nologin
+systemd-coredump:x:997:997:systemd Core Dumper:/:/usr/sbin/nologin
+systemd-timesync:x:996:996:systemd Time Synchronization:/:/usr/sbin/nologin
+vercel:x:1000:1000::/home/vercel:/bin/bash
+root:*LOCK*:14600::::::
+bin:*:19387:0:99999:7:::
+daemon:*:19387:0:99999:7:::
+adm:*:19387:0:99999:7:::
+lp:*:19387:0:99999:7:::
+===== /run =====
+total 4
+drwxr-xr-x+19 root root 4096 Aug 20 14:06 .
+drwxr-xr-x 19 root root  252 Aug 20 14:02 ..
+drwxr-xr-x  2 root root   22 Aug 20 14:02 apm
+drwxr-xr-x+ 2 root root    6 Jul 24 22:25 blkid
+drw-r--r--  3 root root   54 Aug 20 14:06 cell
+drwxr-xr-x+ 2 root root    6 Dec 22  2025 console
+drwx--x--x  9 root root  252 Aug 20 14:02 containerd
+drwx------+ 2 root root    6 Aug 18 18:14 cryptsetup
+drwxr-xr-x+ 2 root root    6 Dec 22  2025 faillock
+drwxr-xr-x+ 3 root root   20 Aug 18 18:14 lock
+drwxr-xr-x+ 2 root root    6 Aug 18 18:14 log
+drwxr-xr-x  2 root root   26 Aug 20 14:02 metrics
+-rw-r--r--+ 1 root root    0 Jan 30  2023 motd
+drwxr-xr-x+ 2 root root    6 Jan 30  2023 motd.d
+drwxr-xr-x  2 root root    6 Aug 20 14:02 mount
+drwx------  3 root root   50 Aug 20 14:06 runc
+drwxr-xr-x+ 2 root root    6 Dec 22  2025 sepermit
+drwxr-xr-x+ 2 root root    6 Jan 30  2023 setrans
+drwxr-xr-x+ 8 root root  100 Aug 18 18:14 systemd
+drwxr-xr-x+ 2 root root    6 Aug 18 18:14 user
+===== /run/cell =====
+total 8
+drw-r--r--  3 root root   54 Aug 20 14:06 .
+drwxr-xr-x+19 root root 4096 Aug 20 14:06 ..
+-rw-r--r--  1 root root  639 Aug 20 14:02 ca-cert.pem
+srwxr-xr-x  1 root root    0 Aug 20 14:02 cell.sock
+drwxr-xr-x  3 root root   50 Aug 20 14:06 runc
+===== /volumes =====
+total 0
+drwxr-x---  3 root root  17 Aug 20 14:02 .
+drwxr-xr-x 19 root root 252 Aug 20 14:02 ..
+drwxr-x---  3 root root  20 Aug 20 14:02 run
+===== /opt =====
+total 0
+drwxr-xr-x+ 4 root root  31 Aug 18 18:15 .
+drwxr-xr-x 19 root root 252 Aug 20 14:02 ..
+drwxr-xr-x+ 3 root root  17 Aug 18 18:15 cni
+drwxr-xr-x+ 2 root root  99 Aug 19 12:22 vercel
+===== /srv =====
+total 0
+drwxr-xr-x+ 2 root root   6 Jan 30  2023 .
+drwxr-xr-x 19 root root 252 Aug 20 14:02 ..
+===== /var =====
+total 8
+drwxr-xr-x+19 root root 4096 Aug 19 12:22 .
+drwxr-xr-x 19 root root  252 Aug 20 14:02 ..
+drwxr-xr-x+ 2 root root    6 Jan 30  2023 adm
+drwxr-xr-x+ 6 root root   59 Aug 18 18:14 cache
+drwxr-x---+ 2 root root    6 Aug 19 12:22 celld
+drwxr-xr-x+ 3 root root   18 Aug 18 18:15 db
+drwxr-xr-x+ 2 root root    6 Jan 30  2023 empty
+drwxr-xr-x+ 2 root root    6 Jan 30  2023 ftp
+drwxr-xr-x+ 2 root root    6 Jan 30  2023 games
+drwxr-xr-x+ 3 root root   18 Jul 24 22:25 kerberos
+drwxr-xr-x+15 root root 4096 Aug 18 18:15 lib
+drwxr-xr-x+ 2 root root    6 Jan 30  2023 local
+lrwxrwxrwx+ 1 root root   11 Jul 24 22:25 lock -> ../run/lock
+drwxr-xr-x+ 4 root root  180 Aug 18 18:14 log
+lrwxrwxrwx+ 1 root root   10 Jan 30  2023 mail -> spool/mail
+drwxr-xr-x+ 2 root root    6 Jan 30  2023 nis
+drwxr-xr-x+ 2 root root    6 Jan 30  2023 opt
+drwxr-xr-x+ 2 root root    6 Jan 30  2023 preserve
+lrwxrwxrwx+ 1 root root    6 Jul 24 22:24 run -> ../run
+===== /var/lib =====
+total 12
+drwxr-xr-x+15 root root 4096 Aug 18 18:15 .
+drwxr-xr-x+19 root root 4096 Aug 19 12:22 ..
+drwxr-xr-x+ 2 root root   83 Aug 18 18:15 alternatives
+drwx------+11 root root 4096 Aug 19 18:48 containerd
+drwxr-xr-x+ 2 root root   80 Aug 18 18:15 dnf
+drwxr-xr-x+ 2 root root    6 Jan 30  2023 games
+drwxr-xr-x+ 2 root root    6 Jan 30  2023 misc
+drwx------+ 2 root root    6 Aug 18 18:14 portables
+drwx------+ 2 root root    6 Aug 18 18:14 private
+drwxr-xr-x+ 2 root root   91 Jul 24 22:25 rpm
+drwxr-xr-x+ 2 root root    6 Jan 30  2023 rpm-state
+drwxr-xr-x+ 3 root root   17 Aug 18 18:14 selinux
+drwxr-xr-x+ 4 root root   56 Aug 18 18:15 systemd
+drwxr-xr-x+ 2 998  root    6 Jan 13  2025 vector
+drwxr-xr-x+ 2 root root    6 Jul 24 22:24 yum
+===== find certs/keys =====
+/mnt/vda2/etc/pki/ca-trust/extracted/openssl/ca-bundle.trust.crt
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/ACCVRAIZ1.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/AC_RAIZ_FNMT-RCM.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/AC_RAIZ_FNMT-RCM_SERVIDORES_SEGUROS.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/ANF_Secure_Server_Root_CA.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/Actalis_Authentication_Root_CA.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/AffirmTrust_Commercial.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/AffirmTrust_Networking.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/AffirmTrust_Premium.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/AffirmTrust_Premium_ECC.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/Amazon_Root_CA_1.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/Amazon_Root_CA_2.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/Amazon_Root_CA_3.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/Amazon_Root_CA_4.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/Atos_TrustedRoot_2011.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/Atos_TrustedRoot_Root_CA_ECC_TLS_2021.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/Atos_TrustedRoot_Root_CA_RSA_TLS_2021.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/BJCA_Global_Root_CA1.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/BJCA_Global_Root_CA2.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/Buypass_Class_2_Root_CA.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/Buypass_Class_3_Root_CA.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/CA_Disig_Root_R2.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/CFCA_EV_ROOT.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/COMODO_Certification_Authority.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/COMODO_ECC_Certification_Authority.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/COMODO_RSA_Certification_Authority.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/Certainly_Root_E1.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/Certainly_Root_R1.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/Certigna.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/Certigna_Root_CA.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/Certum_EC-384_CA.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/Certum_Trusted_Network_CA.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/Certum_Trusted_Network_CA_2.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/Certum_Trusted_Root_CA.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/CommScope_Public_Trust_ECC_Root-01.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/CommScope_Public_Trust_ECC_Root-02.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/CommScope_Public_Trust_RSA_Root-01.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/CommScope_Public_Trust_RSA_Root-02.pem
+/mnt/vda2/etc/pki/ca-trust/extracted/pem/directory-hash/D-TRUST_BR_Root_CA_1_2020.pem
+===== find config/env =====
+/mnt/vda2/etc/containerd/config.toml
+/mnt/vda2/etc/dbus-1/session.conf
+/mnt/vda2/etc/dbus-1/system.conf
+/mnt/vda2/etc/dnf/dnf.conf
+/mnt/vda2/etc/dnf/plugins/copr.conf
+/mnt/vda2/etc/dnf/plugins/debuginfo-install.conf
+/mnt/vda2/etc/dnf/plugins/release-notification.conf
+/mnt/vda2/etc/dnf/plugins/supportinfo.conf
+/mnt/vda2/etc/dnf/protected.d/dnf.conf
+/mnt/vda2/etc/dnf/protected.d/sudo.conf
+/mnt/vda2/etc/dnf/protected.d/systemd.conf
+/mnt/vda2/etc/dracut.conf.d/99-disable-syslog.conf
+/mnt/vda2/etc/host.conf
+/mnt/vda2/etc/krb5.conf
+/mnt/vda2/etc/ld.so.conf
+/mnt/vda2/etc/libaudit.conf
+/mnt/vda2/etc/libreport/events.d/collect_dnf.conf
+/mnt/vda2/etc/libuser.conf
+/mnt/vda2/etc/mke2fs.conf
+/mnt/vda2/etc/nsswitch.conf
+/mnt/vda2/etc/openldap/ldap.conf
+/mnt/vda2/etc/pki/ca-trust/ca-legacy.conf
+/mnt/vda2/etc/security/access.conf
+/mnt/vda2/etc/security/chroot.conf
+/mnt/vda2/etc/security/faillock.conf
+/mnt/vda2/etc/security/group.conf
+/mnt/vda2/etc/security/limits.conf
+/mnt/vda2/etc/security/namespace.conf
+/mnt/vda2/etc/security/pam_env.conf
+/mnt/vda2/etc/security/pwquality.conf
+/mnt/vda2/etc/security/sepermit.conf
+/mnt/vda2/etc/security/time.conf
+/mnt/vda2/etc/selinux/semanage.conf
+/mnt/vda2/etc/sudo.conf
+/mnt/vda2/etc/sysctl.conf
+/mnt/vda2/etc/sysctl.d/10-inotify.conf
+/mnt/vda2/etc/sysctl.d/99-sysctl.conf
+/mnt/vda2/etc/systemd/coredump.conf
+/mnt/vda2/etc/systemd/homed.conf
+/mnt/vda2/etc/systemd/journald.conf
+/mnt/vda2/etc/systemd/logind.conf
+/mnt/vda2/etc/systemd/oomd.conf
+/mnt/vda2/etc/systemd/pstore.conf
+/mnt/vda2/etc/systemd/sleep.conf
+/mnt/vda2/etc/systemd/system/containerd.service.d/override.conf
+/mnt/vda2/etc/systemd/system/systemd-hwdb-update.service.d/override.conf
+/mnt/vda2/etc/systemd/system.conf
+/mnt/vda2/etc/systemd/system.conf.d/10-show-errors-only.conf
+/mnt/vda2/etc/systemd/timesyncd.conf
+/mnt/vda2/etc/systemd/user.conf
+===== run/containerd =====
+total 4
+drwx--x--x  9 root root  252 Aug 20 14:02 .
+drwxr-xr-x+19 root root 4096 Aug 20 14:06 ..
+srw-rw----  1 root root    0 Aug 20 14:02 containerd.sock
+srw-rw----  1 root root    0 Aug 20 14:02 containerd.sock.ttrpc
+drwx------  3 root root   24 Aug 20 14:02 fifo
+drwx------  2 root root    6 Aug 20 14:02 io.containerd.grpc.v1.cri
+drwx------  3 root root   32 Aug 20 14:02 io.containerd.mount-manager.v1.bolt
+drwx--x--x  3 root root   21 Aug 20 14:02 io.containerd.runtime.v2.task
+drwx------  2 root root    6 Aug 20 14:02 io.containerd.sandbox.controller.v1.shim
+===== proc visible from cell disk =====
+total 0
+drwxr-xr-x+ 2 root root   6 Jul 24 22:24 .
+drwxr-xr-x 19 root root 252 Aug 20 14:02 ..
+===== hostname =====
+cat: /mnt/vda2/etc/hostname: No such file or directory
+===== machine-id =====
+8e919362f6ad48b4b3fa554b8781701d
+===== shadow root hash =====
+root:*LOCK*
+DONE
+=== unshare rc: 0 ===
+

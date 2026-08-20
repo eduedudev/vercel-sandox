@@ -1,0 +1,72 @@
+exit: 0
+===== containerd prior-knowledge verbose =====
+Note: Unnecessary use of -X or --request, POST is already inferred.
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0*   Trying /mnt/vda2/run/containerd/containerd.sock:0...
+* Established connection to unix (/mnt/vda2/run/containerd/containerd.sock port 0) from  port 0 
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for http://unix/containerd.services.namespaces.v1.Namespaces/List
+* [HTTP/2] [1] [:method: POST]
+* [HTTP/2] [1] [:scheme: http]
+* [HTTP/2] [1] [:authority: unix]
+* [HTTP/2] [1] [:path: /containerd.services.namespaces.v1.Namespaces/List]
+* [HTTP/2] [1] [user-agent: curl/8.18.0]
+* [HTTP/2] [1] [accept: */*]
+* [HTTP/2] [1] [content-type: application/grpc]
+* [HTTP/2] [1] [te: trailers]
+* [HTTP/2] [1] [content-length: 0]
+> POST /containerd.services.namespaces.v1.Namespaces/List HTTP/2
+> Host: unix
+> User-Agent: curl/8.18.0
+> Accept: */*
+> Content-Type: application/grpc
+> TE: trailers
+> Content-Length: 0
+> 
+* Request completely sent off
+< HTTP/2 200 
+< content-type: application/grpc
+< grpc-status: 2
+< grpc-message: EOF
+< 
+{ [0 bytes data]
+  0      0   0      0   0      0      0      0                              0  0      0   0      0   0      0      0      0                              0  0      0   0      0   0      0      0      0                              0
+* Connection #0 to host unix:80 left intact
+
+===== containerd prior-knowledge NO body =====
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0*   Trying /mnt/vda2/run/containerd/containerd.sock:0...
+* Established connection to unix (/mnt/vda2/run/containerd/containerd.sock port 0) from  port 0 
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for http://unix/containerd.services.namespaces.v1.Namespaces/List
+* [HTTP/2] [1] [:method: POST]
+* [HTTP/2] [1] [:scheme: http]
+* [HTTP/2] [1] [:authority: unix]
+* [HTTP/2] [1] [:path: /containerd.services.namespaces.v1.Namespaces/List]
+* [HTTP/2] [1] [user-agent: curl/8.18.0]
+* [HTTP/2] [1] [accept: */*]
+* [HTTP/2] [1] [content-type: application/grpc]
+* [HTTP/2] [1] [te: trailers]
+* [HTTP/2] [1] [content-length: 0]
+> POST /containerd.services.namespaces.v1.Namespaces/List HTTP/2
+> Host: unix
+> User-Agent: curl/8.18.0
+> Accept: */*
+> Content-Type: application/grpc
+> TE: trailers
+> Content-Length: 0
+> 
+* Request completely sent off
+< HTTP/2 200 
+< content-type: application/grpc
+< grpc-status: 2
+< grpc-message: EOF
+< 
+{ [0 bytes data]
+  0      0   0      0   0      0      0      0                              0  0      0   0      0   0      0      0      0                              0  0      0   0      0   0      0      0      0                              0
+* Connection #0 to host unix:80 left intact
+DONE
+=== rc: 0 ===
+

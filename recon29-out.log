@@ -1,0 +1,59 @@
+exit: 0
+===== full 23456 response =====
+* [HTTP/2] [1] [:path: /vercel.hive.celld.api.v1.CelldService/RegisterPort]
+* [HTTP/2] [1] [user-agent: curl/8.18.0]
+* [HTTP/2] [1] [accept: */*]
+* [HTTP/2] [1] [content-type: application/grpc]
+* [HTTP/2] [1] [te: trailers]
+* [HTTP/2] [1] [content-length: 5]
+> POST /vercel.hive.celld.api.v1.CelldService/RegisterPort HTTP/2
+> Host: 127.0.0.1:23456
+> User-Agent: curl/8.18.0
+> Accept: */*
+> Content-Type: application/grpc
+> TE: trailers
+> Content-Length: 5
+> 
+} [5 bytes data]
+* upload completely sent off: 5 bytes
+< HTTP/2 404 
+< content-type: text/plain; charset=utf-8
+< x-content-type-options: nosniff
+< content-length: 19
+< date: Thu, 20 Aug 2026 14:24:42 GMT
+< 
+{ [19 bytes data]
+* Connection #0 to host 127.0.0.1:23456 left intact
+404 page not found
+===== full 30001 response =====
+* [HTTP/2] [1] [:path: /vercel.hive.celld.api.v1.CelldService/RegisterPort]
+* [HTTP/2] [1] [user-agent: curl/8.18.0]
+* [HTTP/2] [1] [accept: */*]
+* [HTTP/2] [1] [content-type: application/grpc]
+* [HTTP/2] [1] [te: trailers]
+* [HTTP/2] [1] [content-length: 5]
+> POST /vercel.hive.celld.api.v1.CelldService/RegisterPort HTTP/2
+> Host: 127.0.0.1:30001
+> User-Agent: curl/8.18.0
+> Accept: */*
+> Content-Type: application/grpc
+> TE: trailers
+> Content-Length: 5
+> 
+} [5 bytes data]
+* upload completely sent off: 5 bytes
+< HTTP/2 404 
+< content-type: text/plain; charset=utf-8
+< x-content-type-options: nosniff
+< content-length: 19
+< date: Thu, 20 Aug 2026 14:24:42 GMT
+< 
+{ [19 bytes data]
+* Connection #0 to host 127.0.0.1:30001 left intact
+404 page not found
+===== cell.sock HTTP path fuzz =====
+===== cell.sock POST probe paths =====
+===== containerd container spec decode =====
+DONE
+=== rc: 0 ===
+

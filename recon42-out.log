@@ -1,0 +1,36 @@
+exit: 0
+=== vector data/run dirs ===
+ls: cannot access '/mnt/vda2/var/run/vector': No such file or directory
+/mnt/vda2/var/lib/vector:
+total 4
+drwxr-xr-x+ 2 998  root    6 Jan 13  2025 .
+drwxr-xr-x+15 root root 4096 Aug 18 18:15 ..
+/mnt/vda2/run/motd
+/mnt/vda2/run/cell/ca-cert.pem
+/mnt/vda2/run/containerd/io.containerd.mount-manager.v1.bolt/mounts.db
+/mnt/vda2/run/runc/e5244146-92ce-47d4-8ddf-f2721fc5317a/state.json
+=== datadog key format search on disk (dc_ or 32hex) ===
+=== vector toml full tree ===
+/mnt/vda2/etc/vector/internal_metrics.toml
+/mnt/vda2/etc/vector/sinks/datadog_celld.toml
+/mnt/vda2/etc/vector/sinks/datadog_kernel.toml
+/mnt/vda2/etc/vector/sources/celld.toml
+/mnt/vda2/etc/vector/sources/kernel.toml
+/mnt/vda2/etc/vector/tests.toml
+/mnt/vda2/etc/vector/transforms/celld_app.toml
+/mnt/vda2/etc/vector/transforms/celld_remap.toml
+/mnt/vda2/etc/vector/transforms/kernel_remap.toml
+/mnt/vda2/etc/vector/vector.toml
+=== /proc/kcore read attempt (python) ===
+kcore read 0 bytes, first bytes: b''
+b''
+=== /dev/mem via mknod fresh path ===
+crw-r--r-- 1 root root 1, 1 Aug 20 14:40 /tmp/memdev
+mem read 65536 bytes
+b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+=== check kernel cmdline (may hint mitigations) ===
+pci=off nomodule i8042.nomux panic=1 i8042.dumbkbd cell_id=hvc_iad1_67e93e48_1c9cab26b2124ff496bb07140cf120dd i8042.noaux i8042.nopnp quiet build_version=2026.08.19-81ade84e0e1185cfa9c085b01f5ff42833c5eaf9 ip=100.64.98.175::100.64.0.1:255.255.0.0:::off:172.31.0.2:: init=/opt/vercel/celld-init.sh ro console=ttyS0 reboot=k pci=off root=/dev/vda rw virtio_mmio.device=4K@0xc0001000:5 virtio_mmio.device=4K@0xc0002000:6 virtio_mmio.device=4K@0xc0003000:7 virtio_mmio.device=4K@0xc0004000:8 virtio_mmio.device=4K@0xc0005000:9
+=== /proc/modules vsock/others ===
+DONE
+=== rc: 0 ===
+

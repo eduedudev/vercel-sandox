@@ -1,0 +1,20 @@
+exit: 0
+=== ARP entries ===
+100.64.0.1 dev eth0 lladdr a2:9c:3d:b5:a8:e9 REACHABLE 
+169.254.169.254 dev eth0 lladdr 02:fc:00:00:00:01 PERMANENT 
+=== ensure MMDS ARP entry ===
+=== MMDS token ===
+token rc=0 value=r 0 ms: Could not connect to server
+* closing connection #0
+--- curl verbose tail ---
+*   Trying 169.254.169.254:80...
+* connect to 169.254.169.254 port 80 from 100.64.29.201 port 50324 failed: No route to host
+* Failed to connect to 169.254.169.254 port 80 after 0 ms: Could not connect to server
+* closing connection #0
+=== MMDS root (json) ===
+
+=== MMDS meta-data path ===
+
+DONE
+=== rc: 0 ===
+

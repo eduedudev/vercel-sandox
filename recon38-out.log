@@ -1,0 +1,44 @@
+updating policy to deny-all...
+policy updated
+exit: 0
+=== my ip ===
+100.64.165.103/16
+=== 1. HTTP egress (should be blocked under deny-all) ===
+http_code=000 err=Failed to connect to 1.1.1.1 port 80 after 1 ms: Could not connect to server
+https_code=000 err=Failed to connect to 8.8.8.8 port 443 after 0 ms: Could not connect to server
+https_example=000 err=Could not resolve host: example.com
+=== 2. raw TCP to 8.8.8.8:443 ===
+bash: connect: No route to host
+bash: line 1: /dev/tcp/8.8.8.8/443: No route to host
+
+=== 3. raw TCP to 1.1.1.1:80 ===
+bash: connect: No route to host
+bash: line 1: /dev/tcp/1.1.1.1/80: No route to host
+
+=== 4. UDP to 8.8.8.8:53 ===
+udp_send_rc=0
+=== 5. ping 8.8.8.8 ===
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+From 100.64.0.1 icmp_seq=2 Destination Host Prohibited
+
+--- 8.8.8.8 ping statistics ---
+=== 6. DNS resolution via host dns 172.31.0.2 ===
+#MANUAL
+nameserver 172.31.0.2
+;; communications error to 172.31.0.2#53: host unreachable
+;; communications error to 172.31.0.2#53: host unreachable
+;; communications error to 172.31.0.2#53: host unreachable
+;; no servers could be reached
+
+=== 7. raw AF_PACKET UDP to 8.8.8.8:53 + sniff ===
+Traceback (most recent call last):
+  File "<stdin>", line 14, in <module>
+struct.error: required argument is not an integer
+=== 8. /dev/tcp to 172.31.0.2:53 (host DNS) ===
+rc=0
+=== 9. traceroute-ish to 8.8.8.8 ===
+IP address       HW type     Flags       HW address            Mask     Device
+100.64.0.1       0x1         0x2         ae:a9:46:bf:cc:1e     *        eth0
+DONE
+=== rc: 0 ===
+

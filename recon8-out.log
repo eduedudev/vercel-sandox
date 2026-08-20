@@ -1,0 +1,63 @@
+exit: 0
+===== FULL mountinfo (254:0 = vda) =====
+78 69 254:0 /etc/hosts /etc/hosts ro,relatime - xfs /dev/root rw,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota
+79 69 254:0 /etc/resolv.conf /etc/resolv.conf ro,relatime - xfs /dev/root rw,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota
+80 69 254:0 /volumes/run/vercel/share /run/vercel/share rw,relatime master:1 - xfs /dev/root rw,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota
+81 69 254:0 /run/cell/ca-cert.pem /etc/pki/ca-trust/source/anchors/vercel-proxy-ca.pem ro,relatime - xfs /dev/root rw,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota
+82 69 254:0 /run/cell/ca-cert.pem /usr/local/share/ca-certificates/vercel-proxy-ca.crt ro,relatime - xfs /dev/root rw,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota
+===== try mount vda root elsewhere =====
+mount: /mnt/vdaroot: /dev/vda already mounted on /etc/hosts.
+       dmesg(1) may have more information after failed mount system call.
+exit: 32
+mount: /mnt/vdaroot: must be superuser to use mount.
+       dmesg(1) may have more information after failed mount system call.
+bind exit: 32
+===== find cell paths in mountinfo =====
+78 69 254:0 /etc/hosts /etc/hosts ro,relatime - xfs /dev/root rw,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota
+79 69 254:0 /etc/resolv.conf /etc/resolv.conf ro,relatime - xfs /dev/root rw,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota
+80 69 254:0 /volumes/run/vercel/share /run/vercel/share rw,relatime master:1 - xfs /dev/root rw,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota
+81 69 254:0 /run/cell/ca-cert.pem /etc/pki/ca-trust/source/anchors/vercel-proxy-ca.pem ro,relatime - xfs /dev/root rw,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota
+82 69 254:0 /run/cell/ca-cert.pem /usr/local/share/ca-certificates/vercel-proxy-ca.crt ro,relatime - xfs /dev/root rw,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota
+===== sandbox-init maps (pid 1) =====
+00400000-008db000 r-xp 00000000 fe:00 125832463                          /run/vercel/share/sandbox-init
+008db000-00e30000 r--p 004db000 fe:00 125832463                          /run/vercel/share/sandbox-init
+00e30000-00e9e000 rw-p 00a30000 fe:00 125832463                          /run/vercel/share/sandbox-init
+00e9e000-02ee2000 rw-p 00000000 00:00 0 
+3773d0000000-3773d0800000 ---p 00000000 00:00 0 
+3773d0800000-3773d1000000 rw-p 00000000 00:00 0 
+3773d1000000-3773d4000000 ---p 00000000 00:00 0 
+7fae952a0000-7fae95400000 rw-p 00000000 00:00 0 
+7fae95400000-7fae97400000 rw-p 00000000 00:00 0 
+7fae97400000-7faeae2e7000 ---p 00000000 00:00 0 
+7faeae2e7000-7faeae2e8000 rw-p 00000000 00:00 0 
+7faeae2e8000-7faece2e7000 ---p 00000000 00:00 0 
+7faece2e7000-7faece2e8000 rw-p 00000000 00:00 0 
+7faece2e8000-7faeda1dc000 ---p 00000000 00:00 0 
+7faeda1dc000-7faeda1dd000 rw-p 00000000 00:00 0 
+7faeda1dd000-7faedb9bb000 ---p 00000000 00:00 0 
+7faedb9bb000-7faedb9bc000 rw-p 00000000 00:00 0 
+7faedb9bc000-7faedbc00000 ---p 00000000 00:00 0 
+7faedbc07000-7faedbc67000 rw-p 00000000 00:00 0 
+7faedbc67000-7faedbd67000 rw-p 00000000 00:00 0 
+===== tools present? =====
+/usr/bin/dd
+===== ptrace test on pid 1 =====
+environ len: 706
+===== read /proc/1/mem via dd (root) =====
+0+0 records in
+0+0 records out
+0 bytes copied, 0.000045856 s, 0.0 B/s
+===== TCP ports with Connect headers =====
+--- :23456 /vercel.sandbox.spawn.v1.SpawnService/Ping [application/connect+json] ---
+b'HTTP/1.1 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Thu, 20 Aug 2026 13:48:43 GMT\r\nContent-Length: 19\r\n\r\n404 page not found\n'
+--- :23456 /grpc.health.v1.Health/Check [application/connect+json] ---
+b'HTTP/1.1 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Thu, 20 Aug 2026 13:48:47 GMT\r\nContent-Length: 19\r\n\r\n404 page not found\n'
+--- :30001 /vercel.sandbox.spawn.v1.SpawnService/Ping [application/connect+json] ---
+b'HTTP/1.1 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Thu, 20 Aug 2026 13:48:51 GMT\r\nContent-Length: 19\r\n\r\n404 page not found\n'
+--- :30001 /grpc.health.v1.Health/Check [application/connect+json] ---
+b'HTTP/1.1 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Thu, 20 Aug 2026 13:48:55 GMT\r\nContent-Length: 19\r\n\r\n404 page not found\n'
+--- :30002 /vercel.sandbox.spawn.v1.SpawnService/Ping [application/connect+json] ERR [Errno 104] Connection reset by peer
+--- :30002 /grpc.health.v1.Health/Check [application/connect+json] ERR [Errno 104] Connection reset by peer
+PORT DONE
+DONE
+

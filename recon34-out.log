@@ -1,0 +1,19 @@
+exit: 0
+100.64.0.1 dev eth0 lladdr a2:9c:3d:b5:a8:e9 REACHABLE 
+169.254.169.254 dev eth0 lladdr 02:fc:00:00:00:01 PERMANENT 
+Exception in thread Thread-1 (sender):
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/threading.py", line 1082, in _bootstrap_inner
+    self._context.run(self.run)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/lib/python3.14/threading.py", line 1024, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<stdin>", line 13, in sender
+struct.error: argument for 's' must be a bytes object
+Traceback (most recent call last):
+  File "<stdin>", line 21, in <module>
+BlockingIOError: [Errno 11] Resource temporarily unavailable
+DONE
+=== rc: 0 ===
+

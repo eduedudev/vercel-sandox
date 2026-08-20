@@ -1,0 +1,52 @@
+exit: 0
+===== pid namespace check =====
+our pid ns:
+pid:[4026532093]
+===== do host pids exist? =====
+--- pid 549 ---
+ls: cannot access '/proc/549': No such file or directory
+
+--- pid 561 ---
+ls: cannot access '/proc/561': No such file or directory
+
+--- pid 562 ---
+ls: cannot access '/proc/562': No such file or directory
+
+--- pid 568 ---
+ls: cannot access '/proc/568': No such file or directory
+
+--- pid 583 ---
+ls: cannot access '/proc/583': No such file or directory
+
+===== try reading host root via /proc/<pid>/root =====
+--- /proc/549/root ---
+ls: cannot access '/proc/549/root/': No such file or directory
+ls: cannot access '/proc/549/root/run/cell/': No such file or directory
+ls: cannot access '/proc/549/root/etc/': No such file or directory
+--- /proc/561/root ---
+ls: cannot access '/proc/561/root/': No such file or directory
+ls: cannot access '/proc/561/root/run/cell/': No such file or directory
+ls: cannot access '/proc/561/root/etc/': No such file or directory
+--- /proc/562/root ---
+ls: cannot access '/proc/562/root/': No such file or directory
+ls: cannot access '/proc/562/root/run/cell/': No such file or directory
+ls: cannot access '/proc/562/root/etc/': No such file or directory
+--- /proc/568/root ---
+ls: cannot access '/proc/568/root/': No such file or directory
+ls: cannot access '/proc/568/root/run/cell/': No such file or directory
+ls: cannot access '/proc/568/root/etc/': No such file or directory
+--- /proc/583/root ---
+ls: cannot access '/proc/583/root/': No such file or directory
+ls: cannot access '/proc/583/root/run/cell/': No such file or directory
+ls: cannot access '/proc/583/root/etc/': No such file or directory
+===== net namespace list =====
+/proc/1/ns/net net:[4026531833]
+/proc/793/ns/net net:[4026531833]
+/proc/890/ns/net net:[4026531833]
+/proc/891/ns/net net:[4026531833]
+/proc/892/ns/net net:[4026531833]
+/proc/893/ns/net net:[4026531833]
+/proc/self/ns/net net:[4026531833]
+/proc/thread-self/ns/net net:[4026531833]
+DONE
+

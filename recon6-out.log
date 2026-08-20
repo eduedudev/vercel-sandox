@@ -1,0 +1,40 @@
+exit: 0
+===== identity/caps =====
+uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev)
+Current: =eip
+Bounding set =cap_chown,cap_dac_override,cap_dac_read_search,cap_fowner,cap_fsetid,cap_kill,cap_setgid,cap_setuid,cap_setpcap,cap_linux_immutable,cap_net_bind_service,cap_net_broadcast,cap_net_admin,cap_net_raw,cap_ipc_lock,cap_ipc_owner,cap_sys_module,cap_sys_rawio,cap_sys_chroot,cap_sys_ptrace,cap_sys_pacct,cap_sys_admin,cap_sys_boot,cap_sys_nice,cap_sys_resource,cap_sys_time,cap_sys_tty_config,cap_mknod,cap_lease,cap_audit_write,cap_audit_control,cap_setfcap,cap_mac_override,cap_mac_admin,cap_syslog,cap_wake_alarm,cap_block_suspend,cap_audit_read,cap_perfmon,cap_bpf,cap_checkpoint_restore
+Ambient set =cap_chown,cap_dac_override,cap_dac_read_search,cap_fowner,cap_fsetid,cap_kill,cap_setgid,cap_setuid,cap_setpcap,cap_linux_immutable,cap_net_bind_service,cap_net_broadcast,cap_net_admin,cap_net_raw,cap_ipc_lock,cap_ipc_owner,cap_sys_module,cap_sys_rawio,cap_sys_chroot,cap_sys_ptrace,cap_sys_pacct,cap_sys_admin,cap_sys_boot,cap_sys_nice,cap_sys_resource,cap_sys_time,cap_sys_tty_config,cap_mknod,cap_lease,cap_audit_write,cap_audit_control,cap_setfcap,cap_mac_override,cap_mac_admin,cap_syslog,cap_wake_alarm,cap_block_suspend,cap_audit_read,cap_perfmon,cap_bpf,cap_checkpoint_restore
+Current IAB: ^cap_chown,^cap_dac_override,^cap_dac_read_search,^cap_fowner,^cap_fsetid,^cap_kill,^cap_setgid,^cap_setuid,^cap_setpcap,^cap_linux_immutable,^cap_net_bind_service,^cap_net_broadcast,^cap_net_admin,^cap_net_raw,^cap_ipc_lock,^cap_ipc_owner,^cap_sys_module,^cap_sys_rawio,^cap_sys_chroot,^cap_sys_ptrace,^cap_sys_pacct,^cap_sys_admin,^cap_sys_boot,^cap_sys_nice,^cap_sys_resource,^cap_sys_time,^cap_sys_tty_config,^cap_mknod,^cap_lease,^cap_audit_write,^cap_audit_control,^cap_setfcap,^cap_mac_override,^cap_mac_admin,^cap_syslog,^cap_wake_alarm,^cap_block_suspend,^cap_audit_read,^cap_perfmon,^cap_bpf,^cap_checkpoint_restore
+Securebits: 00/0x0/1'b0 (no-new-privs=0)
+ secure-noroot: no (unlocked)
+ secure-no-suid-fixup: no (unlocked)
+ secure-keep-caps: no (unlocked)
+ secure-no-ambient-raise: no (unlocked)
+uid=1000(ubuntu) euid=1000(ubuntu)
+===== ps full =====
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+ubuntu         1 12.5  0.5 1268980 12012 ?       Ssl  13:46   0:00 /run/vercel/share/sandbox-init --socket=/run/vercel/share/init.sock --pubkey=ncFCVBNNpe1LApvvDAduEnpmSCdEeEZL8qg8MfCfR1U=
+ubuntu        13  0.0  0.1   4948  3964 ?        S    13:46   0:00 bash -c  echo "===== identity/caps =====" id capsh --print 2>/dev/null | head -10 || cat /proc/self/status | grep -E "Cap|Uid|Gid" echo "===== ps full =====" ps auxww | head -20 echo "===== unix socket processes =====" for pid in 551 561 562 567 582 883; do   echo "--- pid $pid ---"   cat /proc/$pid/cmdline 2>/dev/null | tr '\0' ' '; echo done echo "===== containerd socket probe =====" curl -s -m 3 -i --unix-socket /run/containerd/containerd.sock http://localhost/v1/containers 2>&1 | head -20 echo "===== cell.sock probe =====" curl -s -m 3 -i --unix-socket /run/cell/cell.sock http://localhost/ 2>&1 | head -20 echo "===== apm.sock probe =====" curl -s -m 3 -i --unix-socket /run/apm/apm.sock http://localhost/ 2>&1 | head -20 echo "===== containerd version =====" curl -s -m 3 --unix-socket /run/containerd/containerd.sock "http://localhost/v1/version" 2>&1 | head -c 500; echo echo DONE 
+root          14  0.0  0.3  16452  7312 ?        D    13:46   0:00 sudo sh -c update-ca-trust || update-ca-certificates
+ubuntu        19  0.0  0.1   7160  4388 ?        R    13:46   0:00 ps auxww
+ubuntu        20  0.0  0.3  16304  7896 ?        S    13:46   0:00 head -20
+===== unix socket processes =====
+--- pid 551 ---
+
+--- pid 561 ---
+
+--- pid 562 ---
+
+--- pid 567 ---
+
+--- pid 582 ---
+
+--- pid 883 ---
+
+===== containerd socket probe =====
+===== cell.sock probe =====
+===== apm.sock probe =====
+===== containerd version =====
+
+DONE
+

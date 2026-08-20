@@ -1,0 +1,491 @@
+exit: 0
+===== runc task config (sandbox-init container) =====
+config: /mnt/vda2/run/cell/runc/50a41866-b2bc-4924-abf2-ec4122bd8e2e/config.json
+{
+  "ociVersion": "1.2.0",
+  "process": {
+    "user": {
+      "uid": 1000,
+      "gid": 1000,
+      "additionalGids": [
+        4,
+        20,
+        24,
+        25,
+        27,
+        29,
+        30,
+        44,
+        46
+      ]
+    },
+    "args": [
+      "/run/vercel/share/sandbox-init",
+      "--socket=/run/vercel/share/init.sock",
+      "--pubkey=ma9UjtvrVhujUKPtFQsaI4xOrCoz8buvfq5t/7Hzwtg="
+    ],
+    "env": [
+      "PATH=/vercel/.local/bin:/vercel/.global/pnpm/bin:/vercel/.global/npm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "LANG=C.UTF-8",
+      "HOME=/vercel",
+      "AWS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt",
+      "CARGO_HTTP_CAINFO=/etc/ssl/certs/ca-certificates.crt",
+      "CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt",
+      "GIT_SSL_CAINFO=/etc/ssl/certs/ca-certificates.crt",
+      "GRPC_DEFAULT_SSL_ROOTS_FILE_PATH=/etc/ssl/certs/ca-certificates.crt",
+      "NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt",
+      "NODE_USE_SYSTEM_CA=1",
+      "NPM_CONFIG_CAFILE=/etc/ssl/certs/ca-certificates.crt",
+      "PIP_CERT=/etc/ssl/certs/ca-certificates.crt",
+      "REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt",
+      "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt"
+    ],
+    "cwd": "/vercel",
+    "capabilities": {
+      "bounding": [
+        "CAP_AUDIT_CONTROL",
+        "CAP_AUDIT_READ",
+        "CAP_AUDIT_WRITE",
+        "CAP_BLOCK_SUSPEND",
+        "CAP_BPF",
+        "CAP_CHECKPOINT_RESTORE",
+        "CAP_CHOWN",
+        "CAP_DAC_OVERRIDE",
+        "CAP_DAC_READ_SEARCH",
+        "CAP_FOWNER",
+        "CAP_FSETID",
+        "CAP_IPC_LOCK",
+        "CAP_IPC_OWNER",
+        "CAP_KILL",
+        "CAP_LEASE",
+        "CAP_LINUX_IMMUTABLE",
+        "CAP_MAC_ADMIN",
+        "CAP_MAC_OVERRIDE",
+        "CAP_MKNOD",
+        "CAP_NET_ADMIN",
+        "CAP_NET_BIND_SERVICE",
+        "CAP_NET_BROADCAST",
+        "CAP_NET_RAW",
+        "CAP_PERFMON",
+        "CAP_SETFCAP",
+        "CAP_SETGID",
+        "CAP_SETPCAP",
+        "CAP_SETUID",
+        "CAP_SYS_ADMIN",
+        "CAP_SYS_BOOT",
+        "CAP_SYS_CHROOT",
+        "CAP_SYS_MODULE",
+        "CAP_SYS_NICE",
+        "CAP_SYS_PACCT",
+        "CAP_SYS_PTRACE",
+        "CAP_SYS_RAWIO",
+        "CAP_SYS_RESOURCE",
+        "CAP_SYS_TIME",
+        "CAP_SYS_TTY_CONFIG",
+        "CAP_SYSLOG",
+        "CAP_WAKE_ALARM"
+      ],
+      "effective": [
+        "CAP_AUDIT_CONTROL",
+        "CAP_AUDIT_READ",
+        "CAP_AUDIT_WRITE",
+        "CAP_BLOCK_SUSPEND",
+        "CAP_BPF",
+        "CAP_CHECKPOINT_RESTORE",
+        "CAP_CHOWN",
+        "CAP_DAC_OVERRIDE",
+        "CAP_DAC_READ_SEARCH",
+        "CAP_FOWNER",
+        "CAP_FSETID",
+        "CAP_IPC_LOCK",
+        "CAP_IPC_OWNER",
+        "CAP_KILL",
+        "CAP_LEASE",
+        "CAP_LINUX_IMMUTABLE",
+        "CAP_MAC_ADMIN",
+        "CAP_MAC_OVERRIDE",
+        "CAP_MKNOD",
+        "CAP_NET_ADMIN",
+        "CAP_NET_BIND_SERVICE",
+        "CAP_NET_BROADCAST",
+        "CAP_NET_RAW",
+        "CAP_PERFMON",
+        "CAP_SETFCAP",
+        "CAP_SETGID",
+        "CAP_SETPCAP",
+        "CAP_SETUID",
+        "CAP_SYS_ADMIN",
+        "CAP_SYS_BOOT",
+        "CAP_SYS_CHROOT",
+        "CAP_SYS_MODULE",
+        "CAP_SYS_NICE",
+        "CAP_SYS_PACCT",
+        "CAP_SYS_PTRACE",
+        "CAP_SYS_RAWIO",
+        "CAP_SYS_RESOURCE",
+        "CAP_SYS_TIME",
+        "CAP_SYS_TTY_CONFIG",
+        "CAP_SYSLOG",
+        "CAP_WAKE_ALARM"
+      ],
+      "inheritable": [
+        "CAP_AUDIT_CONTROL",
+        "CAP_AUDIT_READ",
+        "CAP_AUDIT_WRITE",
+        "CAP_BLOCK_SUSPEND",
+        "CAP_BPF",
+        "CAP_CHECKPOINT_RESTORE",
+        "CAP_CHOWN",
+        "CAP_DAC_OVERRIDE",
+        "CAP_DAC_READ_SEARCH",
+        "CAP_FOWNER",
+        "CAP_FSETID",
+        "CAP_IPC_LOCK",
+        "CAP_IPC_OWNER",
+        "CAP_KILL",
+        "CAP_LEASE",
+        "CAP_LINUX_IMMUTABLE",
+        "CAP_MAC_ADMIN",
+        "CAP_MAC_OVERRIDE",
+        "CAP_MKNOD",
+        "CAP_NET_ADMIN",
+        "CAP_NET_BIND_SERVICE",
+        "CAP_NET_BROADCAST",
+        "CAP_NET_RAW",
+        "CAP_PERFMON",
+        "CAP_SETFCAP",
+        "CAP_SETGID",
+        "CAP_SETPCAP",
+        "CAP_SETUID",
+        "CAP_SYS_ADMIN",
+        "CAP_SYS_BOOT",
+        "CAP_SYS_CHROOT",
+        "CAP_SYS_MODULE",
+        "CAP_SYS_NICE",
+        "CAP_SYS_PACCT",
+        "CAP_SYS_PTRACE",
+        "CAP_SYS_RAWIO",
+        "CAP_SYS_RESOURCE",
+        "CAP_SYS_TIME",
+        "CAP_SYS_TTY_CONFIG",
+        "CAP_SYSLOG",
+        "CAP_WAKE_ALARM"
+      ],
+      "permitted": [
+        "CAP_AUDIT_CONTROL",
+        "CAP_AUDIT_READ",
+        "CAP_AUDIT_WRITE",
+        "CAP_BLOCK_SUSPEND",
+        "CAP_BPF",
+        "CAP_CHECKPOINT_RESTORE",
+        "CAP_CHOWN",
+        "CAP_DAC_OVERRIDE",
+        "CAP_DAC_READ_SEARCH",
+        "CAP_FOWNER",
+        "CAP_FSETID",
+        "CAP_IPC_LOCK",
+        "CAP_IPC_OWNER",
+        "CAP_KILL",
+        "CAP_LEASE",
+        "CAP_LINUX_IMMUTABLE",
+        "CAP_MAC_ADMIN",
+        "CAP_MAC_OVERRIDE",
+        "CAP_MKNOD",
+        "CAP_NET_ADMIN",
+        "CAP_NET_BIND_SERVICE",
+        "CAP_NET_BROADCAST",
+        "CAP_NET_RAW",
+        "CAP_PERFMON",
+        "CAP_SETFCAP",
+        "CAP_SETGID",
+        "CAP_SETPCAP",
+        "CAP_SETUID",
+        "CAP_SYS_ADMIN",
+        "CAP_SYS_BOOT",
+        "CAP_SYS_CHROOT",
+        "CAP_SYS_MODULE",
+        "CAP_SYS_NICE",
+        "CAP_SYS_PACCT",
+        "CAP_SYS_PTRACE",
+        "CAP_SYS_RAWIO",
+        "CAP_SYS_RESOURCE",
+        "CAP_SYS_TIME",
+        "CAP_SYS_TTY_CONFIG",
+        "CAP_SYSLOG",
+        "CAP_WAKE_ALARM"
+      ],
+      "ambient": [
+        "CAP_AUDIT_CONTROL",
+        "CAP_AUDIT_READ",
+        "CAP_AUDIT_WRITE",
+        "CAP_BLOCK_SUSPEND",
+        "CAP_BPF",
+        "CAP_CHECKPOINT_RESTORE",
+        "CAP_CHOWN",
+        "CAP_DAC_OVERRIDE",
+        "CAP_DAC_READ_SEARCH",
+        "CAP_FOWNER",
+        "CAP_FSETID",
+        "CAP_IPC_LOCK",
+        "CAP_IPC_OWNER",
+        "CAP_KILL",
+        "CAP_LEASE",
+        "CAP_LINUX_IMMUTABLE",
+        "CAP_MAC_ADMIN",
+        "CAP_MAC_OVERRIDE",
+        "CAP_MKNOD",
+        "CAP_NET_ADMIN",
+        "CAP_NET_BIND_SERVICE",
+        "CAP_NET_BROADCAST",
+        "CAP_NET_RAW",
+        "CAP_PERFMON",
+        "CAP_SETFCAP",
+        "CAP_SETGID",
+        "CAP_SETPCAP",
+        "CAP_SETUID",
+        "CAP_SYS_ADMIN",
+        "CAP_SYS_BOOT",
+        "CAP_SYS_CHROOT",
+        "CAP_SYS_MODULE",
+        "CAP_SYS_NICE",
+        "CAP_SYS_PACCT",
+        "CAP_SYS_PTRACE",
+        "CAP_SYS_RAWIO",
+        "CAP_SYS_RESOURCE",
+        "CAP_SYS_TIME",
+        "CAP_SYS_TTY_CONFIG",
+        "CAP_SYSLOG",
+        "CAP_WAKE_ALARM"
+      ]
+    },
+    "rlimits": [
+      {
+        "type": "RLIMIT_NOFILE",
+        "hard": 1048576,
+        "soft": 1048576
+      }
+    ],
+    "oomScoreAdj": 500
+  },
+  "root": {
+    "path": "/run/cell/runc/50a41866-b2bc-4924-abf2-ec4122bd8e2e/rootfs"
+  },
+  "hostname": "50a41866-b2b",
+  "mounts": [
+    {
+      "destination": "/proc",
+      "type": "proc",
+      "source": "proc"
+    },
+    {
+      "destination": "/dev",
+      "type": "bind",
+      "source": "/dev",
+      "options": [
+        "rbind",
+        "rw"
+      ]
+    },
+    {
+      "destination": "/dev/pts",
+      "type": "devpts",
+      "source": "devpts",
+      "options": [
+        "nosuid",
+        "noexec",
+        "newinstance",
+        "ptmxmode=0666",
+        "mode=0620"
+      ]
+    },
+    {
+      "destination": "/dev/shm",
+      "type": "tmpfs",
+      "source": "shm",
+      "options": [
+        "nosuid",
+        "noexec",
+        "nodev",
+        "mode=1777",
+        "size=65536k"
+      ]
+    },
+    {
+      "destination": "/dev/mqueue",
+      "type": "mqueue",
+      "source": "mqueue",
+      "options": [
+        "nosuid",
+        "noexec",
+        "nodev"
+      ]
+    },
+    {
+      "destination": "/sys",
+      "type": "sysfs",
+      "source": "sysfs",
+      "options": [
+        "nosuid",
+        "noexec",
+        "nodev"
+      ]
+    },
+    {
+      "destination": "/sys/fs/cgroup",
+      "type": "cgroup2",
+      "source": "cgroup",
+      "options": [
+        "nosuid",
+        "noexec",
+        "nodev",
+        "relatime"
+      ]
+    },
+    {
+      "destination": "/etc/hosts",
+      "type": "bind",
+      "source": "/etc/hosts",
+      "options": [
+        "rbind",
+        "ro"
+      ]
+    },
+    {
+      "destination": "/etc/resolv.conf",
+      "type": "bind",
+      "source": "/etc/resolv.conf",
+      "options": [
+        "rbind",
+        "ro"
+      ]
+    },
+    {
+      "destination": "/run/vercel/share",
+      "type": "bind",
+      "source": "/volumes/run/vercel/share",
+      "options": [
+        "rbind"
+      ]
+    },
+    {
+      "destination": "/etc/pki/ca-trust/source/anchors/vercel-proxy-ca.pem",
+      "type": "bind",
+      "source": "/run/cell/ca-cert.pem",
+      "options": [
+        "rbind",
+        "ro"
+      ]
+    },
+    {
+      "destination": "/usr/local/share/ca-certificates/vercel-proxy-ca.crt",
+      "type": "bind",
+      "source": "/run/cell/ca-cert.pem",
+      "options": [
+        "rbind",
+        "ro"
+      ]
+    }
+  ],
+  "linux": {
+    "resources": {
+      "devices": [
+        {
+          "allow": true,
+          "access": "rwm"
+        }
+      ],
+      "pids": {
+        "limit": 4096
+      }
+    },
+    "cgroupsPath": "/container/50a41866-b2bc-4924-abf2-ec4122bd8e2e",
+    "namespaces": [
+      {
+        "type": "pid"
+      },
+      {
+        "type": "ipc"
+      },
+      {
+        "type": "uts"
+      },
+      {
+        "type": "mount"
+      },
+      {
+        "type": "cgroup"
+      }
+    ],
+    "seccomp": {
+      "defaultAction": "SCMP_ACT_ALLOW",
+      "architectures": [
+        "SCMP_ARCH_X86",
+        "SCMP_ARCH_X86_64",
+        "SCMP_ARCH_X32",
+        "SCMP_ARCH_ARM",
+        "SCMP_ARCH_AARCH64"
+      ],
+      "syscalls": [
+        {
+          "names": [
+            "socket"
+          ],
+          "action": "SCMP_ACT_ERRNO",
+          "errnoRet": 13,
+          "args": [
+            {
+              "index": 0,
+              "value": 40,
+              "op": "SCMP_CMP_EQ"
+            }
+          ]
+        }
+      ]
+    },
+    "maskedPaths": [
+      "/proc/kcore",
+      "/proc/keys"
+    ]
+  }
+}
+===== container.pid =====
+565
+===== containerd via h2c curl =====
+--- /containerd.services.containers.v1.Containers/List ---
+
+--- /containerd.services.images.v1.Images/List ---
+
+--- /containerd.services.namespaces.v1.Namespaces/List ---
+
+--- /containerd.services.leases.v1.Leases/List ---
+
+--- /containerd.services.tasks.v1.Tasks/List ---
+
+--- /containerd.services.content.v1.Content/List ---
+
+--- /containerd.services.snapshots.v1.Snapshots/List ---
+
+--- /containerd.services.introspection.v1.Introspection/Plugins ---
+
+
+===== cell.sock h2c =====
+404 page not found
+
+404 page not found
+
+===== cell.sock HTTP1.1 paths (json) =====
+  /health -> HTTP/1.0 404 Not Found
+  /api -> HTTP/1.0 404 Not Found
+  /v1 -> HTTP/1.0 404 Not Found
+  /containers -> HTTP/1.0 404 Not Found
+  /status -> HTTP/1.0 404 Not Found
+  /info -> HTTP/1.0 404 Not Found
+  /cells -> HTTP/1.0 404 Not Found
+  /sandboxes -> HTTP/1.0 404 Not Found
+  /metrics -> HTTP/1.0 404 Not Found
+  /debug/pprof -> HTTP/1.0 404 Not Found
+  /api/v1 -> HTTP/1.0 404 Not Found
+  /api/v1/containers -> HTTP/1.0 404 Not Found
+DONE
+=== rc: 0 ===
+

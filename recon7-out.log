@@ -1,0 +1,67 @@
+exit: 0
+===== sudo root check =====
+uid=0(root) gid=0(root) groups=0(root)
+===== /run contents =====
+total 0
+drwxr-xr-x  5 root root  47 Aug 19 21:41 .
+drwxr-xr-x 19 root root 251 Aug  7 10:53 ..
+drwxrwxrwt  2 root root   6 Jul 24 12:47 lock
+drwxr-xr-x  2 root root  23 Aug  7 10:53 systemd
+drwxr-xr-x  3 root root  19 Aug 19 21:41 vercel
+--- /run/containerd ---
+ls: cannot access '/run/containerd/': No such file or directory
+--- /run/cell ---
+ls: cannot access '/run/cell/': No such file or directory
+--- /run/apm ---
+ls: cannot access '/run/apm/': No such file or directory
+===== mount /dev/vda as root =====
+mount: /mnt/vda: /dev/vda already mounted on /etc/hosts.
+       dmesg(1) may have more information after failed mount system call.
+mount exit: 32
+/mnt/vda:
+total 0
+drwxr-xr-x 2 ubuntu ubuntu  6 Aug 19 22:05 .
+drwxr-xr-x 3 root   root   17 Aug 19 22:05 ..
+===== namespaces PID1 vs self =====
+PID1 ns:
+ 
+. 
+.. 
+cgroup cgroup:[4026532094]
+ipc ipc:[4026532092]
+mnt mnt:[4026532090]
+net net:[4026531833]
+pid pid:[4026532093]
+pid_for_children pid:[4026532093]
+time time:[4026531834]
+time_for_children time:[4026531834]
+user user:[4026531837]
+uts uts:[4026532091]
+self ns:
+ 
+. 
+.. 
+cgroup cgroup:[4026532094]
+ipc ipc:[4026532092]
+mnt mnt:[4026532090]
+net net:[4026531833]
+pid pid:[4026532093]
+pid_for_children pid:[4026532093]
+time time:[4026531834]
+time_for_children time:[4026531834]
+user user:[4026531837]
+uts uts:[4026532091]
+===== mountinfo interesting =====
+69 42 254:16 / / rw,relatime - xfs /dev/vdb rw,nouuid,inode64,logbufs=8,logbsize=32k,noquota
+80 69 254:0 /volumes/run/vercel/share /run/vercel/share rw,relatime master:1 - xfs /dev/root rw,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota
+81 69 254:0 /run/cell/ca-cert.pem /etc/pki/ca-trust/source/anchors/vercel-proxy-ca.pem ro,relatime - xfs /dev/root rw,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota
+82 69 254:0 /run/cell/ca-cert.pem /usr/local/share/ca-certificates/vercel-proxy-ca.crt ro,relatime - xfs /dev/root rw,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=2048,noquota
+===== host dirs reachable? =====
+ls: cannot access '/opt/vercel/': No such file or directory
+/opt/:
+total 0
+drwxr-xr-x  2 root root   6 Jul 24 12:47 .
+drwxr-xr-x 19 root root 251 Aug  7 10:53 ..
+ls: cannot access '/etc/vercel': No such file or directory
+DONE
+

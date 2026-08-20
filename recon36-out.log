@@ -1,0 +1,11 @@
+exit: 0
+Traceback (most recent call last):
+  File "<stdin>", line 21, in <module>
+BlockingIOError: [Errno 11] Resource temporarily unavailable
+=== sniff 8s on eth0 ===
+Traceback (most recent call last):
+  File "<stdin>", line 8, in <module>
+BlockingIOError: [Errno 11] Resource temporarily unavailable
+DONE
+=== rc: 0 ===
+

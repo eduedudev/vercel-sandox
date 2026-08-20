@@ -1,0 +1,33 @@
+exit: 0
+===== containerd.sock gRPC (h2c) via mount =====
+--- containerd/containerd.services.containers.v1.Containers/List ---
+
+--- containerd/containerd.services.images.v1.Images/List ---
+
+--- containerd/containerd.services.namespaces.v1.Namespaces/List ---
+
+--- containerd/containerd.services.tasks.v1.Tasks/List ---
+
+--- containerd/containerd.services.introspection.v1.Introspection/Plugins ---
+
+
+===== TCP 30002 gRPC (h2c) =====
+--- :30002/vercel.hive.celld.api.v1.CelldService/RegisterPort ---
+
+--- :30002/vercel.hive.celld.api.v1.CelldService/StopContainer ---
+
+--- :30002/vercel.hive.celld.api.v1.CelldService/WaitContainer ---
+
+--- :30002/vercel.hive.host.api.v1.HostService/CreateSnapshot ---
+
+--- :30002/vercel.hive.cell.api.drives.v1.DrivesService/SetOCIImageConfig ---
+
+--- :30002/vercel.hive.cell.api.processes.v1.ProcessService/ ---
+
+--- :30002/containerd.services.containers.v1.Containers/List ---
+
+
+===== TCP 30001/23456 connect GET paths =====
+DONE
+=== rc: 0 ===
+

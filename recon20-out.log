@@ -1,0 +1,76 @@
+exit: 0
+===== live vs disk: check socket inodes =====
+/mnt/vda2/run/cell/:
+total 8
+drw-r--r--  3 root root   54 Aug 20 14:11 .
+drwxr-xr-x+19 root root 4096 Aug 20 14:11 ..
+-rw-r--r--  1 root root  639 Aug 20 14:07 ca-cert.pem
+srwxr-xr-x  1 root root    0 Aug 20 14:07 cell.sock
+drwxr-xr-x  3 root root   50 Aug 20 14:11 runc
+
+/mnt/vda2/run/containerd/:
+total 4
+drwx--x--x  9 root root  252 Aug 20 14:07 .
+drwxr-xr-x+19 root root 4096 Aug 20 14:11 ..
+srw-rw----  1 root root    0 Aug 20 14:07 containerd.sock
+srw-rw----  1 root root    0 Aug 20 14:07 containerd.sock.ttrpc
+drwx------  3 root root   24 Aug 20 14:07 fifo
+drwx------  2 root root    6 Aug 20 14:07 io.containerd.grpc.v1.cri
+drwx------  3 root root   32 Aug 20 14:07 io.containerd.mount-manager.v1.bolt
+drwx--x--x  3 root root   21 Aug 20 14:07 io.containerd.runtime.v2.task
+drwx------  2 root root    6 Aug 20 14:07 io.containerd.sandbox.controller.v1.shim
+drwx------  3 root root   21 Aug 20 14:07 runc
+drw-------  2 root root   78 Aug 20 14:07 s
+--- compare with host-visible sockets (ss) ---
+u_str LISTEN 0      0                                                   /run/containerd/containerd.sock.ttrpc 561             * 0                                       
+u_str LISTEN 0      0                                                         /run/containerd/containerd.sock 562             * 0                                       
+u_str LISTEN 0      0                                                                     /run/cell/cell.sock 568             * 0                                       
+u_str LISTEN 0      0                                                             /run/vercel/share/init.sock 884             * 0    users:(("sandbox-init",pid=1,fd=4))
+
+===== connect to cell.sock via mount =====
+--- connect /mnt/vda2/run/cell/cell.sock ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+--- connect /mnt/vda2/run/containerd/containerd.sock ---
+@@@--- connect /mnt/vda2/run/containerd/containerd.sock.ttrpc ---
+
+===== gRPC introspection/health over cell.sock =====
+--- /grpc.health.v1.Health/Check ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:12:29 GMT
+Content-Length: 19
+
+--- /vercel.hive.celld.api.v1.Celld/Health ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:12:29 GMT
+Content-Length: 19
+
+--- /vercel.hive.cell.api.containers.v1.Containers/Create ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:12:29 GMT
+Content-Length: 19
+
+
+===== containerd version via unix (grpc) =====
+/tmp/explore5.sh: line 29: xxd: command not found
+
+===== runc tasks on disk (live?) =====
+/mnt/vda2/run/runc
+/mnt/vda2/run/runc/50a41866-b2bc-4924-abf2-ec4122bd8e2e
+/mnt/vda2/run/runc/50a41866-b2bc-4924-abf2-ec4122bd8e2e/state.json
+/mnt/vda2/run/cell/runc
+/mnt/vda2/run/cell/runc/50a41866-b2bc-4924-abf2-ec4122bd8e2e
+/mnt/vda2/run/cell/runc/50a41866-b2bc-4924-abf2-ec4122bd8e2e/rootfs
+/mnt/vda2/run/cell/runc/50a41866-b2bc-4924-abf2-ec4122bd8e2e/config.json
+/mnt/vda2/run/cell/runc/50a41866-b2bc-4924-abf2-ec4122bd8e2e/container.pid
+===== cell /proc visible? (host pid ns via disk proc) =====
+DONE
+=== rc: 0 ===
+

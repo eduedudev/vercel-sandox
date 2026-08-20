@@ -1,0 +1,233 @@
+exit: 0
+===== /root/.ssh =====
+total 0
+drwx------+2 root root  6 Aug 18 18:14 .
+dr-xr-x---+3 root root 18 Aug 18 18:14 ..
+--- /mnt/vda2/root/.ssh/* ---
+cat: '/mnt/vda2/root/.ssh/*': No such file or directory
+===== /home/vercel =====
+total 12
+drwx------+2 ubuntu ubuntu  62 Aug 19 12:22 .
+drwxr-xr-x+3 root   root    20 Aug 19 12:22 ..
+-rw-r--r--+1 ubuntu ubuntu  18 Jan 28  2023 .bash_logout
+-rw-r--r--+1 ubuntu ubuntu 141 Jan 28  2023 .bash_profile
+-rw-r--r--+1 ubuntu ubuntu 492 Jan 28  2023 .bashrc
+--- /home/vercel/.ssh ---
+ls: cannot access '/mnt/vda2/home/vercel/.ssh': No such file or directory
+[/mnt/vda2/home/vercel/.ssh/*]
+cat: '/mnt/vda2/home/vercel/.ssh/*': No such file or directory
+--- dotfiles ---
+/mnt/vda2/home/vercel/.bash_logout
+/mnt/vda2/home/vercel/.bash_profile
+/mnt/vda2/home/vercel/.bashrc
+===== /opt/vercel =====
+total 35096
+drwxr-xr-x+2 root root       99 Aug 19 12:22 .
+drwxr-xr-x+4 root root       31 Aug 18 18:15 ..
+-rwxr-xr-x+1 1001 1001     1818 Aug 18 18:10 apply-variables-vector.sh
+-rwxr-xr-x+1 1001 1001 35925696 Aug 19 12:21 celld
+-rwxr-xr-x+1 1001 1001      214 Aug 18 18:10 celld-exit-hook.sh
+-rwxr-xr-x+1 1001 1001      707 Aug 18 18:10 celld-init.sh
+--- /opt/cni ---
+total 4
+drwxr-xr-x+3 root root   17 Aug 18 18:15 .
+drwxr-xr-x+4 root root   31 Aug 18 18:15 ..
+drwxr-xr-x+2 root root 4096 Aug 18 18:15 bin
+===== /var/celld =====
+/mnt/vda2/var/celld:
+total 4
+drwxr-x---+ 2 root root    6 Aug 19 12:22 .
+drwxr-xr-x+19 root root 4096 Aug 19 12:22 ..
+===== /var/log =====
+/mnt/vda2/var/log:
+total 100
+drwxr-xr-x+ 4 root root    180 Aug 18 18:14 .
+drwxr-xr-x+19 root root   4096 Aug 19 12:22 ..
+lrwxrwxrwx+ 1 root root     39 Aug 18 18:14 README -> ../../usr/share/doc/systemd/README.logs
+-rw-rw----+ 1 root voice     0 Aug 18 18:14 btmp
+-rw-r--r--+ 1 root root  31148 Aug 18 18:15 dnf.librepo.log
+-rw-r--r--+ 1 root root  48643 Aug 18 18:15 dnf.log
+-rw-r--r--+ 1 root root   8624 Aug 18 18:15 dnf.rpm.log
+-rw-r--r--+ 1 root root    180 Aug 18 18:15 hawkey.log
+drwxr-sr-x+ 2 root 190       6 Aug 18 18:14 journal
+-rw-rw-r--+ 1 root voice     0 Aug 18 18:14 lastlog
+drwx------+ 2 root root      6 Aug 18 18:14 private
+-rw-------+ 1 root root      0 Aug 18 18:14 tallylog
+-rw-rw-r--+ 1 root voice     0 Aug 18 18:14 wtmp
+
+/mnt/vda2/var/log/journal:
+total 0
+drwxr-sr-x+2 root 190    6 Aug 18 18:14 .
+drwxr-xr-x+4 root root 180 Aug 18 18:14 ..
+
+/mnt/vda2/var/log/private:
+total 0
+drwx------+2 root root   6 Aug 18 18:14 .
+drwxr-xr-x+4 root root 180 Aug 18 18:14 ..
+===== /etc/containerd/config.toml =====
+version = 2
+
+disabled_plugins = [
+  "io.containerd.grpc.v1.cri",
+  "io.containerd.snapshotter.v1.blockfile",
+  "io.containerd.snapshotter.v1.btrfs",
+  "io.containerd.snapshotter.v1.aufs",
+  "io.containerd.snapshotter.v1.devmapper",
+  "io.containerd.snapshotter.v1.zfs",
+  "io.containerd.snapshotter.v1.native",
+  "io.containerd.tracing.processor.v1.otlp",
+  "io.containerd.internal.v1.tracing",
+  "io.containerd.grpc.v1.streaming",
+  "io.containerd.grpc.v1.cri",
+  "io.containerd.differ.v1.walking",
+  "io.containerd.grpc.v1.diff",
+  "io.containerd.service.v1.diff-service",
+  "io.containerd.nri.v1.nri",
+  "io.containerd.internal.v1.opt",
+  "io.containerd.internal.v1.restart",
+  "io.containerd.transfer.v1.local",
+  "io.containerd.grpc.v1.transfer",
+  "io.containerd.sandbox.store.v1.local",
+  "io.containerd.sandbox.controller.v1.local",
+  "io.containerd.grpc.v1.sandbox-controllers",
+  "io.containerd.grpc.v1.sandboxes",
+]
+
+[metrics]
+  address = ""  # disables metrics endpoint
+
+[debug]
+  level = "warn"  # reduce log noise and startup time
+===== containerd override =====
+[Service]
+ExecStartPre=
+===== /var/lib/containerd =====
+total 8
+drwx------+11 root root 4096 Aug 19 18:48 .
+drwxr-xr-x+15 root root 4096 Aug 18 18:15 ..
+drwxr-xr-x+ 4 root root   33 Aug 20 14:02 io.containerd.content.v1.content
+drwx--x--x+ 2 root root   21 Aug 19 18:48 io.containerd.metadata.v1.bolt
+drwx--x--x+ 3 root root   21 Aug 20 14:02 io.containerd.runtime.v2.task
+drwx------+ 2 root root    6 Aug 19 18:48 io.containerd.sandbox.controller.v1.shim
+drwx------+ 2 root root    6 Aug 19 18:48 io.containerd.snapshotter.v1.blockfile
+drwx------+ 3 root root   23 Aug 20 14:02 io.containerd.snapshotter.v1.erofs
+drwx------+ 3 root root   23 Aug 19 18:48 io.containerd.snapshotter.v1.native
+--- io.containerd.snapshotter.v1.overlayfs ---
+total 68
+drwx------+ 3 root root     42 Aug 19 18:48 .
+drwx------+11 root root   4096 Aug 19 18:48 ..
+-rw-------+ 1 root root 131072 Aug 20 14:02 metadata.db
+drwx------+ 8 root root     60 Aug 20 14:02 snapshots
+--- io.containerd.content.v1.content ---
+total 13068
+drwxr-xr-x+2 root root    4096 Aug 19 18:48 .
+drwxr-xr-x+3 root root      20 Aug 19 18:48 ..
+-r--r--r--+1 root root    1787 Aug 19 18:48 2047b3a776deda2a547cb10d1d0018234c72daa22f31bbe90dd405c5ba307f29
+-r--r--r--+1 root root     622 Aug 19 18:48 506994b8d0b771e74ff03c73d470dfcb5f8416beca171e6c355563d6a45e9df3
+-r--r--r--+1 root root    1236 Aug 19 18:48 981c1c8c6ac4b2f2f34748e01587129dc503d7a1f7e66be584f53aea6f6f17e2
+-r--r--r--+1 root root 8365152 Aug 19 18:48 b0533cfce1b9314f84aa978e63e449ea15b24bc5ea8892758dfef17f41b6ced5
+-r--r--r--+1 root root      93 Aug 19 18:48 b8a280bf1a3e32acdae08544fed2204a5f19a71c2e62fc12039d6e9e13a5b5a9
+-r--r--r--+1 root root     856 Aug 19 18:48 cb679edd2139deec92f70fdf6832a9abfb6ff9146140b368d626de322ca7b084
+-r--r--r--+1 root root     120 Aug 19 18:48 ce0fdc90ea1a00c92b79ae2d19c81817c9d583d4f7f68bac39629ac9f1966092
+-r--r--r--+1 root root 4983537 Aug 19 18:48 f4326688cd7e14293ecd74d6db23443294e0bddfc5c9895631f32f06b14ec0a7
+===== systemd units of interest =====
+basic.target.wants
+containerd.service.d
+ctrl-alt-del.target
+dbus.service
+default.target
+getty.target.wants
+multi-user.target.wants
+sockets.target.wants
+sysinit.target.wants
+systemd-hwdb-update.service.d
+timers.target.wants
+--- cell service unit ---
+[/mnt/vda2/etc/systemd/system/*cell*]
+cat: '/mnt/vda2/etc/systemd/system/*cell*': No such file or directory
+[/mnt/vda2/lib/systemd/system/celld.service]
+[Unit]
+Description=Cell daemon
+After=containerd.service
+After=vector.service
+Requires=containerd.service
+Requires=vector.service
+
+[Service]
+# convert symlink to real file to handle issues like #inc-2024-05-17-issues-connecting-to-mongodb-atlas-from-build-container
+ExecStartPre=cp --remove-destination /proc/net/pnp /etc/resolv.conf
+ExecStart=/opt/vercel/celld
+ExecStopPost=/opt/vercel/celld-exit-hook.sh
+Restart=no
+Type=notify
+
+# This is so containers started via runc do not inherit the default ulimit of
+# celld. At the time of writing, we don't use the runc runtime under systemd in
+# production. (We only use runc with celld as init). We also raise the limit
+# here for completeness.
+LimitNOFILE=1048576
+
+[Install]
+WantedBy=multi-user.target
+===== find tokens/keys in cell filesystem (fast scan) =====
+/mnt/vda2/opt/vercel/apply-variables-vector.sh
+===== celld logs token-like strings =====
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/00df8b67abfc6d8027626eb5f3e869604464fc959d2a7650a7ce0ef88f1cbd67/python3-wcwidth-0.2.5-3.amzn2023.0.2.noarch.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/0633ca62c5067ce82ef2b18fd3c4420de298837a7916f677e13b482282635633/dnf-plugins-core-4.3.0-13.amzn2023.0.6.noarch.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/063b6413ff094888d817113360332f7e68fadda36767fcf40de0d99c07fbabaa/python3-jmespath-0.10.0-1.amzn2023.0.3.noarch.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/06d66285ecaec0f943b4dc24290c6dfefd291f1d2d6e0a3fb26b966ee7c27f55/tar-1.34-1.amzn2023.0.4.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/07a5c6de366eb6c61def60beb0905e41ea832858467df65c4bb09cc9d30cde63/libnftnl-1.2.2-2.amzn2023.0.2.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/0cde2deae6a92d346f6c8984bda812289e322273a01834bbd6133b69c54e7979/python3-distro-1.5.0-5.amzn2023.0.2.noarch.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/0e77fcfdfd8d72c72644227cf88c3304fa1372058e46a74b292dae789fbb6e8e/libuser-0.63-4.amzn2023.0.2.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/11fff2e6e50f1044b00b1328076545a8ad2ff1a237e0e454ad2e86a6a954e645/dbus-1.12.28-1.amzn2023.0.1.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/1533489c05709f89fe7a5e05816ee0d3e699f953d37e60fed2916d0ac9fe8bc9/iptables-nft-1.8.8-3.amzn2023.0.2.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/1935c9e1fb68627342283112905d8ed05a851447671c48c6dbcc5a57db2dfd34/python3-colorama-0.4.4-2.amzn2023.0.2.noarch.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/1ea0be4b14c504d77f940f8a04439c949746c5f509afd482f6a5772a2c506ba0/python3-urllib3-1.25.10-5.amzn2023.0.7.noarch.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/1f2402fc10b690e16e56563c6d893eb097299a1b9be71a2b81c7e3720f2fe439/python3-dbus-1.2.18-1.amzn2023.0.2.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/2020c283aab8789ae5ccb743966e0670366a6dd23f8c14b9b6ea0a4f518bd1c2/less-608-2.amzn2023.0.2.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/21c8ebbda7a5b5ba17209f58a5428736604b7b8b21125e8d10ddd08eda0f1053/systemd-libs-252.23-12.amzn2023.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/2644f60d37cd4f7aa5288f149464029b02d41e0ee468e020b2d2560636a971d1/containerd-2.2.5-1.amzn2023.0.1.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/2e2af75516c9fdc6621f181c72f4440f55375ccc146fa1a59c7a8c40f92beb6b/python3-prompt-toolkit-3.0.24-1.amzn2023.0.2.noarch.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/2f1191cc1239dd6fd5bc50575604a823a47b64c43f04ee9f0420efa1ba1a4490/e2fsprogs-libs-1.46.5-2.amzn2023.0.2.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/3070d3abc261ab0270717aae200b702861924c35fee59ad2abcf7bdf807462c7/libmnl-1.0.4-13.amzn2023.0.2.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/322786a8e3df9b8dde62b3543f1a932b44eed307917c154a42c97b50ee7c5553/iptables-libs-1.8.8-3.amzn2023.0.2.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/3664efb5954a1c8c01c3600da2418cd5c8fa1f2323bc1200aa3a13edcee64540/pam-1.5.1-8.amzn2023.0.8.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/37afc42e5e5c94f34d7b0f4efc1e7f5bd68b49b1eca42bb4cf9b69e53cbdadd7/oniguruma-6.9.7.1-1.amzn2023.0.2.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/42921b0f73636651a559711e9a316618b0070d157fcc5f4f8bf9c6852e2a439b/libsemanage-3.4-5.amzn2023.0.2.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/45780fe9e90daa7e45c00d807da2385d928c791f547fafa459ce7664f379413c/dnf-utils-4.3.0-13.amzn2023.0.6.noarch.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/49f2344859df0d070b99c6b2eae5e0d5cc394f97621909987b3000a7eb0872e8/inih-58-2.amzn2023.0.1.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/4a3cb4434afe2c672eb3dfd214d0004c0e3e262446317d19ec4a4adc18fd182d/libdb-5.3.28-49.amzn2023.0.2.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/4a4054d8374cc8f324e5bd528f3dd0b9281b4281b79ec746fb8ced7574face2d/cni-plugins-1.7.1-1.amzn2023.0.7.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/4cc6c6e7d328b9294a862029b8b3312c0f674c5f01ea529f60c232db6e05388f/userspace-rcu-0.12.1-3.amzn2023.0.4.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/503d60c3e78bff8d207bc96ecdae1a688e3e1aae9e6c9cf46fd1edff75b1e00c/kbd-2.4.0-2.amzn2023.0.3.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/54ff9c6f79407955b6e9a7ddaebaa819638db422c64a41d4564dea30a83947fb/systemd-252.23-12.amzn2023.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/55c93b8194af8e5d3344302b0de75a0fff1c93bf735fba87ef850093f0f41e8f/libpcap-1.10.1-1.amzn2023.0.2.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/56f750f73b18390f61f304213d085b436db29c4c754463196b87a11c8f5340b9/libargon2-20171227-9.amzn2023.0.2.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/58412cd8ad189185d5020ac7a433c4caa435146ea452a8812f32978d71a1e038/fuse-libs-2.9.9-13.amzn2023.0.2.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/59708c7da1d8d2d6fd163f6b6075e1559983dd091c9860e25d31dacc58950a3b/systemd-udev-252.23-12.amzn2023.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/5987ef9835ef1277e65a6d5a05e9ffb2d8d5ef2827e6db0a510624aaee7d5b0a/libss-1.46.5-2.amzn2023.0.2.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/5ef9b218fad3bcc1104e10cee7f2b667366fecaedec2e4b14884b458ee369c40/systemd-pam-252.23-12.amzn2023.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/6320c75545aa25901a7de2768acb05c3ac974219c2cc1fa93174863728433325/python3-dateutil-2.8.1-3.amzn2023.0.2.noarch.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/68a35b912a5f4213ce65ec21c786444f3ad50ff7a836ef1336d658275dfca3ab/psmisc-23.4-1.amzn2023.0.2.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/68c40785d71392fd0ff6f38d1aa6c732fa1fe29b9ed1deff020ae8944a47777d/procps-ng-3.3.17-1.amzn2023.0.2.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/6b564682fe93f857590f58e1fa95081f8ee2e1f47842d1b85054bd048fccc02b/device-mapper-1.02.185-1.amzn2023.0.5.x86_64.rpm
+https://cdn.amazonlinux.com/al2023/core/guids/b931e59462596572851c0724d5b8efa54b154f37b41f56caa06283d8d5bc4b84/x86_64/../../../../blobstore/6b7b568461a81bd209d3e95f44d8cf49df9798296141bffca8d21c2fec477212/util-linux-2.37.4-1.amzn2023.0.6.x86_64.rpm
+===== mount table inside cell /proc/mounts =====
+===== crontabs / sudoers =====
+## Sudoers allows particular users to run various commands as
+## the root user, without needing the root password.
+##
+## Examples are provided at the bottom of the file for collections
+## of related commands, which can then be delegated out to particular
+## users or groups.
+## 
+## This file must be edited with the 'visudo' command.
+
+## Host Aliases
+total 8
+drwxr-x---+ 2 root root   20 Aug 19 12:22 .
+drwxr-xr-x+56 root root 4096 Aug 20 14:02 ..
+-rw-r--r--+ 1 root root   30 Aug 19 12:22 vercel
+DONE
+=== rc: 0 ===
+

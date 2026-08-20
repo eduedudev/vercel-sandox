@@ -1,0 +1,56 @@
+exit: 0
+===== /containerd.services.namespaces.v1.Namespaces/List =====
+HTTP/2 200 
+content-type: application/grpc
+
+grpc-status: 0
+grpc-message: 
+--- body (first 200 bytes) ---
+0000000  \0  \0  \0  \0  \v  \n  \t  \n  \a   d   e   f   a   u   l   t
+0000020
+===== /containerd.services.containers.v1.Containers/List =====
+HTTP/2 200 
+content-type: application/grpc
+grpc-status: 9
+grpc-message: namespace is required: failed precondition
+
+--- body (first 200 bytes) ---
+0000000
+===== /containerd.services.images.v1.Images/List =====
+HTTP/2 200 
+content-type: application/grpc
+grpc-status: 9
+grpc-message: namespace is required: failed precondition
+
+--- body (first 200 bytes) ---
+0000000
+===== /containerd.services.tasks.v1.Tasks/List =====
+HTTP/2 200 
+content-type: application/grpc
+grpc-status: 9
+grpc-message: namespace is required: failed precondition
+
+--- body (first 200 bytes) ---
+0000000
+===== /containerd.services.introspection.v1.Introspection/Plugins =====
+HTTP/2 200 
+content-type: application/grpc
+
+grpc-status: 0
+grpc-message: 
+--- body (first 200 bytes) ---
+0000000  \0  \0  \0 020 242  \n   a  \n 030   i   o   .   c   o   n   t
+0000020   a   i   n   e   r   d   .   c   o   n   t   e   n   t   .   v
+0000040   1 022  \a   c   o   n   t   e   n   t   *   <  \n 004   r   o
+0000060   o   t 022   4   /   v   a   r   /   l   i   b   /   c   o   n
+0000100   t   a   i   n   e   r   d   /   i   o   .   c   o   n   t   a
+0000120   i   n   e   r   d   .   c   o   n   t   e   n   t   .   v   1
+0000140   .   c   o   n   t   e   n   t  \n   )  \n 037   i   o   .   c
+0000160   o   n   t   a   i   n   e   r   d   .   i   m   a   g   e   -
+0000200   v   e   r   i   f   i   e   r   .   v   1 022 006   b   i   n
+0000220   d   i   r  \n   (  \n 030   i   o   .   c   o   n   t   a   i
+0000240   n   e   r   d   .   w   a   r   n   i   n   g   .   v   1 022
+0000260  \f   d   e   p   r   e   c   a   t   i   o   n   s  \n   7  \n
+DONE
+=== rc: 0 ===
+

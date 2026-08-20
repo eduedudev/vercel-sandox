@@ -1,0 +1,12 @@
+exit: 0
+=== try /dev/mem ===
+0000000   d   d   :       I   O       e   r   r   o   r   :       I   s
+0000020       a       d   i   r   e   c   t   o   r   y  \n
+0000035
+crw-rw-rw- 1 root root 1, 3 Aug 20 14:35 /proc/kcore
+=== scan /proc/kcore for datadog/mmds strings ===
+=== scan mounted disk more broadly for secrets ===
+/tmp/explore23.sh: line 13: syntax error near unexpected token `('
+/tmp/explore23.sh: line 13: `grep -rls -e "DATADOG_API_KEY" -e '".credentials' -e "api-key":" $R 2>/dev/null | grep -vE "/(proc|sys|dev)/" | head -20'
+=== rc: 2 ===
+

@@ -1,0 +1,7 @@
+exit: 0
+=== scanning guest physical RAM via /dev/mem for secrets ===
+read err at 0 [Errno 1] Operation not permitted
+scanned bytes: 0 hits: 0
+DONE
+=== rc: 0 ===
+

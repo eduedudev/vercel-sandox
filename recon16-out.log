@@ -1,0 +1,244 @@
+exit: 0
+===== celld-init.sh =====
+#!/bin/sh
+
+mount -t proc none /proc
+mount -t sysfs none /sys
+mount -t cgroup2 none /sys/fs/cgroup
+
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# convert symlink to real file to handle issues like #inc-2024-05-17-issues-connecting-to-mongodb-atlas-from-build-container
+cp --remove-destination /proc/net/pnp /etc/resolv.conf
+
+sysctl \
+  fs.inotify.max_user_watches=524288 \
+  kernel.pid_max=4194304 \
+  net.ipv4.ping_group_range="0 2147483647" \
+  kernel.core_uses_pid=1 \
+  kernel.sysrq=16 \
+  > /dev/null 2>&1
+
+args=(--init)
+
+for arg in $(</proc/cmdline); do
+  case $arg in
+    cell_id=*) args+=(--cell-id="${arg#cell_id=}") ;;
+  esac
+done
+
+exec /opt/vercel/celld "${args[@]}"
+
+===== celld-exit-hook.sh =====
+#!/bin/env bash
+
+set -euo pipefail
+
+echo "Celld exit hook called."
+
+# Give some time to journalctl to log everything
+sleep 5
+
+# Firecracker needs 'reboot' instead of 'shutdown' to stop the machine
+systemctl reboot
+
+===== apply-variables-vector.sh =====
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# This is the default MMDS IP address which is set by firecracker.
+mmds_ipv4_addr=169.254.169.254
+
+# If a resources has empty string MMDS just leaves the connection open forever.
+# Let's avoid that by setting the max-time.
+curl_opts="--max-time 2 --silent --show-error --fail-with-body"
+
+mmds_token=$(curl -X PUT "http://${mmds_ipv4_addr}/latest/api/token" -H "X-metadata-token-ttl-seconds: 60" $curl_opts)
+mmds_data=$(curl "http://${mmds_ipv4_addr}" -H "Accept: application/json" -H "X-metadata-token: $mmds_token" $curl_opts)
+
+mmds_get_value() {
+  local key=$1
+  local path=$2
+  value=$(echo "$mmds_data" | jq --raw-output "$path")
+  if [ -n "$value" ]; then
+    echo "$value"
+  else
+    echo "'$key' is missing from MMDS store!"
+    echo ""
+  fi
+}
+
+disable_debug_logs() {
+  cd /etc/vector
+  rm -rf sources/kernel.toml
+  rm -rf transforms/kernel_remap.toml
+  rm -rf sinks/datadog_kernel.toml
+}
+
+datadog_api_key=$(mmds_get_value "datadog_api_key" '.credentials.datadog["api-key"]')
+cell_id=$(mmds_get_value "cell_id" '."cell-id"')
+hive_id=$(mmds_get_value "hive_id" '."hive-id"')
+hive_realm=$(mmds_get_value "hive_realm" '."hive-realm"')
+enable_debug_logs=$(mmds_get_value "debug_logs" '."debug-logs"')
+
+if [ -n "$datadog_api_key" ]; then
+  echo "DATADOG_API_KEY=$datadog_api_key" >> /etc/default/vector
+fi
+
+
+if [ -n "$cell_id" ]; then
+  echo "CELL_ID=$cell_id" >> /etc/default/vector
+fi
+
+
+if [ -n "$hive_realm" ]; then
+  echo "HIVE_REALM=$hive_realm" >> /etc/default/vector
+fi
+
+if [ -n "$hive_id" ]; then
+  echo "HIVE_ID=$hive_id" >> /etc/default/vector
+fi
+
+if [[ $enable_debug_logs != "true" ]]; then
+  disable_debug_logs
+fi
+
+build_version=$(awk -v RS=' ' -F= '/^build_version=/{print $2}' /proc/cmdline)
+echo "BUILD_VERSION=${build_version:-unknown}" >> /etc/default/vector
+
+===== sudoers.d/vercel =====
+vercel ALL=(ALL) NOPASSWD:ALL
+
+===== /run/cell/ca-cert.pem =====
+-----BEGIN CERTIFICATE-----
+MIIBqjCCAU+gAwIBAgIQaDMc/4+CwIyHkogyd142pTAKBggqhkjOPQQDAjAzMQ8w
+DQYDVQQKEwZWZXJjZWwxIDAeBgNVBAMTF1ZlcmNlbCBOZXR3b3JrIFByb3h5IENB
+MB4XDTI2MDgyMDE0MDIwNVoXDTI2MDgyMTE0MjIwNVowMzEPMA0GA1UEChMGVmVy
+Y2VsMSAwHgYDVQQDExdWZXJjZWwgTmV0d29yayBQcm94eSBDQTBZMBMGByqGSM49
+AgEGCCqGSM49AwEHA0IABD5Y3Ov/p3QwsEr3n6JB1LUfU7wHpLKcxyxBRzTOZWwT
+WlCvErqVDftcFahEPSn1lvDi+WwiQzQoT/DJY8eqar+jRTBDMA4GA1UdDwEB/wQE
+AwIBBjASBgNVHRMBAf8ECDAGAQH/AgEAMB0GA1UdDgQWBBQujdkNoTYYhwiq8ITj
+iXbV5IqfqTAKBggqhkjOPQQDAgNJADBGAiEAjiMBu08WMUISiyjtRBA9hh24npwA
+1gTZJM1DqBH91+4CIQC+SaYY2CJqWbt7BK0jtYLMDrOQ0jP6de+04nO6IhRLbw==
+-----END CERTIFICATE-----
+
+===== containerd runtime tasks (running sandboxes?) =====
+total 4
+drwx--x--x+ 3 root root   21 Aug 20 14:02 .
+drwx------+11 root root 4096 Aug 19 18:48 ..
+drwx--x--x  3 root root   50 Aug 20 14:02 default
+/mnt/vda2/var/lib/containerd/io.containerd.runtime.v2.task
+/mnt/vda2/var/lib/containerd/io.containerd.runtime.v2.task/default
+/mnt/vda2/var/lib/containerd/io.containerd.runtime.v2.task/default/1dd682e7-928f-4ee2-a5e1-33e7f566fa05
+===== snapshots =====
+total 0
+drwx------+8 root root 60 Aug 20 14:02 .
+drwx------+3 root root 42 Aug 19 18:48 ..
+drwx------+4 root root 28 Aug 19 18:48 1
+drwx------+4 root root 28 Aug 19 18:48 2
+drwx------+4 root root 28 Aug 19 18:48 3
+drwx------+4 root root 28 Aug 19 18:48 4
+drwx------+4 root root 28 Aug 19 18:48 5
+drwx------ 4 root root 28 Aug 20 14:02 6
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/1
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/1/fs
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/1/work
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2/work
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/3
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/3/fs
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/3/work
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/4
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/4/fs
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/4/work
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/5
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/5/fs
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/5/work
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/6
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/6/fs
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/6/work
+===== erofs snapshotter =====
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.erofs/:
+total 4
+drwx------+ 3 root root   23 Aug 20 14:02 .
+drwx------+11 root root 4096 Aug 19 18:48 ..
+drwx------  2 root root    6 Aug 20 14:02 snapshots
+
+/mnt/vda2/var/lib/containerd/io.containerd.snapshotter.v1.erofs/snapshots:
+total 0
+drwx------ 2 root root  6 Aug 20 14:02 .
+drwx------+3 root root 23 Aug 20 14:02 ..
+===== vector config =====
+total 24
+drw-r-x---+ 5 root 998    118 Aug 18 18:15 .
+drwxr-xr-x+56 root root  4096 Aug 20 14:02 ..
+-rw-r-x---+ 1 root 998   1386 Aug 18 18:10 internal_metrics.toml
+drw-r-x---+ 2 root 998     59 Aug 18 18:10 sinks
+drw-r-x---+ 2 root 998     43 Aug 18 18:10 sources
+-rw-r-x---+ 1 root 998  10801 Aug 18 18:10 tests.toml
+drw-r-x---+ 2 root 998     77 Aug 18 18:10 transforms
+-rw-r-x---+ 1 root 998     50 Aug 18 18:10 vector.toml
+cat: /mnt/vda2/etc/vector/vector.yaml: No such file or directory
+# Reports metrics about all of Vector. We filter this
+# later as it would lead to a lot of noise otherwise.
+[sources.metrics_internal]
+type = "internal_metrics"
+namespace = "hive.vector"
+
+[transforms.metrics_internal_filter]
+type = "filter"
+inputs = ["metrics_internal"]
+condition = '''
+  allowlist_metrics = [
+    "buffer_discarded_events_total",
+    "buffer_received_event_bytes_total",
+    "buffer_received_events_total",
+    "buffer_sent_event_bytes_total",
+    "buffer_sent_events_total",
+    "component_discarded_events_total",
+    "component_errors_total",
+    "component_received_bytes_total",
+    "component_received_events_total",
+    "component_sent_bytes_total",
+    "component_sent_events_total"
+  ]
+  allowlist_components = [
+    "cloudwatch_container",
+    "kinesis",
+  ]
+  includes(allowlist_metrics, .name) && includes(allowlist_components, .tags.component_id)
+'''
+
+[transforms.metrics_tagged]
+type = "remap"
+inputs = [ "metrics_internal_filter" ]
+source = '''
+  .tags.service = "hive"
+  .tags.hive = "true"
+  .tags.env = "${HIVE_ID}"
+  .tags.hive_realm = "${HIVE_REALM}"
+  .tags.cell = "true"
+'''
+===== test WRITE access to host disk =====
+WRITE_OK
+-rw-r--r-- 1 root root 0 Aug 20 14:07 /mnt/vda2/.write_test_probe_1787234844
+CLEANED
+===== celld binary info =====
+/mnt/vda2/opt/vercel/celld: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=520784142dcd953fba2d743e403d757f3c17345b, for GNU/Linux 3.2.0, stripped
+95bd1c2d6ba6667f710907b0c437b32fbcc698a6731b9f609067aab08cf3d687  /mnt/vda2/opt/vercel/celld
+-rwxr-xr-x+ 1 1001 1001 35925696 Aug 19 12:21 /mnt/vda2/opt/vercel/celld
+===== journal dir size =====
+0	/mnt/vda2/var/log/journal
+===== check for other cell rootfs data (volumes) =====
+/mnt/vda2/volumes
+/mnt/vda2/volumes/run
+/mnt/vda2/volumes/run/vercel
+/mnt/vda2/volumes/run/vercel/share
+/mnt/vda2/volumes/run/vercel/share/sandbox-init
+/mnt/vda2/volumes/run/vercel/share/init.sock
+DONE
+=== rc: 0 ===
+

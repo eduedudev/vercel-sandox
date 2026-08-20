@@ -1,0 +1,55 @@
+exit: 0
+===== network config files on cell disk =====
+ls: cannot access '/mnt/vda2/etc/network/': No such file or directory
+ls: cannot access '/mnt/vda2/etc/NetworkManager/': No such file or directory
+/mnt/vda2/etc/systemd/network/:
+total 4
+drwxr-xr-x+2 root root    6 Jun 17 20:28 .
+drwxr-xr-x+6 root root 4096 Aug 19 12:22 ..
+===== grep MMDS/169.254 across cell rootfs (quick) =====
+/mnt/vda2/opt/vercel/apply-variables-vector.sh
+/mnt/vda2/opt/vercel/celld
+===== grep datadog api key cached =====
+/mnt/vda2/etc/vector/internal_metrics.toml
+/mnt/vda2/etc/vector/sinks/datadog_celld.toml
+/mnt/vda2/etc/vector/sinks/datadog_kernel.toml
+/mnt/vda2/opt/vercel/apply-variables-vector.sh
+/mnt/vda2/var/lib/rpm/rpmdb.sqlite
+===== find firecracker config / launch artifacts =====
+===== DHCP leases =====
+/mnt/vda2/etc/dnf/plugins/release-notification.conf
+/mnt/vda2/etc/system-release-cpe
+/mnt/vda2/etc/system-release
+/mnt/vda2/etc/os-release
+/mnt/vda2/etc/amazon-linux-release-cpe
+/mnt/vda2/etc/amazon-linux-release
+/mnt/vda2/usr/lib/os-release
+/mnt/vda2/usr/lib/python3.9/site-packages/awscli/botocore/.changes/next-release
+/mnt/vda2/usr/lib/python3.9/site-packages/awscli/examples/ec2/release-address.rst
+/mnt/vda2/usr/lib/python3.9/site-packages/awscli/examples/ec2/release-hosts.rst
+===== interfaces / resolve =====
+#MANUAL
+nameserver 172.31.0.2
+===== /var/celld, /run/celld, env files =====
+ls: cannot access '/mnt/vda2/run/celld/': No such file or directory
+/mnt/vda2/var/celld/:
+total 4
+drwxr-x---+ 2 root root    6 Aug 19 12:22 .
+drwxr-xr-x+19 root root 4096 Aug 19 12:22 ..
+# /etc/default/vector
+# This file can theoretically contain a bunch of environment variables
+# for Vector.  See https://vector.dev/docs/setup/configuration/#environment-variables
+# for details.
+===== vector tomls render check (env vars) =====
+===== cell network route to 169.254 in proc =====
+Iface	Destination	Gateway 	Flags	RefCnt	Use	Metric	Mask		MTU	Window	IRTT                                                       
+eth0	00000000	01004064	0003	0	0	0	00000000	0	0	0                                                                               
+eth0	00004064	00000000	0001	0	0	0	0000FFFF	0	0	0                                                                               
+IP address       HW type     Flags       HW address            Mask     Device
+100.64.0.1       0x1         0x2         a2:9c:3d:b5:a8:e9     *        eth0
+===== try adding ARP entry to MMDS =====
+/tmp/explore16.sh: line 29: arping: command not found
+
+DONE
+=== rc: 0 ===
+

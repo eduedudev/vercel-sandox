@@ -1,0 +1,155 @@
+exit: 0
+===== caps =====
+CapInh:	000001ffffffffff
+CapPrm:	000001ffffffffff
+CapEff:	000001ffffffffff
+CapBnd:	000001ffffffffff
+CapAmb:	000001ffffffffff
+0x000001ffffffffff=cap_chown,cap_dac_override,cap_dac_read_search,cap_fowner,cap_fsetid,cap_kill,cap_setgid,cap_setuid,cap_setpcap,cap_linux_immutable,cap_net_bind_service,cap_net_broadcast,cap_net_admin,cap_net_raw,cap_ipc_lock,cap_ipc_owner,cap_sys_module,cap_sys_rawio,cap_sys_chroot,cap_sys_ptrace,cap_sys_pacct,cap_sys_admin,cap_sys_boot,cap_sys_nice,cap_sys_resource,cap_sys_time,cap_sys_tty_config,cap_mknod,cap_lease,cap_audit_write,cap_audit_control,cap_setfcap,cap_mac_override,cap_mac_admin,cap_syslog,cap_wake_alarm,cap_block_suspend,cap_audit_read,cap_perfmon,cap_bpf,cap_checkpoint_restore
+/usr/bin/nc
+/usr/bin/curl
+/usr/bin/wget
+/usr/bin/python3
+/usr/bin/perl
+
+===== host netns TCP listeners =====
+State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess
+LISTEN 0      4096               *:23456            *:*          
+LISTEN 0      4096               *:30001            *:*          
+LISTEN 0      4096               *:30002            *:*          
+===== UDP listeners =====
+State Recv-Q Send-Q Local Address:Port Peer Address:PortProcess
+===== UNIX sockets =====
+Netid State  Recv-Q Send-Q                                                                      Local Address:Port Peer Address:PortProcess                             
+u_str LISTEN 0      0                                                                       /run/apm/apm.sock 549             * 0                                       
+u_str LISTEN 0      0                                                   /run/containerd/containerd.sock.ttrpc 561             * 0                                       
+u_str LISTEN 0      0                                                         /run/containerd/containerd.sock 562             * 0                                       
+u_str LISTEN 0      0                                                                     /run/cell/cell.sock 568             * 0                                       
+u_str LISTEN 0      0      /run/containerd/s/920b903dc8905838b6f0db5c4eefa1cea67cb80e183b390cc714c98bbb57148f 583             * 0                                       
+u_str LISTEN 0      0                                                             /run/vercel/share/init.sock 879             * 0    users:(("sandbox-init",pid=1,fd=4))
+
+===== distinct net namespaces =====
+      1 net:[4026531833] /proc/70/ns/net
+      1 net:[4026531833] /proc/69/ns/net
+      1 net:[4026531833] /proc/68/ns/net
+      1 net:[4026531833] /proc/67/ns/net
+      1 net:[4026531833] /proc/66/ns/net
+      1 net:[4026531833] /proc/34/ns/net
+      1 net:[4026531833] /proc/28/ns/net
+      1 net:[4026531833] /proc/26/ns/net
+      1 net:[4026531833] /proc/15/ns/net
+      1 net:[4026531833] /proc/14/ns/net
+
+===== probe loopback ports banner =====
+--- port 23456 ---
+
+HTTP/1.0 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:00:17 GMT
+--- port 30001 ---
+
+HTTP/1.0 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:00:20 GMT
+--- port 30002 ---
+
+
+===== connect RPC paths on 23456/30001/30002 =====
+--- 23456 connect SpawnService Ping (unauthenticated) ---
+HTTP/1.0 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:00:20 GMT
+Content-Length: 19
+
+404 page not found
+--- 23456 grpc reflection ---
+HTTP/1.0 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:00:20 GMT
+--- 30001 connect SpawnService Ping (unauthenticated) ---
+HTTP/1.0 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:00:20 GMT
+Content-Length: 19
+
+404 page not found
+--- 30001 grpc reflection ---
+HTTP/1.0 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:00:20 GMT
+--- 30002 connect SpawnService Ping (unauthenticated) ---
+--- 30002 grpc reflection ---
+
+===== common paths on 23456 =====
+--- / ---
+HTTP/1.0 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+--- /health ---
+HTTP/1.0 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+--- /healthz ---
+HTTP/1.0 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+--- /status ---
+HTTP/1.0 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+--- /metrics ---
+HTTP/1.0 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+--- /version ---
+HTTP/1.0 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+--- /api ---
+HTTP/1.0 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+--- /v1 ---
+HTTP/1.0 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+--- /spawn ---
+HTTP/1.0 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+--- /ping ---
+HTTP/1.0 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+--- /_ping ---
+HTTP/1.0 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+
+===== init.sock auth test (empty/with headers) =====
+--- headers:  ---
+timeout: failed to execute process: No such file or directory (os error 2)
+--- headers: -H 'Content-Type: application/json' ---
+timeout: failed to execute process: No such file or directory (os error 2)
+--- headers: -H 'Connect-Protocol-Version: 1' -H 'X-Signature: AAAAA' -H 'X-Timestamp: 1234567890' ---
+timeout: failed to execute process: No such file or directory (os error 2)
+
+===== /run/vercel/share listing =====
+total 15708
+drwxrwxrwx 2 ubuntu ubuntu       43 Aug 20 14:00 .
+drwxr-xr-x 3 root   root         19 Aug 19 21:41 ..
+srw------- 1 ubuntu ubuntu        0 Aug 20 14:00 init.sock
+-rwxr-xr-x 1 root   root   16082925 Aug 20 13:58 sandbox-init
+total 15708
+drwxrwxrwx 2 ubuntu ubuntu       43 Aug 20 14:00 .
+drwxr-xr-x 3 root   root         19 Aug 19 21:41 ..
+srw------- 1 ubuntu ubuntu        0 Aug 20 14:00 init.sock
+-rwxr-xr-x 1 root   root   16082925 Aug 20 13:58 sandbox-init
+DONE
+

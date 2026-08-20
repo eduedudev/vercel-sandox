@@ -1,0 +1,32 @@
+exit: 0
+===== containerd prior-knowledge =====
+--- containerd/containerd.services.namespaces.v1.Namespaces/List ---
+0000000
+--- containerd/containerd.services.containers.v1.Containers/List ---
+0000000
+--- containerd/containerd.services.images.v1.Images/List ---
+0000000
+--- containerd/containerd.services.tasks.v1.Tasks/List ---
+0000000
+
+===== cell.sock prior-knowledge (grpc) =====
+--- cell/vercel.hive.celld.api.v1.CelldService/RegisterPort ---
+0000000
+--- cell/vercel.hive.host.api.v1.HostService/CreateSnapshot ---
+0000000
+--- cell/vercel.sandbox.spawn.v1.SpawnService/Ping ---
+0000000
+
+===== SOCKS5 test on 30002 =====
+0000000
+--- socks5 with connect to 127.0.0.1:23456 ---
+0000000
+
+===== TLS probe on 30002 =====
+0000000   C   o   n   n   e   c   t   i   n   g       t   o       1   2
+0000020   7   .   0   .   0   .   1  \n   4   0   D   7   1   0   4   D
+0000040   7   2   7   F   0   0   0   0   :   e   r   r   o   r   :   0
+0000060   A   0   0   0   1   2   6   :   S   S   L       r   o   u   t
+DONE
+=== rc: 0 ===
+

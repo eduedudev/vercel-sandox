@@ -1,0 +1,30 @@
+prep exit: 0
+total 35324
+drwxr-xr-x 2 root root      284 Aug 20 14:08 .
+drwxrwxrwt 6 root root      183 Aug 20 14:08 ..
+-rwxr-xr-x 1 root root     1818 Aug 20 14:09 apply-variables-vector.sh
+-rw-r--r-- 1 root root      639 Aug 20 14:09 ca-cert.pem
+-rwxr-xr-x 1 root root 35925696 Aug 20 14:09 celld
+-rwxr-xr-x 1 root root      214 Aug 20 14:09 celld-exit-hook.sh
+-rwxr-xr-x 1 root root      707 Aug 20 14:09 celld-init.sh
+-rw-r-x--- 1 root root      147 Aug 20 14:09 celld.toml
+-rw-r--r-- 1 root root     1045 Aug 20 14:09 containerd-config.toml
+-rw-r--r-- 1 root root   262144 Aug 20 14:09 containerd-meta.db
+-rw-r-x--- 1 root root       84 Aug 20 14:09 datadog_celld.toml
+-rw-r-x--- 1 root root       87 Aug 20 14:09 datadog_kernel.toml
+-rw-r-x--- 1 root root       77 Aug 20 14:09 kernel.toml
+-rw------- 1 root root   131072 Aug 20 14:09 snap-meta.db
+
+celld: 35925696 bytes saved
+containerd-meta.db: 262144 bytes saved
+snap-meta.db: 131072 bytes saved
+containerd-config.toml: 1045 bytes saved
+celld-init.sh: 707 bytes saved
+celld-exit-hook.sh: 214 bytes saved
+apply-variables-vector.sh: 1818 bytes saved
+ca-cert.pem: 639 bytes saved
+datadog_celld.toml: 84 bytes saved
+datadog_kernel.toml: 87 bytes saved
+celld.toml: 147 bytes saved
+kernel.toml: 77 bytes saved
+done

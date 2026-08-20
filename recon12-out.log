@@ -1,0 +1,79 @@
+exit: 0
+===== block devices =====
+NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINTS
+vda  254:0    0  33G  0 disk /usr/local/share/ca-certificates/vercel-proxy-ca.crt
+                             /etc/pki/ca-trust/source/anchors/vercel-proxy-ca.pem
+                             /run/vercel/share
+                             /etc/resolv.conf
+                             /etc/hosts
+vdb  254:16   0  64G  0 disk /
+ls: cannot access '/dev/sd*': No such file or directory
+brw------- 1 root root 254,  0 Aug 20 13:58 /dev/vda
+brw------- 1 root root 254, 16 Aug 20 13:58 /dev/vdb
+major minor  #blocks  name
+
+ 254        0   34603008 vda
+ 254       16   67108864 vdb
+
+===== try mount /dev/vda (ro) =====
+mount: /mnt/vda: /dev/vda already mounted on /etc/hosts.
+       dmesg(1) may have more information after failed mount system call.
+mount: /mnt/vda: /dev/vda already mounted on /etc/hosts.
+       dmesg(1) may have more information after failed mount system call.
+total 0
+drwxr-xr-x 2 ubuntu ubuntu  6 Aug 19 22:05 .
+drwxr-xr-x 5 root   root   47 Aug 20 13:49 ..
+--- try mount --rbind of the existing mount via /proc/mounts ---
+
+===== snapshot: can we read all of /dev/vda? =====
+
+===== AF_PACKET sniff test (5s, cap_net_raw) =====
+iface eth0 proto 0x800 len 66 e670930aa610da5b03207337080045000034be4640007f06ce3c644000016440a6bfdcfa5ba04081b09fa9d427428010003f6f6700000101080a38bf3ed65b60
+iface lo proto 0x800 len 628 00000000000000000000000008004500026656bf40004011e3c57f0000017f000001d10d1fbd0252006664617461646f672e7472616365722e7370616e735f73
+iface lo proto 0x800 len 628 00000000000000000000000008004500026656bf40004011e3c57f0000017f000001d10d1fbd0252006664617461646f672e7472616365722e7370616e735f73
+total frames: 10
+
+===== ifaces =====
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e6:70:93:0a:a6:10 brd ff:ff:ff:ff:ff:ff
+    inet 100.64.166.191/16 brd 100.64.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::e470:93ff:fe0a:a610/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+
+===== try install tcpdump/strace via apt (offline?) =====
+/usr/bin/apt-get
+Reading state information...
+E: Unable to locate package tcpdump
+E: Unable to locate package strace
+
+===== pid 1 memory dump with ptrace (targeted) =====
+-r--r--r-- 1 ubuntu ubuntu 0 Aug 20 14:02 /proc/1/maps
+-rw------- 1 ubuntu ubuntu 0 Aug 20 14:02 /proc/1/mem
+00400000-008db000 r-xp 00000000 fe:00 125832488                          /run/vercel/share/sandbox-init
+008db000-00e30000 r--p 004db000 fe:00 125832488                          /run/vercel/share/sandbox-init
+00e30000-00e9e000 rw-p 00a30000 fe:00 125832488                          /run/vercel/share/sandbox-init
+00e9e000-02ee2000 rw-p 00000000 00:00 0 
+1af4d4000000-1af4d5800000 ---p 00000000 00:00 0 
+--- attempt read of /proc/1/mem segments for interesting strings ---
+try /proc/1/syscall and stack:
+202 0xea1af8 0x80 0x0 0x0 0x0 0x0 0x7ffde04cc888 0x490fe3
+total 0
+dr-xr-xr-x 10 ubuntu ubuntu 0 Aug 20 14:00 .
+dr-xr-xr-x  9 ubuntu ubuntu 0 Aug 20 14:00 ..
+dr-xr-xr-x  7 ubuntu ubuntu 0 Aug 20 14:00 1
+dr-xr-xr-x  7 ubuntu ubuntu 0 Aug 20 14:02 10
+dr-xr-xr-x  7 ubuntu ubuntu 0 Aug 20 14:02 11
+dr-xr-xr-x  7 ubuntu ubuntu 0 Aug 20 14:02 12
+dr-xr-xr-x  7 ubuntu ubuntu 0 Aug 20 14:02 6
+dr-xr-xr-x  7 ubuntu ubuntu 0 Aug 20 14:02 7
+dr-xr-xr-x  7 ubuntu ubuntu 0 Aug 20 14:02 8
+DONE
+bash: line 18: strings: command not found
+

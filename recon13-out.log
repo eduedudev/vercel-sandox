@@ -1,0 +1,60 @@
+exit: 0
+===== unshare mount test =====
+/usr/bin/unshare
+/usr/bin/nsenter
+MOUNTED_OK
+bin
+boot
+dev
+etc
+home
+lib
+lib64
+local
+media
+mnt
+opt
+proc
+root
+run
+sbin
+srv
+sys
+tmp
+usr
+var
+volumes
+
+===== AF_PACKET long sniff (20s) all ifaces, decode ascii =====
+
+===== pid1 memory regions scan =====
+scan done; hits:
+  X-Signature: 2 hits; first: ('0x9ef056', "b'-StatusunavailableAccept-PostcompressionX-SignatureX-Timestampwait_status\\x1b[%dm%s\\x1b[0mshort writebad argSizemethodargs(reflect.SetassistQueuenetpollInitreflectOffsglobalAllo'")
+  X-Timestamp: 2 hits; first: ('0x9ef061', "b'ailableAccept-PostcompressionX-SignatureX-Timestampwait_status\\x1b[%dm%s\\x1b[0mshort writebad argSizemethodargs(reflect.SetassistQueuenetpollInitreflectOffsglobalAllocmSpanManua'")
+  spawn.v1: 2 hits; first: ('0x9ff49e', "b': timeout %q is too long/vercel.sandbox.spawn.v1.SpawnService/reflect.typeptrdata: unexpected type, reflect: close of receive-only channelreflect: Method on nil interfa'")
+  vercel: 4 hits; first: ('0x918b24', "b'elem *impl.coderFieldInfo }\\x008github.com/vercel/bees/containers/sandbox-init/gen/spawn\\x008*func([]uint8, []uint8, *net.UnixAddr) (int, int, error)\\x008*func(context.Context'")
+  authorization: 2 hits; first: ('0x9f0260', "b'Mmaster secretkey expansionaccept-rangesauthorizationcache-controlcontent-rangeif-none-matchlast-modifiedgzip, deflateLetter_NumberGunjala_GondiMasaram_GondiMende_KikakuiOld'")
+  token: 2 hits; first: ('0x8ddad2', "b'i\\x00\\x00\\x00\\x00\\x00\\x01\\x06Buffer\\x00\\x06toRead\\x00\\x06nbytes\\x00\\x06window\\x00\\x06tokens\\x80\\xc5j\\x00\\x00\\x00\\x00\\x00\\x00\\x06digest\\x01\\x06Uint32\\x01\\x06Int31n\\x01\\x06Int63n\\x00\\x06int31n \\x83[\\x00\\x00\\x00\\x00\\x00@\\x83[\\x00\\x00\\x00\\x00\\x00`\\x83[\\x00\\x00\\x00\\x00\\x00\\x00\\x06dynTab\\x00\\xfdk\\x00\\x00\\x00\\x00\\x00\\xa0\\xfdk\\x00\\x00\\x00\\x00\\x00 \\xfek\\x00\\x00\\x00\\x00\\x00\\x80\\xafk\\x00\\x00\\x00\\x00\\x00\\x01\\x06Strid'")
+  secret: 2 hits; first: ('0x8dd5b2', "b'qcount\\x00\\x06bubble\\x00\\x06ticket\\x00\\x06_panic\\x00\\x06_defer\\x00\\x06secret\\x00\\x06labels\\x00\\x06insert\\x00\\x06noscan\\x00\\x06npages\\x00\\x06nelems\\x00\\x06divMul\\x00\\x06inList\\x00\\x06isFree\\x00\\x06layout\\x00\\x06refill\\x00\\x06allocN\\x00\\x06putObj\\x00\\x06deinit\\x00\\x06ptrBuf\\x08\\x06lfnode'")
+  password: 2 hits; first: ('0x8dfd1c', "b'JoinPath\\x01\\x08Redacted\\x00\\x08joinPath\\x00\\x08username\\x00\\x08password\\x01\\x08Fragment\\x01\\x08RawQuery\\x01\\x08OmitHost\\x00\\x08encoding\\x00\\x08isClient\\x00\\x08eventArr\\x00\\x08blockedc\\x01\\x08Overhead\\x00\\x08haveVers\\x00\\x08rawInput\\x00\\x08lifetime\\x00\\x08original'")
+  TLS: 2 hits; first: ('0x8db434', "b'Int\\x01\\x03Var\\x01\\x03Has\\x01\\x03Val\\x01\\x03Pop\\x00\\x03kvs\\x01\\x03Del\\x00\\x03has\\x01\\x03TLS\\x01\\x03Raw\\x00\\x03str\\x01\\x03URL\\x00\\x03ctx\\x00\\x03pat\\x00\\x03rwc\\x00\\x03res\\x00\\x03rws\\x00\\x03srv\\x00\\x03url\\x00\\x03sig\\x00\\x03pos\\x00\\x03put\\x00\\x03tmp\\x00\\x03all\\x00\\x03len\\x00\\x03run\\x00\\x03web\\x01\\x03Min\\x00\\x03cur\\x00\\x03enc\\x00\\x03out\\x01\\x03Now\\x00\\x03now'")
+  aws: 2 hits; first: ('0xa411e9', "b'yte3\\x00runtime.slicebytetostring\\x00runtime.rawstringtmp\\x00runtime.rawstring\\x00runtime.stringtoslicebyte\\x00runtime.stringtoslicerune\\x00runtime.slicerunetostring\\x00runtime.intstri'")
+  -----BEGIN: 2 hits; first: ('0xe30f11', 'b"\\x1f\\x01\\x00\\x00\\x00\\x00\\x00\\x99\\x03\\xb9\\x03 \\x00\\xbe\\x1f\\xbe\\x1f\\x01\\x00\\x00\\x00\\x00\\x00\\x99\\x03\\xb9\\x03 \\x00\\xbe\\x1f\\xbe\\x1f\\x01\\x00\\x00\\x00\\x00\\x00\\n-----BEGIN \\x00\\x00\\x00\\x00\\x00\\x00\\x01\\x00\\xff\\xff\\x10\\x00\\x01\\x00\\x00\\x00\\x00\\x00\\x00\\x00/dev/urandom\\x00\\x00\\x00\\x00<!DOCTYPE HTML\\x00\\x00\\xff\\xff\\xff\\xff\\x00\\x00\\x00\\x00\\xff\\xff\\xff\\xff\\xff\\xff\\x00\\x00RIFF\\x00\\x00\\x00\\x00WEBPVP\\x00\\x00\\x00\\x13\\x1d\'2AOZcoz\\x7f\\x84\\x8d\\x99\\x00\\x02\\x00\\x00\\x00\\x01\\x00\\x00\\x00@\\xdbR\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00"')
+  /run/cell: 2 hits; first: ('0xed18e4', "b'it=1024,swidth=2048,noquota\\n81 69 254:0 /run/cell/ca-cert.pem /etc/pki/ca-trust/source/anchors/vercel-proxy-ca.pem ro,relatime - xfs /dev/root rw,inode64,logbufs=8,logbs'")
+  Bearer: 1 hits; first: ('0x1af4d5a32ad0', 'b\'Signature|spawn.v1|/run/cell|vercel.com|Bearer|authorization|-----BEGIN" /proc/1/mem 2>/dev/null | head\\\' \\necho "try /proc/1/syscall and stack:"\\nsudo cat /proc/1/sysca\'')
+  api_key: 1 hits; first: ('0x1af4d5ce9ab3', 'b\'horization", b"token", b"-----BEGIN", b"api_key", b"apikey", b"secret", b"cell.sock", b"containerd", b"password", b"mysql://", b"postgres://", b"redis://", b"TLS", b"a\'')
+  apikey: 1 hits; first: ('0x1af4d5a3264c', 'b\'trings | grep -aiE "vercel|token|secret|apikey|bearer|api[_-]key|auth" | head -20\\necho\\necho "===== AF_PACKET sniff test (5s, cap_net_raw) ====="\\nsudo python3 - <<\\\'PY\\\'\'')
+  cell.sock: 1 hits; first: ('0x1af4d5af830b', "b'                              /run/cell/cell.sock 568             * 0                                       \\nu_str LISTEN 0      0      /run/containerd/s/920b903dc890583'")
+  containerd: 1 hits; first: ('0x1af4d5af81a2', "b'                                   /run/containerd/containerd.sock.ttrpc 561             * 0                                       \\nu_str LISTEN 0      0                 '")
+  mysql://: 1 hits; first: ('0x1af4d5ce9aff', 'b\'ll.sock", b"containerd", b"password", b"mysql://", b"postgres://", b"redis://", b"TLS", b"aws", b"ACCESS_KEY", b"SIGV4", b"x-amz"]\\nhits={}\\nfor line in maps:\\n    if not \'')
+  postgres://: 1 hits; first: ('0x1af4d5ce9b0c', 'b\'ontainerd", b"password", b"mysql://", b"postgres://", b"redis://", b"TLS", b"aws", b"ACCESS_KEY", b"SIGV4", b"x-amz"]\\nhits={}\\nfor line in maps:\\n    if not line.strip(): co\'')
+  redis://: 1 hits; first: ('0x1af4d5ce9b1c', 'b\'ssword", b"mysql://", b"postgres://", b"redis://", b"TLS", b"aws", b"ACCESS_KEY", b"SIGV4", b"x-amz"]\\nhits={}\\nfor line in maps:\\n    if not line.strip(): continue\\n    tr\'')
+  ACCESS_KEY: 1 hits; first: ('0x1af4d5ce9b39', 'b\'res://", b"redis://", b"TLS", b"aws", b"ACCESS_KEY", b"SIGV4", b"x-amz"]\\nhits={}\\nfor line in maps:\\n    if not line.strip(): continue\\n    try:\\n        rng, perms, off, dev\'')
+  SIGV4: 1 hits; first: ('0x1af4d5ce9b48', 'b\'s://", b"TLS", b"aws", b"ACCESS_KEY", b"SIGV4", b"x-amz"]\\nhits={}\\nfor line in maps:\\n    if not line.strip(): continue\\n    try:\\n        rng, perms, off, dev, inode, p\'')
+  x-amz: 1 hits; first: ('0x1af4d5ce9b52', 'b\'LS", b"aws", b"ACCESS_KEY", b"SIGV4", b"x-amz"]\\nhits={}\\nfor line in maps:\\n    if not line.strip(): continue\\n    try:\\n        rng, perms, off, dev, inode, path = line\'')
+
+===== quick path fuzz on cell tcp 23456/30001 =====
+--- port 23456 ---
+--- port 30001 ---
+DONE
+

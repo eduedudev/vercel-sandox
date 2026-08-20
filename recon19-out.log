@@ -1,0 +1,149 @@
+exit: 0
+#################### PORT 23456 ####################
+--- :23456 /vercel.hive.celld.api.v1.Celld/StartContainer ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:27 GMT
+--- :23456 /vercel.hive.celld.api.v1.Celld/UnregisterPort ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:27 GMT
+--- :23456 /vercel.hive.celld.api.v1.Celld/Health ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:27 GMT
+--- :23456 /vercel.hive.celld.api.v1.Celld/Ping ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:27 GMT
+--- :23456 /vercel.hive.cell.api.containers.v1.Containers/Create ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:27 GMT
+--- :23456 /vercel.hive.cell.api.containers.v1.Containers/Start ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:28 GMT
+--- :23456 /vercel.hive.cell.api.containers.v1.Containers/Exec ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:28 GMT
+--- :23456 /vercel.hive.cell.api.containers.v1.Containers/Kill ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:28 GMT
+--- :23456 /vercel.hive.host.api.v1.Host/GetResourceUsage ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:28 GMT
+--- :23456 /vercel.hive.host.api.v1.Host/GetOCIImageConfig ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:28 GMT
+--- :23456 /vercel.hive.api.cells.v1.Cells/GetCellAddress ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:28 GMT
+--- :23456 /vercel.sandbox.spawn.v1.SpawnService/Ping ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:28 GMT
+--- :23456 /grpc.health.v1.Health/Check ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:28 GMT
+#################### PORT 30001 ####################
+--- :30001 /vercel.hive.celld.api.v1.Celld/StartContainer ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:28 GMT
+--- :30001 /vercel.hive.celld.api.v1.Celld/UnregisterPort ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:28 GMT
+--- :30001 /vercel.hive.celld.api.v1.Celld/Health ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:28 GMT
+--- :30001 /vercel.hive.celld.api.v1.Celld/Ping ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:28 GMT
+--- :30001 /vercel.hive.cell.api.containers.v1.Containers/Create ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:28 GMT
+--- :30001 /vercel.hive.cell.api.containers.v1.Containers/Start ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:28 GMT
+--- :30001 /vercel.hive.cell.api.containers.v1.Containers/Exec ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:28 GMT
+--- :30001 /vercel.hive.cell.api.containers.v1.Containers/Kill ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:28 GMT
+--- :30001 /vercel.hive.host.api.v1.Host/GetResourceUsage ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:28 GMT
+--- :30001 /vercel.hive.host.api.v1.Host/GetOCIImageConfig ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:29 GMT
+--- :30001 /vercel.hive.api.cells.v1.Cells/GetCellAddress ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:29 GMT
+--- :30001 /vercel.sandbox.spawn.v1.SpawnService/Ping ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:29 GMT
+--- :30001 /grpc.health.v1.Health/Check ---
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Thu, 20 Aug 2026 14:11:29 GMT
+#################### PORT 30002 ####################
+--- :30002 /vercel.hive.celld.api.v1.Celld/StartContainer ---
+--- :30002 /vercel.hive.celld.api.v1.Celld/UnregisterPort ---
+--- :30002 /vercel.hive.celld.api.v1.Celld/Health ---
+--- :30002 /vercel.hive.celld.api.v1.Celld/Ping ---
+--- :30002 /vercel.hive.cell.api.containers.v1.Containers/Create ---
+--- :30002 /vercel.hive.cell.api.containers.v1.Containers/Start ---
+--- :30002 /vercel.hive.cell.api.containers.v1.Containers/Exec ---
+--- :30002 /vercel.hive.cell.api.containers.v1.Containers/Kill ---
+--- :30002 /vercel.hive.host.api.v1.Host/GetResourceUsage ---
+--- :30002 /vercel.hive.host.api.v1.Host/GetOCIImageConfig ---
+--- :30002 /vercel.hive.api.cells.v1.Cells/GetCellAddress ---
+--- :30002 /vercel.sandbox.spawn.v1.SpawnService/Ping ---
+--- :30002 /grpc.health.v1.Health/Check ---
+DONE
+

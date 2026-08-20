@@ -1,0 +1,27 @@
+exit: 0
+== /containerd.services.containers.v1.Containers/List ns=default -> status=0 msg= 
+  \0  \0  \0 033   c  \n 340   6  \n   $   1   3   a   5   4   8
+   f   7   -   f   0   2   6   -   4   c   5   c   -   a   1   0
+   8   -   3   2   e   e   7   c   2   c   1   7   f   3 032 207
+== /containerd.services.containers.v1.Containers/List ns=cell -> status=0 msg= 
+  \0  \0  \0  \0  \0
+== /containerd.services.containers.v1.Containers/List ns=vercel -> status=0 msg= 
+  \0  \0  \0  \0  \0
+== /containerd.services.tasks.v1.Tasks/List ns=default -> status=0 msg= 
+  \0  \0  \0 001   !  \n 236 002 022   $   1   3   a   5   4   8
+   f   7   -   f   0   2   6   -   4   c   5   c   -   a   1   0
+   8   -   3   2   e   e   7   c   2   c   1   7   f   3 030 220
+== /containerd.services.tasks.v1.Tasks/List ns=cell -> status=0 msg= 
+  \0  \0  \0  \0  \0
+== /containerd.services.images.v1.Images/List ns=default -> status=0 msg= 
+  \0  \0  \0 001      \n 235 002  \n 207 001   9   7   7   8   0
+   5   9   0   0   1   5   6   .   d   k   r   .   e   c   r   .
+   u   s   -   e   a   s   t   -   1   .   a   m   a   z   o   n
+== /containerd.services.snapshots.v1.Snapshots/List ns=default -> status=3 msg= snapshotter argument missing: invalid argument
+== /containerd.services.snapshots.v1.Snapshots/List ns=cell -> status=3 msg= snapshotter argument missing: invalid argument
+
+===== full containers list (default) if any =====
+/tmp/explore12.sh: line 30: strings: command not found
+DONE
+=== rc: 0 ===
+

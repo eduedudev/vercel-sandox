@@ -1,0 +1,53 @@
+exit: 0
+===== iptables filter =====
+/tmp/explore15.sh: line 4: iptables: command not found
+===== iptables nat =====
+/tmp/explore15.sh: line 6: iptables: command not found
+===== iptables mangle =====
+/tmp/explore15.sh: line 8: iptables: command not found
+===== nft =====
+/tmp/explore15.sh: line 10: nft: command not found
+===== ip rule / routes =====
+0:	from all lookup local
+32766:	from all lookup main
+32767:	from all lookup default
+default via 100.64.0.1 dev eth0 
+100.64.0.0/16 dev eth0 proto kernel scope link src 100.64.12.141 
+local 100.64.12.141 dev eth0 table local proto kernel scope host src 100.64.12.141 
+broadcast 100.64.255.255 dev eth0 table local proto kernel scope link src 100.64.12.141 
+local 127.0.0.0/8 dev lo table local proto kernel scope host src 127.0.0.1 
+local 127.0.0.1 dev lo table local proto kernel scope host src 127.0.0.1 
+broadcast 127.255.255.255 dev lo table local proto kernel scope link src 127.0.0.1 
+fe80::/64 dev eth0 proto kernel metric 256 pref medium
+local ::1 dev lo table local proto kernel metric 0 pref medium
+local fe80::2cbc:6aff:fede:1392 dev eth0 table local proto kernel metric 0 pref medium
+multicast ff00::/8 dev eth0 table local proto kernel metric 256 pref medium
+===== netns of self =====
+net:[4026531833]
+===== firewalld-like procs =====
+===== test egress to internet IP =====
+codercode: 302 time: 0.015389
+1.1.1.1: 301 time: 0.003727
+applesecure: 000
+===== connection refused MMDS retest (with ip addr) =====
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host proto kernel_lo 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 2e:bc:6a:de:13:92 brd ff:ff:ff:ff:ff:ff
+    inet 100.64.12.141/16 brd 100.64.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::2cbc:6aff:fede:1392/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+default via 100.64.0.1 dev eth0 
+100.64.0.0/16 dev eth0 proto kernel scope link src 100.64.12.141 
+*   Trying 169.254.169.254:80...
+* connect to 169.254.169.254 port 80 from 100.64.12.141 port 56808 failed: No route to host
+* Failed to connect to 169.254.169.254 port 80 after 0 ms: Could not connect to server
+* closing connection #0
+DONE
+=== rc: 0 ===
+

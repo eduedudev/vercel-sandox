@@ -1,0 +1,13 @@
+exit: 0
+=== /dev/vsock? ===
+crw------- 1 root root 10, 258 Aug 20 14:31 /dev/vsock
+=== vsock port to CID3:2050 (python) ===
+connect err: [Errno 13] Permission denied
+=== vsock ports scan (common) ===
+scan done
+=== vsock from cid -1 (any)? ===
+cid=-1 err: [Errno 13] Permission denied
+=== check hostname for virtsock/vsock ====
+DONE
+=== rc: 0 ===
+

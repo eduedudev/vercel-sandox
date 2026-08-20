@@ -1,0 +1,60 @@
+exit: 0
+===== /etc/default/vector (HOST SECRETS) =====
+# /etc/default/vector
+# This file can theoretically contain a bunch of environment variables
+# for Vector.  See https://vector.dev/docs/setup/configuration/#environment-variables
+# for details.
+total 12
+drwxr-xr-x+ 2 root root   35 Aug 18 18:15 .
+drwxr-xr-x+56 root root 4096 Aug 20 14:02 ..
+-rw-r--r--+ 1 root root  119 Nov 20  2023 useradd
+-rw-r--r--+ 1 root root  194 Jan 13  2025 vector
+
+===== vector sinks =====
+--- /mnt/vda2/etc/vector/sinks/datadog_celld.toml ---
+type = "datadog_logs"
+inputs = ["celld_app"]
+default_api_key = "${DATADOG_API_KEY}"
+--- /mnt/vda2/etc/vector/sinks/datadog_kernel.toml ---
+type = "datadog_logs"
+inputs = ["kernel_remap"]
+default_api_key = "${DATADOG_API_KEY}"
+--- sources ---
+--- /mnt/vda2/etc/vector/sources/celld.toml ---
+# Read output from the 'celld' daemon
+type = "journald"
+include_matches.UNIT = ["celld.service"]
+include_matches._SYSTEMD_UNIT = ["celld.service"]
+--- /mnt/vda2/etc/vector/sources/kernel.toml ---
+# Read kernel logs
+type = "journald"
+include_matches._TRANSPORT = ["kernel"]
+--- vector.toml ---
+# Set global options
+data_dir = "/var/lib/vector"
+
+===== MMDS test from this netns =====
+default via 100.64.0.1 dev eth0 
+100.64.0.0/16 dev eth0 proto kernel scope link src 100.64.119.164 
+169.254.169.254 via 100.64.0.1 dev eth0 src 100.64.119.164 uid 0 
+    cache 
+
+--- try add route to mmds ---
+
+
+===== containerd metadata (bolt db) =====
+total 144
+drwx--x--x+ 2 root root     21 Aug 19 18:48 .
+drwx------+11 root root   4096 Aug 19 18:48 ..
+-rw-r--r--+ 1 root root 262144 Aug 20 14:02 meta.db
+
+===== host cmdline / proc (cell boot info) =====
+cat: /mnt/vda2/proc/cmdline: No such file or directory
+--- dmi/ec2 metadata refs ---
+/mnt/vda2/etc/cloud
+/mnt/vda2/etc/cloud/cloud.cfg.d
+
+===== celld env vars embedded? (strings scan for URLs/tokens) =====
+DONE
+=== rc: 0 ===
+
